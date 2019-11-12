@@ -1,19 +1,24 @@
 .bluebar {
-    padding-top: 5px;
+    padding-top: 0.3%;
     margin: 0px;
     background-color: #002868;
 }
 
 .redbar {
-    padding-top: 5px;
+    padding-top: 0.3%;
     margin: 0px;
     background-color: #ef2b2d;
 }
 
 .whitebar {
-    padding-top: 5px;
+    padding-top: 0.3%;
     margin: 0px;
     background-color: #ffffff;
+}
+
+.logo{
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 

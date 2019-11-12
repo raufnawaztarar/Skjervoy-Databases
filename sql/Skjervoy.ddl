@@ -2,6 +2,7 @@ CREATE TABLE Employees (
   `Employee ID`  char(8) NOT NULL, 
   Name           varchar(255) NOT NULL, 
   Email          char(64) NOT NULL, 
+  Password       char(64) NOT NULL, 
   Phone          char(14) NOT NULL, 
   Salary         real NOT NULL, 
   Role           varchar(255) NOT NULL, 

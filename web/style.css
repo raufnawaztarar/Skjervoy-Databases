@@ -21,6 +21,12 @@
     padding-bottom: 3%;
 }
 
+.black_desc_box{
+    padding-top: 100px;
+    margin: 0px;
+    background-color: #000000;
+}
+
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126

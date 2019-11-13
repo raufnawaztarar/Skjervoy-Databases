@@ -35,12 +35,11 @@
 }
 
 .splash{
-    height: 75%;
-    width: 75%;
+    height: 100%;
+    width: 100%;
 }
 
 .splash_container{
-    text-align: center;
 }
 
 .black_box_desc{

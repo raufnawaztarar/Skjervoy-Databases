@@ -74,7 +74,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 .card_button{
@@ -90,6 +91,15 @@
     margin-left: 20px;
     color: #000000;
 }
+
+.card-title, .center_box_heading{
+    font-family: 'javanese-text';
+}
+
+.card-text, .center_box_desc {
+    font-family: 'Kollektif';
+}
+
 
 /*==================== 
 	Footer 

@@ -40,9 +40,13 @@
 
 .center_splash_heading{
     position: inline;
-    
     font-size: 50px;
 }
+
+.product_block{
+    padding-top: 5%;
+}
+
 
 /*==================== 
 	Footer 

@@ -190,7 +190,8 @@ LOCK TABLES Suppliers WRITE;
 /*!40000 ALTER TABLE Suppliers DISABLE KEYS */;
 INSERT INTO Suppliers (Name, Address, Phone, Email)
 VALUES
-	('Lamy','0000000000000001','+41 7777123456','orders@lamy.de');
+	('Lamy','0000000000000001','+41 7777023456','orders@lamy.de');
+	('Pilot','0000000000000002','+44 7777023457','sales@pilot.co.uk');
 
 /*!40000 ALTER TABLE Suppliers ENABLE KEYS */;
 UNLOCK TABLES;
@@ -201,7 +202,7 @@ DROP TABLE IF EXISTS Orders;
 
 CREATE TABLE Orders (
   `Order ID`        char(16) NOT NULL, 
-  Time              time NOT NULL, 
+  Date              date NOT NULL, 
   Product           char(16) NOT NULL, 
   Quantity          int(1) NOT NULL, 
   Address           char(16) NOT NULL, 
@@ -215,9 +216,10 @@ CREATE TABLE Orders (
 LOCK TABLES Orders WRITE;
 /*!40000 ALTER TABLE Orders DISABLE KEYS */;
 INSERT INTO Orders 
-	(`Order ID`, Time, Product, Quantity, Address, Weight, `Payment Details`, `Customer ID`, `Courier Name`)
+	(`Order ID`, Date, Product, Quantity, Address, Weight, `Payment Details`, `Customer ID`, `Courier Name`)
 VALUES
-	('1234567890123456', '12:30:11', '5234567890123456', 1, '0000111122223333', 2100.0, 'Card ending in 4567', '1111222233334444', 'Royal Mail');
+	('2000111122223333', '2019-11-02', '3000111122223333', 1, '0000111122223333', 2100.0, 'Card ending in 4567', '1111222233334444', 'Royal Mail');
+	('2000111122223334', '2019-11-10', '3000111122223334', 2, '0000111122223334', 246.5,  'Card ending in 4848', '1111222233334445', 'DHL');
 
 /*!40000 ALTER TABLE Orders ENABLE KEYS */;
 UNLOCK TABLES;
@@ -241,7 +243,8 @@ LOCK TABLES Customers WRITE;
 /*!40000 ALTER TABLE Customers DISABLE KEYS */;
 INSERT INTO Customers (`Customer ID`, Name, Address, Phone, Email, Password)
 VALUES
-	('1111222233334444','Fred the Fish', '5000111122223333', '+44 7777123456','fredf@bbmail.com', 'faf3c42a3408b253d75a3b8828aca9231e55e6af1cdcb6e37c50986f2ce1d4da');
+	('1111222233334444','Fred the Fish', '5000111122223333', '+44 7777123456','fredf@bbmail.com', 'faf3c42a3408b253d75a3b8828aca9231e55e6af1cdcb6e37c50986f2ce1d4da'); # My leg!
+	('1111222233334445','Sandy Cheeks', '5000111122223334', '+44 7777123457','sandyc@texasmail.com', '0eefdf991b49be88b622dd960c56f4bc4cd2eee7c1c74578452c923c4cc274b9'); # Howdy
 
 /*!40000 ALTER TABLE Customers ENABLE KEYS */;
 UNLOCK TABLES;
@@ -266,6 +269,7 @@ INSERT INTO Addresses
 (`Address ID`,`First Line of Address`,`Second Line of Address`,Postcode, City, Country)
 VALUES
 	('5000111122223333','21 Gravel St', '', 'BB1 2FF','Bikini Bottom', 'International Waters');
+	('5000111122223334','1 Glass Dome Close', 'South Field', 'BB4 001','Bikini Bottom', 'International Waters');
 
 /*!40000 ALTER TABLE Addresses ENABLE KEYS */;
 UNLOCK TABLES;

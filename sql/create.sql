@@ -175,6 +175,103 @@ VALUES
 UNLOCK TABLES;
 
 
+# Suppliers
+DROP TABLE IF EXISTS Suppliers;
+
+CREATE TABLE Suppliers (
+  Name    varchar(255) NOT NULL, 
+  Address char(16) NOT NULL, 
+  Phone   char(14) NOT NULL, 
+  Email   varchar(255) NOT NULL, 
+  PRIMARY KEY (Name)
+  );
+
+LOCK TABLES Suppliers WRITE;
+/*!40000 ALTER TABLE Suppliers DISABLE KEYS */;
+INSERT INTO Suppliers (Name, Address, Phone, Email)
+VALUES
+	('Lamy','0000000000000001','+41 7777123456','orders@lamy.de');
+
+/*!40000 ALTER TABLE Suppliers ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Orders
+DROP TABLE IF EXISTS Orders;
+
+CREATE TABLE Orders (
+  `Order ID`        char(16) NOT NULL, 
+  Time              time NOT NULL, 
+  Product           char(16) NOT NULL, 
+  Quantity          int(1) NOT NULL, 
+  Address           char(16) NOT NULL, 
+  Weight            real NOT NULL, 
+  `Payment Details` varchar(255) NOT NULL, 
+  `Customer ID`     char(16) NOT NULL, 
+  `Courier Name`    varchar(255) NOT NULL, 
+  PRIMARY KEY (`Order ID`)
+  );
+
+LOCK TABLES Orders WRITE;
+/*!40000 ALTER TABLE Orders DISABLE KEYS */;
+INSERT INTO Orders 
+	(`Order ID`, Time, Product, Quantity, Address, Weight, `Payment Details`, `Customer ID`, `Courier Name`)
+VALUES
+	('1234567890123456', '12:30:11', '5234567890123456', 1, '0000111122223333', 2100.0, 'Card ending in 4567', '1111222233334444', 'Royal Mail');
+
+/*!40000 ALTER TABLE Orders ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+# Customers
+DROP TABLE IF EXISTS Customers;
+
+CREATE TABLE Customers (
+  `Customer ID` char(16) NOT NULL, 
+  Name          varchar(255) NOT NULL, 
+  Address       char(16) NOT NULL, 
+  Phone         char(14), 
+  Email         varchar(255) NOT NULL, 
+  Password      char(64) NOT NULL, 
+  PRIMARY KEY (`Customer ID`)
+  );
+
+LOCK TABLES Customers WRITE;
+/*!40000 ALTER TABLE Customers DISABLE KEYS */;
+INSERT INTO Customers (`Customer ID`, Name, Address, Phone, Email, Password)
+VALUES
+	('1111222233334444','Fred the Fish', '5000111122223333', '+44 7777123456','fredf@bbmail.com', 'faf3c42a3408b253d75a3b8828aca9231e55e6af1cdcb6e37c50986f2ce1d4da');
+
+/*!40000 ALTER TABLE Customers ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Addresses
+DROP TABLE IF EXISTS Addresses;
+
+CREATE TABLE Addresses (
+  `Address ID`             char(16) NOT NULL, 
+  `First Line of Address`  char(255) NOT NULL, 
+  `Second Line of Address` char(255), 
+  Postcode                 char(9) NOT NULL, 
+  City                     varchar(255) NOT NULL, 
+  Country                  varchar(255) NOT NULL, 
+  PRIMARY KEY (`Address ID`)
+  );
+
+LOCK TABLES Addresses WRITE;
+/*!40000 ALTER TABLE Addresses DISABLE KEYS */;
+INSERT INTO Addresses 
+(`Address ID`,`First Line of Address`,`Second Line of Address`,Postcode, City, Country)
+VALUES
+	('5000111122223333','21 Gravel St', '', 'BB1 2FF','Bikini Bottom', 'International Waters');
+
+/*!40000 ALTER TABLE Addresses ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
 
 
 

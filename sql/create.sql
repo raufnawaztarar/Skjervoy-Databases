@@ -1,15 +1,8 @@
-# original file created by Iain Murray, edit it to match our database
 
-
-# Sequel Pro dump
-# Version 1630
-# http://code.google.com/p/sequel-pro
-#
 # Host: silva.computing.dundee.ac.uk (MySQL 5.1.37)
 # Database: 19ac3d05
-# Generation Time: 2019-12-14 12:44:38 +0000
-# ************************************************************
 
+# following conditional comments copied from SQLTutorialCreateDatabase.sql
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -25,10 +18,10 @@ CREATE DATABASE `19ac3d05`;
 
 USE `19ac3d05`;
 
-# Dump of table Employees
-# ------------------------------------------------------------
+# Employees
 
 DROP TABLE IF EXISTS `Employees`;
+# ------------------------------------------------------------
 
 CREATE TABLE `Employees` (
   `Employee ID`  char(8) NOT NULL, 
@@ -76,7 +69,7 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table Buildings
+# Buildings
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `Buildings`;
@@ -101,7 +94,7 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table Inventory
+# Inventory
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `Inventory`;
@@ -125,7 +118,7 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table Products
+# Products
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `Products`;
@@ -152,7 +145,7 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table Couriers
+# Couriers
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `Couriers`;
@@ -176,6 +169,7 @@ UNLOCK TABLES;
 
 
 # Suppliers
+# ------------------------------------------------------------
 DROP TABLE IF EXISTS Suppliers;
 
 CREATE TABLE Suppliers (
@@ -198,6 +192,7 @@ UNLOCK TABLES;
 
 
 # Orders
+# ------------------------------------------------------------
 DROP TABLE IF EXISTS Orders;
 
 CREATE TABLE Orders (
@@ -227,6 +222,7 @@ UNLOCK TABLES;
 
 
 # Customers
+# ------------------------------------------------------------
 DROP TABLE IF EXISTS Customers;
 
 CREATE TABLE Customers (
@@ -251,6 +247,7 @@ UNLOCK TABLES;
 
 
 # Addresses
+# ------------------------------------------------------------
 DROP TABLE IF EXISTS Addresses;
 
 CREATE TABLE Addresses (
@@ -279,6 +276,7 @@ UNLOCK TABLES;
 
 
 
+# following conditional comments also copied from SQLTutorialCreateDatabase.sql
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

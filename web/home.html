@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+
     <!-- Tab Title-->
     <title>Skjervoy</title>
 
@@ -13,180 +14,175 @@
     <!-- Our External Style Sheet-->
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    
+    <!-- Icon Libary-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</head>
-<body>
+  </head>
+  <body>
+
     <!-- Top Banner Colors-->
+    <div class ="rainbow_group">
+        <div class="bluebar"></div>
+        <div class="whitebar"></div>
+        <div class="redbar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
+          <li class="nav-item"><a href="#" class="nav-link">Our Products</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Our Stores</a></li>
+        </ul>
+      </div>
+      <img class ="col-xs-4 justify-content-center" src="resources/black_logo2.png" alt="logo" height="auto" width="auto" data-toggle="null" data-target="null">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
+          <li href="#"><i class="nav-link fa fa-fw fa-search"></i> Search</a></li>
+          <li href="#"><i class="nav-link fa fa-fw fa-user"></i> Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Splash Home Screen Image-->
+    <div class="splash_container">
+      <img class ="splash" src="resources/front_page.jpg" alt="Responsive image">
+    </div>
+
+    <!-- First Black Description Box-->
+    <div class="black_box_desc">
+      <p class="center_box_heading">- Our Products -</p>
+    </div>
+
+    <!-- First List Of Product Category-->
+    <div class = "product_block">
+        <div class="row mb-2 ">
+          <div class="col-sm d-flex justify-content-center">
+            <div class="card mb-3" style="max-width: 1000px;">
+              <div class="row no-gutters">
+                <div class="col-md-7">
+                  <img src="../web/resources/cat_notebook.png" class="card-img-top" alt="Notebook Category">
+                </div>
+                <div class="col-md-5">
+                  <div class="card-body">
+                    <h5 class="card-title">Our Notebooks</h5>
+                    <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
+                    <div class="card_button">
+                        <button type="button" class="btn btn-outline-dark">View Locations</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-sm d-flex justify-content-center">
+            <div class="card mb-3" style="max-width: 1000px;">
+              <div class="row no-gutters">
+                <div class="col-md-7">
+                  <img src="../web/resources/cat_pens.png" class="card-img" alt="Pen Category">
+                </div>
+                <div class="col-md-5">
+                  <div class="card-body">
+                    <h5 class="card-title">Our Pens</h5>
+                    <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
+                    <div class="card_button">
+                        <button type="button" class="btn btn-outline-dark">View Locations</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Story Of Company Description-->
+    <div class="black_box_desc">
+      <p class="center_box_heading">- The Story Of Skjervøy -</p>
+      <p class="center_box_desc">Our story begins in 1925 when our beloved founder, Frank, first discovered the fine art of pen craftsmanship. Using only the best and highest quality materials he began to experiment with different designs. His unique sense of style and unparalleled eye for quality lead to him establishing a store and distribution chain which would become far greater then he could ever imagine.</p>
+      <img class = "flag" src="../web/resources/flag.png" alt="norsk flag" height=auto width=auto>
+    </div>
+
+    <!-- Find Other Locations Card-->
+    <div class = "product_block">
+      <div class="row mb-2 ">
+        <div class="col-sm d-flex justify-content-center">
+          <div class="card mb-3" style="max-width: 1000px;">
+            <div class="row no-gutters">
+              <div class="col-md-7">
+                <img src="../web/resources/shop_scene.png" class="card-img" alt="shop_scene">
+              </div>
+              <div class="col-md-5">
+                <div class="card-body">
+                  <h5 class="card-title">Find one of our establishments</h5>
+                  <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
+                  <div class="card_button">
+                      <button type="button" class="btn btn-outline-dark">View Locations</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Banner Colors-->
     <div class="bluebar"></div>
     <div class="whitebar"></div>
     <div class="redbar"></div>
 
-     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
-                <li class="nav-item"><a href="#" class="nav-link">Link 1</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Link 2</a></li>
+    <!-- Footer-->
+    <footer id="footer" class="footer-1">
+    <div class="main-footer widgets-dark typo-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col text-left">
+          <div class="widget">
+            <h5 class="widget-title"><font face="javanese-text">Quick Links</font><span></span></h5>
+            <ul class="thumbnail-widget">
+              <li>
+                <div class="thumb-content"><a href="#.">Home</a></div>
+              </li>
+              <li>
+                <div class="thumb-content"><a href="#.">Products</a></div>
+              </li>
+              <li>
+                <div class="thumb-content"><a href="#.">Store Guide</a></div>
+              </li>
+              <li>
+                <div class="thumb-content"><a href="#.">Track Orders</a></div>
+              </li>
             </ul>
+          </div>
         </div>
-        
-        <img class ="col-xs-4 justify-content-center" src="resources/black_logo2.png" alt="logo" height="auto" width="auto" data-toggle="null" data-target="null">
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
-                <li class="nav-item"><a href="#" class="nav-link">Link 1</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Link 2</a></li>
+        <div class="col text-center">
+          <p><img class ="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
+            <font face="kollektif" >Store Opening Hours<br>
+            Mon - Fri: 9 AM - 6 PM<br>
+            Sat - Sun: 10 AM - 5 PM<br>
+            </font>
+          </p>
+        </div>
+        <div class="col text-right">
+          <div class="widget">
+            <h5 class="widget-title"><font face="javanese-text">Company Information</font><span></span></h5>
+            <ul class="thumbnail-widget">
+              <li>
+                <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
+              </li>
+              <li>
+                <div class="thumb-content"><a href="#.">Employee Access</a></div>
+              </li>
             </ul>
+          </div>
         </div>
-    </nav>
-
-    <div class="splash-container">
-            <img class ="splash" src="resources/front_page.jpg" alt="Responsive image">
+      </div>
     </div>
-
-    <div class="black_box_desc">
-        <p class="center_box_heading">- Our Products -</p>
-    </div>
-
-    <div class = "product_block"></div>
-        <div class="row mb-2 ">
-            <div class="col-sm d-flex justify-content-center">
-                    <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="..." class="card-img" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-        </div>
-        <div class="row mb-2">
-                <div class="col-sm d-flex justify-content-center">
-                        <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                          <div class="col-md-4">
-                            <img src="..." class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-    </div>
-
-    <div class="black_box_desc">
-            <p class="center_box_heading">- Our Products -</p>
-    </div>
-
-    <div class = "product_block"></div>
-        <div class="row mb-2 ">
-            <div class="col-sm d-flex justify-content-center">
-                    <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="..." class="card-img" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-        </div>
-        <div class="row mb-2">
-                <div class="col-sm d-flex justify-content-center">
-                        <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                          <div class="col-md-4">
-                            <img src="..." class="card-img" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-    </div>
-
-     <!-- Bottom Banner Colors-->
-     <div class="bluebar"></div>
-     <div class="whitebar"></div>
-     <div class="redbar"></div>
-     
-     <footer id="footer" class="footer-1">
-     <div class="main-footer widgets-dark typo-light">
-         <div class="container">
-             <div class="row justify-content-center">
-                     <div class="col text-left">
-                         <div class="widget">
-                             <h5 class="widget-title"><font face="javanese-text">Quick Links</font><span></span></h5>
-                                 <ul class="thumbnail-widget">
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Home</a></div>	
-                                     </li>
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Products</a></div>	
-                                     </li>
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Store Guide</a></div>	
-                                     </li>
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Track Orders</a></div>	
-                                     </li>
-                             </ul>
-                         </div>
-                     </div>
-     
-                     <div class="col text-center">
-                         <p><img class ="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
-                             <font face="kollektif" >Store Opening Hours<br>
-                             Mon - Fri: 9 AM - 6 PM<br>
-                             Sat - Sun: 10 AM - 5 PM<br>
-                             </font>
-                         </p>
-                     </div>
- 
-                         <div class="col text-right">
-                             <div class="widget">
-                                 <h5 class="widget-title"><font face="javanese-text">Company Information</font><span></span></h5>
-                                 <ul class="thumbnail-widget">
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Privacy Policy</a></div>	
-                                     </li>
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Employee Access</a></div>	
-                                     </li>
-                                 </ul>
-                             </div>
-                         </div>
-             </div>
-         </div>
-</body>
+  </body>
 </html>

@@ -41,25 +41,15 @@
 
 .black_box_desc{
     margin: 0px;
-<<<<<<< Updated upstream
-    padding-top: 25px;
-=======
     padding-top: 40px;
->>>>>>> Stashed changes
     background-color: #000000;
 }
 
 .center_box_heading{
     text-align: center;
-<<<<<<< Updated upstream
-    font-size: 25px;
-    color: white;
-    padding-bottom:20px;
-=======
     font-size: 35px;
     color: white;
     padding-bottom:40px;
->>>>>>> Stashed changes
 }
 .center_box_desc{
     text-align: center;

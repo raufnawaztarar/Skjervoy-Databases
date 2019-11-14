@@ -88,9 +88,9 @@ LOCK TABLES `Buildings` WRITE;
 /*!40000 ALTER TABLE `Buildings` DISABLE KEYS */;
 INSERT INTO `Buildings` (`Building ID`,Type,`Phone Number`,Manager,Address,Revenue)
 VALUES
-	('111111',Warehouse,'0123456789789',Essie Oneal,'5600111122223333',2565656565);
-  ('222222',Office,'0123456789779',David Avery,'5600111122223334',2565656565);
-  ('333333',Shop,'01234588889779',Keith Bates,'5600111122223335',2999656565);
+	('111111','Warehouse','0123456789789',Essie Oneal,'5600111122223333',2565656565);
+  ('222222','Office','0123456789779',David Avery,'5600111122223334',2565656565);
+  ('333333','Shop','01234588889779',Keith Bates,'5600111122223335',2999656565);
 /*!40000 ALTER TABLE `Buildings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +128,7 @@ DROP TABLE IF EXISTS `Products`;
 CREATE TABLE `Products` (
   `Product ID`    char(16) NOT NULL, 
   Name            varchar(255) NOT NULL, 
-  Type            char(64) NOT NULL, 
+  Type            varchar(64) NOT NULL, 
   `Buying Price`  real NOT NULL, 
   `Selling Price` real NOT NULL, 
   Weight          real NOT NULL, 
@@ -141,9 +141,9 @@ LOCK TABLES `Products` WRITE;
 /*!40000 ALTER TABLE `Products` DISABLE KEYS */;
 INSERT INTO `Products` (`Product ID`,Name,Type,`Buying Price`,`Selling Price`,Weight, Picture, Supplier)
 VALUES
-	('123456',fargerik, Pen,'10.99','99.99','1',Link,'Lamy');
-  ('123696',glatt, Pen,'10.99','99.99','1',Link,'Lamy');
-  ('113696',tre, Pen,'10.99','99.99','1',Link,'Lamy');
+	('123456','fargerik', 'Pen','10.99','99.99','1','/img/pen/fargerik.jpg','Lamy');
+  ('123696','glatt', 'Pen','10.99','99.99','1','/img/pen/glatt','Lamy');
+  ('113696','tre', 'Pen','10.99','99.99','1','/img/pen/tre','Lamy');
 
 /*!40000 ALTER TABLE `Products` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -166,7 +166,7 @@ LOCK TABLES `Couriers` WRITE;
 /*!40000 ALTER TABLE `Couriers` DISABLE KEYS */;
 INSERT INTO `Couriers` (Name, Address, `Cost per Kg`, `Collection point`, `Warehouse ID`)
 VALUES
-	(Fedx,'5500111122223333','2','5500111122223334', '999999');
+	('Fedx','5500111122223333','2','5500111122223334', '999999');
 
 /*!40000 ALTER TABLE `Couriers` ENABLE KEYS */;
 UNLOCK TABLES;

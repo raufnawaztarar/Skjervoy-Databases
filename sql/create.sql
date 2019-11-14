@@ -41,30 +41,30 @@ LOCK TABLES `Employees` WRITE;
 /*!40000 ALTER TABLE `Employees` DISABLE KEYS */;
 INSERT INTO `Employees` (`Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details`, Picture, Building)
 VALUES
-	(123456,'Erick Nolan','Erick Nolan@skjervoy.com','07774696960','26000','Manager','00-22-11 10061011','link','Shop'),
-	(123457,'Peter Mayer','Peter Mayer@skjervoy.com','07774696961','27000','Manager','00-22-01 10061010','link','Shop'),
-	(123458,'Jamal Scott','Jamal Scott@skjervoy.com','07774696962','28000','Manager','00-22-12 10061012','link','Shop'),
-	(123459,'Keith Bates','Keith Bates@skjervoy.com','07774696963','26000','Manager','00-22-13 10061014','link','Shop'),
-	(123460,'Gregg Rivas','Gregg Rivas@skjervoy.com','07774696964','25500','Manager','00-22-14 10061013','link','Shop'),
-	(123461,'Ruby Wright','Ruby Wright@skjervoy.com','07774696965','25050','Manager','00-22-15 10061015','link','Shop'),
-	(123462,'Micah Ewing','Micah Ewing@skjervoy.com','07774696966','45000','Manager','00-22-16 10061016','link','Shop'),
-	(123463,'Maura Stone','Maura Stone@skjervoy.com','07774696967','75000','Manager','00-22-17 10061017','link','Shop'),
-  (123456,'Mitzi House','Mitzi House@skjervoy.com','07774696968','26000','Manager','00-22-18 10061018','link','Shop'),
-	(123457,'Steve Beard','Steve Beard@skjervoy.com','07774696969','20000','Manager','00-22-19 10061019','link','Shop'),
-	(123458,'Lloyd Riley','Lloyd Riley@skjervoy.com','07774696970','20000','Manager','00-22-21 10061020','link','Shop'),
-	(123459,'Isiah Rojas','Isiah Rojas@skjervoy.com','07774696971','29000','Manager','00-22-30 10061021','link','Shop'),
-	(123460,'Galen Cline','Galen Cline@skjervoy.com','07774696972','21000','Manager','00-22-31 10061023','link','Shop'),
-	(123461,'Davis Tyler','Davis Tyler@skjervoy.com','07774696973','29000','Manager','00-22-32 10061024','link','Shop'),
-	(123462,'Candy Mills','Candy Mills@skjervoy.com','07774696974','26000','Manager','00-22-33 10061025','link','Shop'),
-	(123463,'Vicky Johns','Vicky Johns@skjervoy.com','07774696975','26000','Manager','00-22-34 10061026','link','Shop'),
-  (123464,'Dixie Pitts','Dixie Pitts@skjervoy.com','07774696976','27000','Manager','00-22-35 10061027','link','Shop'),
-	(123465,'Deann Moran','Deann Moran@skjervoy.com','07774696977','29000','Manager','00-22-36 10061028','link','Shop'),
-	(123466,'Essie Oneal','Essie Oneal@skjervoy.com','07774696978','29000','Manager','00-22-37 10061029','link','Shop'),
-	(123467,'Alice Doyle','Alice Doyle@skjervoy.com','07774696979','24000','Manager','00-22-16 10061030','link','Shop'),
-	(123468,'Ricky Eaton','Ricky Eaton@skjervoy.com','07774696980','23000','Manager','00-22-99 10061031','link','Shop'),
-	(123469,'Ilene Bruce','Ilene Bruce@skjervoy.com','07774696981','21000','Manager','00-22-44 10061032','link','Shop'),
-	(123470,'David Avery','David Avery@skjervoy.com','07774696982','22000','Manager','00-22-66 10061033','link','Shop'),
-	(123471,'Allan Ellis','Allan Ellis@skjervoy.com','07774696983','29000','Manager','00-22-77 10061034','link','Shop'),
+	(123456,'Erick Nolan','ErickNolan@skjervoy.com','07774696960','26000','Product Manager','00-22-11 10061011','link','Shop'),
+	(123457,'Peter Mayer','PeterMayer@skjervoy.com','07774696961','27000','HR Manager','00-22-01 10061010','link','Shop'),
+	(123458,'Jamal Scott','JamalScott@skjervoy.com','07774696962','28000','Manager','00-22-12 10061012','link','Shop'),
+	(123459,'Keith Bates','KeithBates@skjervoy.com','07774696963','26000','Manager','00-22-13 10061014','link','Shop'),
+	(123460,'Gregg Rivas','GreggRivas@skjervoy.com','07774696964','25500','Manager','00-22-14 10061013','link','Shop'),
+	(123461,'Ruby Wright','RubyWright@skjervoy.com','07774696965','25050','Manager','00-22-15 10061015','link','Shop'),
+	(123462,'Micah Ewing','MicahEwing@skjervoy.com','07774696966','45000','Manager','00-22-16 10061016','link','Shop'),
+	(123463,'Maura Stone','MauraStone@skjervoy.com','07774696967','75000','Sales Assistant','00-22-17 10061017','link','Shop'),
+  (123456,'Mitzi House','MitziHouse@skjervoy.com','07774696968','26000','Sales Assistant','00-22-18 10061018','link','Shop'),
+	(123457,'Steve Beard','SteveBeard@skjervoy.com','07774696969','20000','Sales Assistant','00-22-19 10061019','link','Shop'),
+	(123458,'Lloyd Riley','LloydRiley@skjervoy.com','07774696970','20000','Sales Assistant','00-22-21 10061020','link','Shop'),
+	(123459,'Isiah Rojas','IsiahRojas@skjervoy.com','07774696971','29000','Manager','00-22-30 10061021','link','Shop'),
+	(123460,'Galen Cline','GalenCline@skjervoy.com','07774696972','21000','Manager','00-22-31 10061023','link','Shop'),
+	(123461,'Davis Tyler','DavisTyler@skjervoy.com','07774696973','29000','Manager','00-22-32 10061024','link','Shop'),
+	(123462,'Candy Mills','CandyMills@skjervoy.com','07774696974','26000','Manager','00-22-33 10061025','link','Shop'),
+	(123463,'Vicky Johns','VickyJohns@skjervoy.com','07774696975','26000','Manager','00-22-34 10061026','link','Shop'),
+  (123464,'Dixie Pitts','DixiePitts@skjervoy.com','07774696976','27000','Manager','00-22-35 10061027','link','Shop'),
+	(123465,'Deann Moran','DeannMoran@skjervoy.com','07774696977','29000','Manager','00-22-36 10061028','link','Shop'),
+	(123466,'Essie Oneal','EssieOneal@skjervoy.com','07774696978','29000','Manager','00-22-37 10061029','link','Shop'),
+	(123467,'Alice Doyle','AliceDoyle@skjervoy.com','07774696979','24000','Manager','00-22-16 10061030','link','Shop'),
+	(123468,'Ricky Eaton','RickyEaton@skjervoy.com','07774696980','23000','Manager','00-22-99 10061031','link','Shop'),
+	(123469,'Ilene Bruce','IleneBruce@skjervoy.com','07774696981','21000','Manager','00-22-44 10061032','link','Shop'),
+	(123470,'David Avery','DavidAvery@skjervoy.com','07774696982','22000','Manager','00-22-66 10061033','link','Shop'),
+	(123471,'Allan Ellis','AllanEllis@skjervoy.com','07774696983','29000','Manager','00-22-77 10061034','link','Shop'),
 /*!40000 ALTER TABLE `Employees` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,8 +88,9 @@ LOCK TABLES `Buildings` WRITE;
 /*!40000 ALTER TABLE `Buildings` DISABLE KEYS */;
 INSERT INTO `Buildings` (`Building ID`,Type,`Phone Number`,Manager,Address,Revenue)
 VALUES
-	(1,'Bilda','Groves','1966-04-01','1999-05-01',2);
-
+	('111111',Warehouse,'0123456789789',Essie Oneal,55 Glasgow, g41 2nt,2565656565);
+  ('222222',Office,'0123456789779',David Avery,78 Glasgow, g41 2nt,2565656565);
+  ('333333',Shop,'01234588889779',Keith Bates,99 Glasgow, g41 2nt,2999656565);
 /*!40000 ALTER TABLE `Buildings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,8 +113,9 @@ LOCK TABLES `Inventory` WRITE;
 /*!40000 ALTER TABLE `SALES` DISABLE KEYS */;
 INSERT INTO `Inventory` (`Inventory Entry ID`,`Product ID` ,Quantity, Building,`Minimum Required Quantity`)
 VALUES
-	(1,1,'Simpson','Sofa','Harrison',235.67);
-
+	('999999','123456',10,Warehouse,'10');
+  ('888888','123457',8,Warehouse,'10');
+  ('777777','123458',9,Warehouse,'10');
 /*!40000 ALTER TABLE `Inventory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +141,9 @@ LOCK TABLES `Products` WRITE;
 /*!40000 ALTER TABLE `Products` DISABLE KEYS */;
 INSERT INTO `Products` (`Product ID`,Name,Type,`Buying Price`,`Selling Price`,Weight, Picture, Supplier)
 VALUES
-	(3,2,'Smith','Stool','Ford',82.78);
+	('123456',fargerik, Pen,'10.99','99.99','1',Link,'Lamy');
+  ('123696',glatt, Pen,'10.99','99.99','1',Link,'Lamy');
+  ('113696',tre, Pen,'10.99','99.99','1',Link,'Lamy');
 
 /*!40000 ALTER TABLE `Products` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -162,7 +166,7 @@ LOCK TABLES `Couriers` WRITE;
 /*!40000 ALTER TABLE `Couriers` DISABLE KEYS */;
 INSERT INTO `Couriers` (Name, Address, `Cost per Kg`, `Collection point`, `Warehouse ID`)
 VALUES
-	(1,'Fred','Williams',1);
+	(Fedx,'88 Perth road dd1 1aa','2','88 glasgow g41 2nt', '999999');
 
 /*!40000 ALTER TABLE `Couriers` ENABLE KEYS */;
 UNLOCK TABLES;

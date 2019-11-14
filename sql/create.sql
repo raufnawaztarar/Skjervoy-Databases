@@ -34,21 +34,21 @@ CREATE TABLE `Employees` (
   `Bank Details` varchar(255) NOT NULL, 
   Picture        varchar(255), 
   Building       char(8) NOT NULL, 
-  PRIMARY KEY (`Employee ID`));
-)
+  PRIMARY KEY (`Employee ID`)
+  );
 
 LOCK TABLES `Employees` WRITE;
 /*!40000 ALTER TABLE `Employees` DISABLE KEYS */;
 INSERT INTO `Employees` (`Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details`, Picture, Building)
 VALUES
-	('00123456','Erick Nolan','ErickNolan@skjervoy.com','07774696960',26000,'Product Manager','00-22-11 10061011',null,'00222222'),
-	('00123457','Peter Mayer','PeterMayer@skjervoy.com','07774696961',27000,'HR Manager','00-22-01 10061010','/img/emp/peter_mayer.jpg','00222222'),
-	('00123458','Jamal Scott','JamalScott@skjervoy.com','07774696962',28000,'Manager','00-22-12 10061012',null,'00222222'),
-	('00123459','Keith Bates','KeithBates@skjervoy.com','07774696963',26000,'Manager','00-22-13 10061014',null,'00333333'), # shop mgr
-	('00123460','Gregg Rivas','GreggRivas@skjervoy.com','07774696964',25500,'Manager','00-22-14 10061013',null,'00222222'),
-	('00123461','Ruby Wright','RubyWright@skjervoy.com','07774696965',25050,'Manager','00-22-15 10061015',null,'00222222'),
-	('00123462','Micah Ewing','MicahEwing@skjervoy.com','07774696966',45000,'Manager','00-22-16 10061016',null,'00222222'),
-	('00123463','Maura Stone','MauraStone@skjervoy.com','07774696967',75000,'Sales Assistant','00-22-17 10061017',null,'00333333'),
+	('00123448','Erick Nolan','ErickNolan@skjervoy.com','07774696960',26000,'Product Manager','00-22-11 10061011',null,'00222222'),
+	('00123449','Peter Mayer','PeterMayer@skjervoy.com','07774696961',27000,'HR Manager','00-22-01 10061010','/img/emp/peter_mayer.jpg','00222222'),
+	('00123450','Jamal Scott','JamalScott@skjervoy.com','07774696962',28000,'Manager','00-22-12 10061012',null,'00222222'),
+	('00123451','Keith Bates','KeithBates@skjervoy.com','07774696963',26000,'Manager','00-22-13 10061014',null,'00333333'), # shop mgr
+	('00123452','Gregg Rivas','GreggRivas@skjervoy.com','07774696964',25500,'Manager','00-22-14 10061013',null,'00222222'),
+	('00123453','Ruby Wright','RubyWright@skjervoy.com','07774696965',25050,'Manager','00-22-15 10061015',null,'00222222'),
+	('00123454','Micah Ewing','MicahEwing@skjervoy.com','07774696966',45000,'Manager','00-22-16 10061016',null,'00222222'),
+	('00123455','Maura Stone','MauraStone@skjervoy.com','07774696967',75000,'Sales Assistant','00-22-17 10061017',null,'00333333'),
   ('00123456','Mitzi House','MitziHouse@skjervoy.com','07774696968',26000,'Sales Assistant','00-22-18 10061018',null,'00333333'),
 	('00123457','Steve Beard','SteveBeard@skjervoy.com','07774696969',20000,'Sales Assistant','00-22-19 10061019',null,'00333333'),
 	('00123458','Lloyd Riley','LloydRiley@skjervoy.com','07774696970',20000,'Sales Assistant','00-22-21 10061020',null,'00333333'),
@@ -64,7 +64,7 @@ VALUES
 	('00123468','Ricky Eaton','RickyEaton@skjervoy.com','07774696980',23000,'Warehouse Assistant','00-22-99 10061031',null,'00111111'),
 	('00123469','Ilene Bruce','IleneBruce@skjervoy.com','07774696981',21000,'Manager','00-22-44 10061032',null,'00222222'),
 	('00123470','David Avery','DavidAvery@skjervoy.com','07774696982',22000,'Manager','00-22-66 10061033',null,'00222222'), #office mgr
-	('00123471','Allan Ellis','AllanEllis@skjervoy.com','07774696983',29000,'Manager','00-22-77 10061034',null,'00222222'),
+	('00123471','Allan Ellis','AllanEllis@skjervoy.com','07774696983',29000,'Manager','00-22-77 10061034',null,'00222222');
 /*!40000 ALTER TABLE `Employees` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,15 +82,15 @@ CREATE TABLE `Buildings` (
   Address        char(16) NOT NULL, 
   Revenue        real, 
   PRIMARY KEY (`Building ID`));
-) 
 
 LOCK TABLES `Buildings` WRITE;
 /*!40000 ALTER TABLE `Buildings` DISABLE KEYS */;
 INSERT INTO `Buildings` (`Building ID`,Type,`Phone Number`,Manager,Address,Revenue)
-VALUES
-	('00111111','Warehouse','0123456789789','00123466','5600111122223333',2565656565); # Essie Oneal
-  ('00222222','Office','0123456789779','00123470','5600111122223334',2565656565); # David Avery
-  ('00333333','Shop','01234588889779','00123459','5600111122223335',2999656565); # Keith Bates
+VALUES 
+	('00111111','Warehouse','0123456789789','00123466','5600111122223333',2565656565), # Essie Oneal
+  ('00222222','Office','0123456789779','00123470','5600111122223334',2565656565), # David Avery
+  ('00333333','Shop','01234588889779','00123451','5600111122223335',2999656565) # Keith Bates
+  ;
 /*!40000 ALTER TABLE `Buildings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,15 +107,15 @@ CREATE TABLE `Inventory` (
  Building                    char(8) NOT NULL, 
  `Minimum Required Quantity` int(1) NOT NULL, 
  PRIMARY KEY (`Inventory Entry ID`));
-) 
 
 LOCK TABLES `Inventory` WRITE;
-/*!40000 ALTER TABLE `SALES` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Inventory` DISABLE KEYS */;
 INSERT INTO `Inventory` (`Inventory Entry ID`,`Product ID` ,Quantity, Building,`Minimum Required Quantity`)
-VALUES
-	('0000111100999999','3000111122223333',10,'00111111','10');
-  ('0000111100888888','3000111122223334',8,'00111111','10');
-  ('0000111100777777','3000111122223335',9,'00222222','10');
+VALUES 
+	('0000111100999999','3000111122223333',10,'00111111','10'),
+  ('0000111100888888','3000111122223334',8,'00111111','10'),
+  ('0000111100777777','3000111122223335',9,'00222222','10')
+  ;
 /*!40000 ALTER TABLE `Inventory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,15 +136,15 @@ CREATE TABLE `Products` (
   Supplier        varchar(255) NOT NULL, 
   Series          char(16) NOT NULL,
   PRIMARY KEY (`Product ID`));
-) 
 
 LOCK TABLES `Products` WRITE;
 /*!40000 ALTER TABLE `Products` DISABLE KEYS */;
 INSERT INTO `Products` (`Product ID`,Name,Type,`Buying Price`,`Selling Price`,Weight, Picture, Supplier, Series)
-VALUES
-	('3000111122223333','fargerik', 'Pen','10.99','99.99','1','/img/pen/fargerik.jpg','Lamy', 'Excellence');
-  ('3000111122223334','glatt', 'Pen','10.99','99.99','1','/img/pen/glatt','Lamy', 'Elite');
-  ('3000111122223335','tre', 'Pen','10.99','99.99','1','/img/pen/tre','Lamy', 'Fire');
+VALUES 
+	('3000111122223333','fargerik', 'Pen','10.99','99.99','1','/img/pen/fargerik.jpg','Lamy', 'Excellence'),
+  ('3000111122223334','glatt', 'Pen','10.99','99.99','1','/img/pen/glatt','Lamy', 'Elite'),
+  ('3000111122223335','tre', 'Pen','10.99','99.99','1','/img/pen/tre','Lamy', 'Fire')
+  ;
 
 /*!40000 ALTER TABLE `Products` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -188,9 +188,10 @@ CREATE TABLE Suppliers (
 LOCK TABLES Suppliers WRITE;
 /*!40000 ALTER TABLE Suppliers DISABLE KEYS */;
 INSERT INTO Suppliers (Name, Address, Phone, Email)
-VALUES
-	('Lamy','0000000000000001','+41 7777023456','orders@lamy.de');
-	('Pilot','0000000000000002','+44 7777023457','sales@pilot.co.uk');
+VALUES 
+	('Lamy','0000000000000001','+41 7777023456','orders@lamy.de'),
+	('Pilot','0000000000000002','+44 7777023457','sales@pilot.co.uk')
+    ;
 
 /*!40000 ALTER TABLE Suppliers ENABLE KEYS */;
 UNLOCK TABLES;
@@ -217,9 +218,10 @@ LOCK TABLES Orders WRITE;
 /*!40000 ALTER TABLE Orders DISABLE KEYS */;
 INSERT INTO Orders 
 	(`Order ID`, Date, Product, Quantity, Address, Weight, `Payment Details`, `Customer ID`, `Courier Name`)
-VALUES
-	('2000111122223333', '2019-11-02', '3000111122223333', 1, '0000111122223333', 2100.0, 'Card ending in 4567', '1111222233334444', 'Royal Mail');
-	('2000111122223334', '2019-11-10', '3000111122223334', 2, '0000111122223334', 246.5,  'Card ending in 4848', '1111222233334445', 'DHL');
+VALUES 
+	('2000111122223333', '2019-11-02', '3000111122223333', 1, '0000111122223333', 2100.0, 'Card ending in 4567', '1111222233334444', 'Royal Mail'),
+	('2000111122223334', '2019-11-10', '3000111122223334', 2, '0000111122223334', 246.5,  'Card ending in 4848', '1111222233334445', 'DHL')
+    ;
 
 /*!40000 ALTER TABLE Orders ENABLE KEYS */;
 UNLOCK TABLES;
@@ -243,10 +245,10 @@ CREATE TABLE Customers (
 LOCK TABLES Customers WRITE;
 /*!40000 ALTER TABLE Customers DISABLE KEYS */;
 INSERT INTO Customers (`Customer ID`, Name, Address, Phone, Email, Password)
-VALUES
-	('1111222233334444','Fred the Fish', '5000111122223333', '+44 7777123456','fredf@bbmail.com', 'faf3c42a3408b253d75a3b8828aca9231e55e6af1cdcb6e37c50986f2ce1d4da'); # My leg!
-	('1111222233334445','Sandy Cheeks', '5000111122223334', '+44 7777123457','sandyc@texasmail.com', '0eefdf991b49be88b622dd960c56f4bc4cd2eee7c1c74578452c923c4cc274b9'); # Howdy
-
+VALUES 
+	('1111222233334444','Fred the Fish', '5000111122223333', '+44 7777123456','fredf@bbmail.com', 'faf3c42a3408b253d75a3b8828aca9231e55e6af1cdcb6e37c50986f2ce1d4da'), # My leg!
+	('1111222233334445','Sandy Cheeks', '5000111122223334', '+44 7777123457','sandyc@texasmail.com', '0eefdf991b49be88b622dd960c56f4bc4cd2eee7c1c74578452c923c4cc274b9') # Howdy
+	;
 /*!40000 ALTER TABLE Customers ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,13 +271,13 @@ LOCK TABLES Addresses WRITE;
 /*!40000 ALTER TABLE Addresses DISABLE KEYS */;
 INSERT INTO Addresses 
 (`Address ID`,`First Line of Address`,`Second Line of Address`,Postcode, City, Country)
-VALUES
-	('5000111122223333','21 Gravel St', '', 'BB1 2FF','Bikini Bottom', 'International Waters');
-	('5000111122223334','1 Glass Dome Close', 'South Field', 'BB4 001','Bikini Bottom', 'International Waters');
-	('5500111122223333','88 Perth road', '', 'DD1 1AA','Dundee', 'Scotland');
-	('5500111122223334','88', '', 'g41 2nt','Glasgow', 'Scotland');
-	('5600111122223333','55', '', 'g41 2nt','Glasgow', 'Scotland');
-	('5600111122223334','78', '', 'g41 2nt','Glasgow', 'Scotland');
+VALUES 
+	('5000111122223333','21 Gravel St', '', 'BB1 2FF','Bikini Bottom', 'International Waters'),
+	('5000111122223334','1 Glass Dome Close', 'South Field', 'BB4 001','Bikini Bottom', 'International Waters'),
+	('5500111122223333','88 Perth road', '', 'DD1 1AA','Dundee', 'Scotland'),
+	('5500111122223334','88', '', 'g41 2nt','Glasgow', 'Scotland'),
+	('5600111122223333','55', '', 'g41 2nt','Glasgow', 'Scotland'),
+	('5600111122223334','78', '', 'g41 2nt','Glasgow', 'Scotland'),
 	('5600111122223335','99', '', 'g41 2nt','Glasgow', 'Scotland');
 
 /*!40000 ALTER TABLE Addresses ENABLE KEYS */;

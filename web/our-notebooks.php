@@ -91,7 +91,7 @@
                   <div class="card-body">
                     <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                     <div class="card_button">
-                        <button type="button" class="btn btn-outline-dark">View Locations</button>
+                        <button type="button" class="btn btn-outline-dark">View Locations </button>
                     </div>
                   </div>
                 </div>
@@ -262,6 +262,7 @@
                              </font>
                          </p>
                          <img class = "flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
+                         <p> <font face="kollektif" >Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font></p>
                      </div>
  
                      <div class="col text-right">

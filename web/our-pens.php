@@ -86,7 +86,7 @@
               </div>
               <div class="row no-gutters">
                 <div class="col-md-7">
-                  <img src="../web/resources/excellence.jpg" class="card-img-top" alt="Notebook Category">
+                  <img src="resources/excellence.jpg" class="card-img-top" alt="Notebook Category">
                 </div>
                 <div class="col-md-5">
                   <div class="card-body">
@@ -108,7 +108,7 @@
               </div>
               <div class="row no-gutters">
                 <div class="col-md-7">
-                  <img src="../web/resources/fire.jpg" class="card-img" alt="Pen Category">
+                  <img src="resources/fire.jpg" class="card-img" alt="Pen Category">
                 </div>
                 <div class="col-md-5">
                   <div class="card-body">
@@ -130,7 +130,7 @@
               </div>
               <div class="row no-gutters">
                 <div class="col-md-7">
-                  <img src="../web/resources/elite.jpg" class="card-img" alt="Pen Category">
+                  <img src="resources/elite.jpg" class="card-img" alt="Pen Category">
                 </div>
                 <div class="col-md-5">
                   <div class="card-body">
@@ -155,52 +155,43 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="product-item">
-              <figure>
-                <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="px-4">
-                <h3><a href="#">Wild West Hoodie</a></h3>
-                <p class="mb-4"> </p>
-                <div>
-                  <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <?php
+    
+        mysql_connect("silva.computing.dundee.ac.uk","19ac3u05","abc123") or die(mysql_error());
+        mysql_select_db("19ac3d05") or die(mysql_error());
 
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="product-item">
-              <figure>
-                <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="px-4">
-                <h3><a href="#">Wild West Hoodie</a></h3>
-                <p class="mb-4"> </p>
-                <div>
-                  <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        $data = mysql_query("SELECT * FROM Products WHERE Type=\"Pen\"") or die(mysql_error('No Records Found'));
+
+        while($info = mysql_fetch_array( $data ))
+        { 
+            $name = $info['Name'];
+            $price = $info['Selling Price'];
+            $series = $info['Series'];?>
             
-          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="col-lg-4 col-md-6 mb-5">
             <div class="product-item">
-              <figure>
+            <figure>
                 <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="px-4">
-                <h3><a href="#">Wild West Hoodie</a></h3>
+            </figure>
+            <div class="px-4">
+                <h3><?php echo $name; ?></h3>
+                <h3><?php echo $price; ?></h3>
+                <h2><i><?php echo $series; ?> Series</i></h2>
+            
                 <p class="mb-4"> </p>
                 <div>
-                  <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
+                <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
                 </div>
-              </div>
             </div>
-          </div>
-
+            </div>
+        </div>
+      
+            <?php 
+        } 
+        
+        ?>
           
+          </div>
         </div>
       </div>
     </div>
@@ -210,7 +201,7 @@
     <div class="black_box_desc">
       <p class="center_box_heading">- The Story of Skjerv&oslash;y -</p>
       <p class="center_box_desc">Our story begins in 1925 when our beloved founder, Frank, first discovered the fine art of pen craftsmanship. Using only the best and highest quality materials he began to experiment with different designs. His unique sense of style and unparalleled eye for quality lead to him establishing a store and distribution chain which would become far greater then he could ever imagine.</p>
-      <img class = "flag" src="../web/resources/flag.png" alt="norsk flag" height=auto width=auto>
+      <img class = "flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
     </div>
 
     <!-- Find Other Locations Card-->
@@ -223,7 +214,7 @@
             </div>
             <div class="row no-gutters">
               <div class="col-md-7">
-                <img src="../web/resources/shop_scene.png" class="card-img" alt="shop_scene">
+                <img src="resources/shop_scene.png" class="card-img" alt="shop_scene">
               </div>
               <div class="col-md-5">
                 <div class="card-body">
@@ -277,7 +268,7 @@
                              Sat - Sun: 10 AM - 5 PM<br>
                              </font>
                          </p>
-                         <img class = "flag" src="../web/resources/flag.png" alt="norsk flag" height=auto width=auto>
+                         <img class = "flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
                      </div>
  
                      <div class="col text-right">
@@ -297,5 +288,7 @@
             </div>
          </div>
     </footer>
+
+
 </body>
 </html>

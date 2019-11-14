@@ -31,7 +31,7 @@ CREATE TABLE `Employees` (
   Phone          char(14) NOT NULL, 
   Salary         real NOT NULL, 
   Role           varchar(255) NOT NULL, 
-  `Bank Details` int(255) NOT NULL, 
+  `Bank Details` varchar(255) NOT NULL, 
   Picture        varchar(255), 
   Building       char(8) NOT NULL, 
   PRIMARY KEY (`Employee ID`));
@@ -41,30 +41,30 @@ LOCK TABLES `Employees` WRITE;
 /*!40000 ALTER TABLE `Employees` DISABLE KEYS */;
 INSERT INTO `Employees` (`Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details`, Picture, Building)
 VALUES
-	(123456,'Erick Nolan','ErickNolan@skjervoy.com','07774696960','26000','Product Manager','00-22-11 10061011','link','Shop'),
-	(123457,'Peter Mayer','PeterMayer@skjervoy.com','07774696961','27000','HR Manager','00-22-01 10061010','link','Shop'),
-	(123458,'Jamal Scott','JamalScott@skjervoy.com','07774696962','28000','Manager','00-22-12 10061012','link','Shop'),
-	(123459,'Keith Bates','KeithBates@skjervoy.com','07774696963','26000','Manager','00-22-13 10061014','link','Shop'),
-	(123460,'Gregg Rivas','GreggRivas@skjervoy.com','07774696964','25500','Manager','00-22-14 10061013','link','Shop'),
-	(123461,'Ruby Wright','RubyWright@skjervoy.com','07774696965','25050','Manager','00-22-15 10061015','link','Shop'),
-	(123462,'Micah Ewing','MicahEwing@skjervoy.com','07774696966','45000','Manager','00-22-16 10061016','link','Shop'),
-	(123463,'Maura Stone','MauraStone@skjervoy.com','07774696967','75000','Sales Assistant','00-22-17 10061017','link','Shop'),
-  (123456,'Mitzi House','MitziHouse@skjervoy.com','07774696968','26000','Sales Assistant','00-22-18 10061018','link','Shop'),
-	(123457,'Steve Beard','SteveBeard@skjervoy.com','07774696969','20000','Sales Assistant','00-22-19 10061019','link','Shop'),
-	(123458,'Lloyd Riley','LloydRiley@skjervoy.com','07774696970','20000','Sales Assistant','00-22-21 10061020','link','Shop'),
-	(123459,'Isiah Rojas','IsiahRojas@skjervoy.com','07774696971','29000','Manager','00-22-30 10061021','link','Shop'),
-	(123460,'Galen Cline','GalenCline@skjervoy.com','07774696972','21000','Manager','00-22-31 10061023','link','Shop'),
-	(123461,'Davis Tyler','DavisTyler@skjervoy.com','07774696973','29000','Manager','00-22-32 10061024','link','Shop'),
-	(123462,'Candy Mills','CandyMills@skjervoy.com','07774696974','26000','Manager','00-22-33 10061025','link','Shop'),
-	(123463,'Vicky Johns','VickyJohns@skjervoy.com','07774696975','26000','Manager','00-22-34 10061026','link','Shop'),
-  (123464,'Dixie Pitts','DixiePitts@skjervoy.com','07774696976','27000','Manager','00-22-35 10061027','link','Shop'),
-	(123465,'Deann Moran','DeannMoran@skjervoy.com','07774696977','29000','Manager','00-22-36 10061028','link','Shop'),
-	(123466,'Essie Oneal','EssieOneal@skjervoy.com','07774696978','29000','Manager','00-22-37 10061029','link','Shop'),
-	(123467,'Alice Doyle','AliceDoyle@skjervoy.com','07774696979','24000','Manager','00-22-16 10061030','link','Shop'),
-	(123468,'Ricky Eaton','RickyEaton@skjervoy.com','07774696980','23000','Manager','00-22-99 10061031','link','Shop'),
-	(123469,'Ilene Bruce','IleneBruce@skjervoy.com','07774696981','21000','Manager','00-22-44 10061032','link','Shop'),
-	(123470,'David Avery','DavidAvery@skjervoy.com','07774696982','22000','Manager','00-22-66 10061033','link','Shop'),
-	(123471,'Allan Ellis','AllanEllis@skjervoy.com','07774696983','29000','Manager','00-22-77 10061034','link','Shop'),
+	('00123456','Erick Nolan','ErickNolan@skjervoy.com','07774696960',26000,'Product Manager','00-22-11 10061011',null,'00222222'),
+	('00123457','Peter Mayer','PeterMayer@skjervoy.com','07774696961',27000,'HR Manager','00-22-01 10061010','/img/emp/peter_mayer.jpg','00222222'),
+	('00123458','Jamal Scott','JamalScott@skjervoy.com','07774696962',28000,'Manager','00-22-12 10061012',null,'00222222'),
+	('00123459','Keith Bates','KeithBates@skjervoy.com','07774696963',26000,'Manager','00-22-13 10061014',null,'00333333'), # shop mgr
+	('00123460','Gregg Rivas','GreggRivas@skjervoy.com','07774696964',25500,'Manager','00-22-14 10061013',null,'00222222'),
+	('00123461','Ruby Wright','RubyWright@skjervoy.com','07774696965',25050,'Manager','00-22-15 10061015',null,'00222222'),
+	('00123462','Micah Ewing','MicahEwing@skjervoy.com','07774696966',45000,'Manager','00-22-16 10061016',null,'00222222'),
+	('00123463','Maura Stone','MauraStone@skjervoy.com','07774696967',75000,'Sales Assistant','00-22-17 10061017',null,'00333333'),
+  ('00123456','Mitzi House','MitziHouse@skjervoy.com','07774696968',26000,'Sales Assistant','00-22-18 10061018',null,'00333333'),
+	('00123457','Steve Beard','SteveBeard@skjervoy.com','07774696969',20000,'Sales Assistant','00-22-19 10061019',null,'00333333'),
+	('00123458','Lloyd Riley','LloydRiley@skjervoy.com','07774696970',20000,'Sales Assistant','00-22-21 10061020',null,'00333333'),
+	('00123459','Isiah Rojas','IsiahRojas@skjervoy.com','07774696971',29000,'Manager','00-22-30 10061021',null,'00222222'),
+	('00123460','Galen Cline','GalenCline@skjervoy.com','07774696972',21000,'Manager','00-22-31 10061023',null,'00222222'),
+	('00123461','Davis Tyler','DavisTyler@skjervoy.com','07774696973',29000,'Manager','00-22-32 10061024',null,'00222222'),
+	('00123462','Candy Mills','CandyMills@skjervoy.com','07774696974',26000,'Manager','00-22-33 10061025',null,'00222222'),
+	('00123463','Vicky Johns','VickyJohns@skjervoy.com','07774696975',26000,'Manager','00-22-34 10061026',null,'00222222'),
+  ('00123464','Dixie Pitts','DixiePitts@skjervoy.com','07774696976',27000,'Manager','00-22-35 10061027',null,'00222222'),
+	('00123465','Deann Moran','DeannMoran@skjervoy.com','07774696977',29000,'Manager','00-22-36 10061028',null,'00222222'),
+	('00123466','Essie Oneal','EssieOneal@skjervoy.com','07774696978',29000,'Manager','00-22-37 10061029',null,'00111111'), # wh mgr
+	('00123467','Alice Doyle','AliceDoyle@skjervoy.com','07774696979',24000,'Warehouse Assistant','00-22-16 10061030',null,'00111111'),
+	('00123468','Ricky Eaton','RickyEaton@skjervoy.com','07774696980',23000,'Warehouse Assistant','00-22-99 10061031',null,'00111111'),
+	('00123469','Ilene Bruce','IleneBruce@skjervoy.com','07774696981',21000,'Manager','00-22-44 10061032',null,'00222222'),
+	('00123470','David Avery','DavidAvery@skjervoy.com','07774696982',22000,'Manager','00-22-66 10061033',null,'00222222'), #office mgr
+	('00123471','Allan Ellis','AllanEllis@skjervoy.com','07774696983',29000,'Manager','00-22-77 10061034',null,'00222222'),
 /*!40000 ALTER TABLE `Employees` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,9 +88,9 @@ LOCK TABLES `Buildings` WRITE;
 /*!40000 ALTER TABLE `Buildings` DISABLE KEYS */;
 INSERT INTO `Buildings` (`Building ID`,Type,`Phone Number`,Manager,Address,Revenue)
 VALUES
-	('111111',Warehouse,'0123456789789',Essie Oneal,'5600111122223333',2565656565);
-  ('222222',Office,'0123456789779',David Avery,'5600111122223334',2565656565);
-  ('333333',Shop,'01234588889779',Keith Bates,'5600111122223335',2999656565);
+	('00111111','Warehouse','0123456789789','00123466','5600111122223333',2565656565); # Essie Oneal
+  ('00222222','Office','0123456789779','00123470','5600111122223334',2565656565); # David Avery
+  ('00333333','Shop','01234588889779','00123459','5600111122223335',2999656565); # Keith Bates
 /*!40000 ALTER TABLE `Buildings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,9 +113,9 @@ LOCK TABLES `Inventory` WRITE;
 /*!40000 ALTER TABLE `SALES` DISABLE KEYS */;
 INSERT INTO `Inventory` (`Inventory Entry ID`,`Product ID` ,Quantity, Building,`Minimum Required Quantity`)
 VALUES
-	('999999','123456',10,Warehouse,'10');
-  ('888888','123457',8,Warehouse,'10');
-  ('777777','123458',9,Warehouse,'10');
+	('0000111100999999','3000111122223333',10,'00111111','10');
+  ('0000111100888888','3000111122223334',8,'00111111','10');
+  ('0000111100777777','3000111122223335',9,'00222222','10');
 /*!40000 ALTER TABLE `Inventory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,22 +128,23 @@ DROP TABLE IF EXISTS `Products`;
 CREATE TABLE `Products` (
   `Product ID`    char(16) NOT NULL, 
   Name            varchar(255) NOT NULL, 
-  Type            char(64) NOT NULL, 
+  Type            varchar(64) NOT NULL, 
   `Buying Price`  real NOT NULL, 
   `Selling Price` real NOT NULL, 
   Weight          real NOT NULL, 
   Picture         varchar(255), 
   Supplier        varchar(255) NOT NULL, 
+  Series          char(16) NOT NULL,
   PRIMARY KEY (`Product ID`));
 ) 
 
 LOCK TABLES `Products` WRITE;
 /*!40000 ALTER TABLE `Products` DISABLE KEYS */;
-INSERT INTO `Products` (`Product ID`,Name,Type,`Buying Price`,`Selling Price`,Weight, Picture, Supplier)
+INSERT INTO `Products` (`Product ID`,Name,Type,`Buying Price`,`Selling Price`,Weight, Picture, Supplier, Series)
 VALUES
-	('123456',fargerik, Pen,'10.99','99.99','1',Link,'Lamy');
-  ('123696',glatt, Pen,'10.99','99.99','1',Link,'Lamy');
-  ('113696',tre, Pen,'10.99','99.99','1',Link,'Lamy');
+	('3000111122223333','fargerik', 'Pen','10.99','99.99','1','/img/pen/fargerik.jpg','Lamy', 'Excellence');
+  ('3000111122223334','glatt', 'Pen','10.99','99.99','1','/img/pen/glatt','Lamy', 'Elite');
+  ('3000111122223335','tre', 'Pen','10.99','99.99','1','/img/pen/tre','Lamy', 'Fire');
 
 /*!40000 ALTER TABLE `Products` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -166,7 +167,7 @@ LOCK TABLES `Couriers` WRITE;
 /*!40000 ALTER TABLE `Couriers` DISABLE KEYS */;
 INSERT INTO `Couriers` (Name, Address, `Cost per Kg`, `Collection point`, `Warehouse ID`)
 VALUES
-	(Fedx,'5500111122223333','2','5500111122223334', '999999');
+	('Fedx','5500111122223333','2','5500111122223334', '999999');
 
 /*!40000 ALTER TABLE `Couriers` ENABLE KEYS */;
 UNLOCK TABLES;

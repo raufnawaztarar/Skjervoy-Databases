@@ -65,6 +65,12 @@
     font-size: 50px;
 }
 
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: center;
+}
+
 .product_block{
     padding-top: 4%;
     padding-bottom: 2%;
@@ -83,8 +89,17 @@
 }
 
 .card-title{
-    font-size: 20px;
+    font-size: 33px;
 }
+
+.card-text{
+  padding-top: 4%;
+  padding-bottom: 1%;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+}
+
 
 .nav-link{
     margin-right: 20px;
@@ -143,7 +158,7 @@ footer.light .footer-copyright{	background: none repeat scroll 0 0 rgba(255, 255
 	box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none;}
 .widget.subscribe p{	margin-bottom: 18px;}
 .widget li a{	color: #ffffff;}
-.widget li a:hover{	color: #4b92dc;}
+.widget li a:hover{	  text-decoration: none; color: #bfbfbf;}
 .widget-title {margin-bottom: 20px;}
 .widget-title span {background: #ffffff none repeat scroll 0 0;display: block; height: 1.7px;margin-top: 10px;position: relative;width: 30%;}
 .widget-title.text-center span,.widget-title.text-center span::after {margin-left: auto;margin-right:auto;left: 0;right: 0;}

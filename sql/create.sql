@@ -166,7 +166,7 @@ LOCK TABLES `Couriers` WRITE;
 /*!40000 ALTER TABLE `Couriers` DISABLE KEYS */;
 INSERT INTO `Couriers` (Name, Address, `Cost per Kg`, `Collection point`, `Warehouse ID`)
 VALUES
-	(Fedx,'88 Perth road dd1 1aa','2','88 glasgow g41 2nt', '999999');
+	(Fedx,'5500111122223333','2','5500111122223334', '999999');
 
 /*!40000 ALTER TABLE `Couriers` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -271,6 +271,8 @@ INSERT INTO Addresses
 VALUES
 	('5000111122223333','21 Gravel St', '', 'BB1 2FF','Bikini Bottom', 'International Waters');
 	('5000111122223334','1 Glass Dome Close', 'South Field', 'BB4 001','Bikini Bottom', 'International Waters');
+	('5500111122223333','88 Perth road', '', 'DD1 1AA','Dundee', 'Scotland');
+	('5500111122223334','88 glasgow', '', 'g41 2nt','Dundee', 'Scotland');
 
 /*!40000 ALTER TABLE Addresses ENABLE KEYS */;
 UNLOCK TABLES;

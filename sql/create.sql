@@ -134,16 +134,17 @@ CREATE TABLE `Products` (
   Weight          real NOT NULL, 
   Picture         varchar(255), 
   Supplier        varchar(255) NOT NULL, 
+  Series          char(16) NOT NULL,
   PRIMARY KEY (`Product ID`));
 ) 
 
 LOCK TABLES `Products` WRITE;
 /*!40000 ALTER TABLE `Products` DISABLE KEYS */;
-INSERT INTO `Products` (`Product ID`,Name,Type,`Buying Price`,`Selling Price`,Weight, Picture, Supplier)
+INSERT INTO `Products` (`Product ID`,Name,Type,`Buying Price`,`Selling Price`,Weight, Picture, Supplier, Series)
 VALUES
-	('123456','fargerik', 'Pen','10.99','99.99','1','/img/pen/fargerik.jpg','Lamy');
-  ('123696','glatt', 'Pen','10.99','99.99','1','/img/pen/glatt','Lamy');
-  ('113696','tre', 'Pen','10.99','99.99','1','/img/pen/tre','Lamy');
+	('123456','fargerik', 'Pen','10.99','99.99','1','/img/pen/fargerik.jpg','Lamy', 'Excellence');
+  ('123696','glatt', 'Pen','10.99','99.99','1','/img/pen/glatt','Lamy', 'Elite');
+  ('113696','tre', 'Pen','10.99','99.99','1','/img/pen/tre','Lamy', 'Fire');
 
 /*!40000 ALTER TABLE `Products` ENABLE KEYS */;
 UNLOCK TABLES;

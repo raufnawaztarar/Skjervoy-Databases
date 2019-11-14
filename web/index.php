@@ -34,7 +34,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
-          <li class="nav-item"><a href="our-pens.html" class="nav-link">Our Pens</a></li>
+          <li class="nav-item"><a href="our-pens.php" class="nav-link">Our Pens</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Our Notebooks</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Our Stores</a></li>
         </ul>
@@ -195,5 +195,6 @@
     </div>
     </div>
     </footer>
+
   </body>
 </html>

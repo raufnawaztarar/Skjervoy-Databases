@@ -129,6 +129,9 @@
     font-family: 'Kollektif';
 }
 
+.card{
+    border: none;
+}
 
 /*==================== 
 	Footer 

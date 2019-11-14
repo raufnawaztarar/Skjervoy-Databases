@@ -39,32 +39,32 @@ CREATE TABLE `Employees` (
 
 LOCK TABLES `Employees` WRITE;
 /*!40000 ALTER TABLE `Employees` DISABLE KEYS */;
-INSERT INTO `Employees` (`Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details`, Picture, Building)
+INSERT INTO `Employees` (`Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details`, Picture, Building, Password) # pw is just 'password'
 VALUES
-	('00123448','Erick Nolan','ErickNolan@skjervoy.com','07774696960',26000,'Product Manager','00-22-11 10061011',null,'00222222'),
-	('00123449','Peter Mayer','PeterMayer@skjervoy.com','07774696961',27000,'HR Manager','00-22-01 10061010','/img/emp/peter_mayer.jpg','00222222'),
-	('00123450','Jamal Scott','JamalScott@skjervoy.com','07774696962',28000,'Manager','00-22-12 10061012',null,'00222222'),
-	('00123451','Keith Bates','KeithBates@skjervoy.com','07774696963',26000,'Manager','00-22-13 10061014',null,'00333333'), # shop mgr
-	('00123452','Gregg Rivas','GreggRivas@skjervoy.com','07774696964',25500,'Manager','00-22-14 10061013',null,'00222222'),
-	('00123453','Ruby Wright','RubyWright@skjervoy.com','07774696965',25050,'Manager','00-22-15 10061015',null,'00222222'),
-	('00123454','Micah Ewing','MicahEwing@skjervoy.com','07774696966',45000,'Manager','00-22-16 10061016',null,'00222222'),
-	('00123455','Maura Stone','MauraStone@skjervoy.com','07774696967',75000,'Sales Assistant','00-22-17 10061017',null,'00333333'),
-  ('00123456','Mitzi House','MitziHouse@skjervoy.com','07774696968',26000,'Sales Assistant','00-22-18 10061018',null,'00333333'),
-	('00123457','Steve Beard','SteveBeard@skjervoy.com','07774696969',20000,'Sales Assistant','00-22-19 10061019',null,'00333333'),
-	('00123458','Lloyd Riley','LloydRiley@skjervoy.com','07774696970',20000,'Sales Assistant','00-22-21 10061020',null,'00333333'),
-	('00123459','Isiah Rojas','IsiahRojas@skjervoy.com','07774696971',29000,'Manager','00-22-30 10061021',null,'00222222'),
-	('00123460','Galen Cline','GalenCline@skjervoy.com','07774696972',21000,'Manager','00-22-31 10061023',null,'00222222'),
-	('00123461','Davis Tyler','DavisTyler@skjervoy.com','07774696973',29000,'Manager','00-22-32 10061024',null,'00222222'),
-	('00123462','Candy Mills','CandyMills@skjervoy.com','07774696974',26000,'Manager','00-22-33 10061025',null,'00222222'),
-	('00123463','Vicky Johns','VickyJohns@skjervoy.com','07774696975',26000,'Manager','00-22-34 10061026',null,'00222222'),
-  ('00123464','Dixie Pitts','DixiePitts@skjervoy.com','07774696976',27000,'Manager','00-22-35 10061027',null,'00222222'),
-	('00123465','Deann Moran','DeannMoran@skjervoy.com','07774696977',29000,'Manager','00-22-36 10061028',null,'00222222'),
-	('00123466','Essie Oneal','EssieOneal@skjervoy.com','07774696978',29000,'Manager','00-22-37 10061029',null,'00111111'), # wh mgr
-	('00123467','Alice Doyle','AliceDoyle@skjervoy.com','07774696979',24000,'Warehouse Assistant','00-22-16 10061030',null,'00111111'),
-	('00123468','Ricky Eaton','RickyEaton@skjervoy.com','07774696980',23000,'Warehouse Assistant','00-22-99 10061031',null,'00111111'),
-	('00123469','Ilene Bruce','IleneBruce@skjervoy.com','07774696981',21000,'Manager','00-22-44 10061032',null,'00222222'),
-	('00123470','David Avery','DavidAvery@skjervoy.com','07774696982',22000,'Manager','00-22-66 10061033',null,'00222222'), #office mgr
-	('00123471','Allan Ellis','AllanEllis@skjervoy.com','07774696983',29000,'Manager','00-22-77 10061034',null,'00222222');
+	('00123448','Erick Nolan','ErickNolan@skjervoy.com','07774696960',26000,'Product Manager','00-22-11 10061011',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123449','Peter Mayer','PeterMayer@skjervoy.com','07774696961',27000,'HR Manager','00-22-01 10061010','/img/emp/peter_mayer.jpg','00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123450','Jamal Scott','JamalScott@skjervoy.com','07774696962',28000,'Manager','00-22-12 10061012',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123451','Keith Bates','KeithBates@skjervoy.com','07774696963',26000,'Manager','00-22-13 10061014',null,'00333333', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'), # shop mgr
+	('00123452','Gregg Rivas','GreggRivas@skjervoy.com','07774696964',25500,'Manager','00-22-14 10061013',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123453','Ruby Wright','RubyWright@skjervoy.com','07774696965',25050,'Manager','00-22-15 10061015',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123454','Micah Ewing','MicahEwing@skjervoy.com','07774696966',45000,'Manager','00-22-16 10061016',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123455','Maura Stone','MauraStone@skjervoy.com','07774696967',75000,'Sales Assistant','00-22-17 10061017',null,'00333333', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+  ('00123456','Mitzi House','MitziHouse@skjervoy.com','07774696968',26000,'Sales Assistant','00-22-18 10061018',null,'00333333', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123457','Steve Beard','SteveBeard@skjervoy.com','07774696969',20000,'Sales Assistant','00-22-19 10061019',null,'00333333', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123458','Lloyd Riley','LloydRiley@skjervoy.com','07774696970',20000,'Sales Assistant','00-22-21 10061020',null,'00333333', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123459','Isiah Rojas','IsiahRojas@skjervoy.com','07774696971',29000,'Manager','00-22-30 10061021',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123460','Galen Cline','GalenCline@skjervoy.com','07774696972',21000,'Manager','00-22-31 10061023',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123461','Davis Tyler','DavisTyler@skjervoy.com','07774696973',29000,'Manager','00-22-32 10061024',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123462','Candy Mills','CandyMills@skjervoy.com','07774696974',26000,'Manager','00-22-33 10061025',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123463','Vicky Johns','VickyJohns@skjervoy.com','07774696975',26000,'Manager','00-22-34 10061026',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+  ('00123464','Dixie Pitts','DixiePitts@skjervoy.com','07774696976',27000,'Manager','00-22-35 10061027',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123465','Deann Moran','DeannMoran@skjervoy.com','07774696977',29000,'Manager','00-22-36 10061028',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123466','Essie Oneal','EssieOneal@skjervoy.com','07774696978',29000,'Manager','00-22-37 10061029',null,'00111111', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'), # wh mgr
+	('00123467','Alice Doyle','AliceDoyle@skjervoy.com','07774696979',24000,'Warehouse Assistant','00-22-16 10061030',null,'00111111', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123468','Ricky Eaton','RickyEaton@skjervoy.com','07774696980',23000,'Warehouse Assistant','00-22-99 10061031',null,'00111111', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123469','Ilene Bruce','IleneBruce@skjervoy.com','07774696981',21000,'Manager','00-22-44 10061032',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'),
+	('00123470','David Avery','DavidAvery@skjervoy.com','07774696982',22000,'Manager','00-22-66 10061033',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'), #office mgr
+	('00123471','Allan Ellis','AllanEllis@skjervoy.com','07774696983',29000,'Manager','00-22-77 10061034',null,'00222222', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8');
 /*!40000 ALTER TABLE `Employees` ENABLE KEYS */;
 UNLOCK TABLES;
 

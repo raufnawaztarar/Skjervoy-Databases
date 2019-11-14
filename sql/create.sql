@@ -88,9 +88,9 @@ LOCK TABLES `Buildings` WRITE;
 /*!40000 ALTER TABLE `Buildings` DISABLE KEYS */;
 INSERT INTO `Buildings` (`Building ID`,Type,`Phone Number`,Manager,Address,Revenue)
 VALUES
-	('111111',Warehouse,'0123456789789',Essie Oneal,55 Glasgow, g41 2nt,2565656565);
-  ('222222',Office,'0123456789779',David Avery,78 Glasgow, g41 2nt,2565656565);
-  ('333333',Shop,'01234588889779',Keith Bates,99 Glasgow, g41 2nt,2999656565);
+	('111111',Warehouse,'0123456789789',Essie Oneal,'5600111122223333',2565656565);
+  ('222222',Office,'0123456789779',David Avery,'5600111122223334',2565656565);
+  ('333333',Shop,'01234588889779',Keith Bates,'5600111122223335',2999656565);
 /*!40000 ALTER TABLE `Buildings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -272,7 +272,10 @@ VALUES
 	('5000111122223333','21 Gravel St', '', 'BB1 2FF','Bikini Bottom', 'International Waters');
 	('5000111122223334','1 Glass Dome Close', 'South Field', 'BB4 001','Bikini Bottom', 'International Waters');
 	('5500111122223333','88 Perth road', '', 'DD1 1AA','Dundee', 'Scotland');
-	('5500111122223334','88 glasgow', '', 'g41 2nt','Dundee', 'Scotland');
+	('5500111122223334','88', '', 'g41 2nt','Glasgow', 'Scotland');
+	('5600111122223333','55', '', 'g41 2nt','Glasgow', 'Scotland');
+	('5600111122223334','78', '', 'g41 2nt','Glasgow', 'Scotland');
+	('5600111122223335','99', '', 'g41 2nt','Glasgow', 'Scotland');
 
 /*!40000 ALTER TABLE Addresses ENABLE KEYS */;
 UNLOCK TABLES;

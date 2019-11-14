@@ -45,12 +45,26 @@
     background-color: #000000;
 }
 
+.black_box_desc_employee{
+    margin: 0px;
+    padding-top: 100px;
+    background-color: #000000;
+}
+
 .center_box_heading{
     text-align: center;
     font-size: 35px;
     color: white;
     padding-bottom:40px;
 }
+
+.center_box_heading_employee{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    padding-bottom:20px;
+}
+
 .center_box_desc{
     text-align: center;
     font-size: 18px;

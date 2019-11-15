@@ -137,6 +137,42 @@
     border: none;
 }
 
+.login-form {
+    width: 340px;
+    margin: 50px auto;
+    border: #000000;
+    border-width: 2px;
+}
+
+.login-form form {
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    padding: 30px;
+}
+
+.login-form h2 {
+    margin: 0 0 15px;
+}
+
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #000000;
+}
+
+.pull-right{
+    color: #000000;
+}
+
+.body{
+    overflow-x: hidden;
+}
+
 /*==================== 
 	Footer 
 ====================== */
@@ -181,7 +217,7 @@ footer.light .footer-copyright{	background: none repeat scroll 0 0 rgba(255, 255
 .widget li a{	color: #ffffff;}
 .widget li a:hover{	  text-decoration: none; color: #bfbfbf;}
 .widget-title {margin-bottom: 20px;}
-.widget-title span {background: #ffffff none repeat scroll 0 0;display: block; height: 1.7px;margin-top: 10px;position: relative;width: 30%;}
+.widget-title span {background: #ffffff none repeat scroll 0 0;display: block; height: 1.7px;margin-top: 10px;position: relative;width: 100%;}
 .widget-title.text-center span,.widget-title.text-center span::after {margin-left: auto;margin-right:auto;left: 0;right: 0;}
 .widget .badge{	float: right;	background: #000000;}
 
@@ -195,6 +231,12 @@ footer.light .footer-copyright{	background: none repeat scroll 0 0 rgba(255, 255
 .typo-light div,
 .typo-light span,
 .typo-light small{	color: #fff;}
+
+/*
+    Login box from https://startbootstrap.com/snippets/login/
+*/
+
+
 
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

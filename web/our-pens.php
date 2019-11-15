@@ -80,23 +80,6 @@
     <!-- Pens Product Category-->
 
     <div class = "product_block">
-        <div class="row mb-2">
-          <div class="col-sm d-flex justify-content-center">
-            <div class="card mb-3" style="max-width: 1000px;">
-              <div class="row no-gutters">
-                <h5 class="card-title">Excellence Series</h5>
-              </div>
-              <div class="row no-gutters">
-                <div class="col-md-7">
-                  <img src="resources/excellence.jpg" class="card-img-top" alt="Notebook Category">
-                </div>
-                <div class="col-md-5">
-                  <div class="card-body">
-                    <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
-                    <div class="card_button">
-                      <button type="button" class="btn btn-outline-dark" onclick="">View Collection</button>
-                    </div>
-                  </div>
 
     <div class="row">
       <div class="row mb-5 justify-content-center">
@@ -156,14 +139,14 @@
           </div>
       </div>
   </div>
-      <!-- Pens Product Catalogue-->
+
+      
       <div class="site-section" id="products-section">
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-md-6 text-center">
-            <a id="excellence">
-              <h3 class="section-title">Excellence Series</h3>
-            </a>
+            <h3 class="section-sub-title">Explore All</h3>
+            <h2 class="section-title mb-3">Our Pens</h2>
           </div>
         </div>
         <div class="row">
@@ -172,7 +155,7 @@
             mysql_connect("silva.computing.dundee.ac.uk","19ac3u05","abc123") or die(mysql_error());
             mysql_select_db("19ac3d05") or die(mysql_error());
 
-            $data = mysql_query("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Excellence\"") or die(mysql_error('No Records Found'));
+            $data = mysql_query("SELECT * FROM Products WHERE Type=\"Pen\"") or die(mysql_error('No Records Found'));
 
             while($info = mysql_fetch_array( $data ))
             { 
@@ -199,121 +182,6 @@
                 </div>
             </div>
         <?php } ?>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-6 text-center">
-            <h3 class="section-title">Fire Series</h3>
-          </div>
-        </div>
-        <div class="row">
-        <?php
-
-            $data = mysql_query("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Fire\"") or die(mysql_error('No Records Found'));
-
-            while($info = mysql_fetch_array( $data ))
-            { 
-                $name = $info['Name'];
-                $price = $info['Selling Price'];
-                $series = $info['Series'];
-                $pictures = $info['Picture']?>
-                
-                <div class="col-lg-4 col-md-6 mb-5">
-                <div class="product-item">
-                <figure>
-                    <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
-                </figure>
-                <div class="px-4">
-                    <h3><?php echo $name; ?></h3>
-                    <h3>£<?php echo $price; ?></h3>
-                    <h2><i><?php echo $series; ?> Series</i></h2>
-                
-                    <p class="mb-4"> </p>
-                    <div>
-                    <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        <?php } ?>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-6 text-center">
-            <h3 class="section-title">Elite Series</h3>
-          </div>
-        </div>
-        <div class="row">
-          <?php
-            $data = mysql_query("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Elite\"") or die(mysql_error('No Records Found'));
-
-            while($info = mysql_fetch_array( $data ))
-            { 
-                $name = $info['Name'];
-                $price = $info['Selling Price'];
-                $series = $info['Series'];
-                $pictures = $info['Picture']?>
-                
-                <div class="col-lg-4 col-md-6 mb-5">
-                <div class="product-item">
-                <figure>
-                    <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
-                </figure>
-                <div class="px-4">
-                    <h3><?php echo $name; ?></h3>
-                    <h3>£<?php echo $price; ?></h3>
-                    <h2><i><?php echo $series; ?> Series</i></h2>
-                
-                    <p class="mb-4"> </p>
-                    <div>
-                    <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
-                    </div>
-                </div>
-              </div>
-            </div>
-          <?php } ?>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-6 text-center">
-            <h3 class="section-title">Others</h3>
-          </div>
-        </div>
-        <div class="row">
-          <?php
-            $data = mysql_query("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Other\"") or die(mysql_error('No Records Found'));
-
-            while($info = mysql_fetch_array( $data ))
-            { 
-                $name = $info['Name'];
-                $price = $info['Selling Price'];
-                $series = $info['Series'];
-                $pictures = $info['Picture']?>
-                
-                <div class="col-lg-4 col-md-6 mb-5">
-                <div class="product-item">
-                <figure>
-                    <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
-                </figure>
-                <div class="px-4">
-                    <h3><?php echo $name; ?></h3>
-                    <h3>£<?php echo $price; ?></h3>
-                    <h2><i><?php echo $series; ?> Series</i></h2>
-                
-                    <p class="mb-4"> </p>
-                    <div>
-                    <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
-                    </div>
-                </div>
-              </div>
-            </div>
-          <?php } ?>
           </div>
         </div>
       </div>

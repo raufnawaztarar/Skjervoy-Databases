@@ -158,28 +158,29 @@
 
             while($info = mysql_fetch_array( $data ))
             { 
-                $name = $info['Name'];
-                $price = $info['Selling Price'];
-                $series = $info['Series'];?>
-                
-                <div class="col-lg-4 col-md-6 mb-5">
-                <div class="product-item">
-                <figure>
-                  <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
-                </figure>
-                <div class="px-4">
-                    <h3><?php echo $name; ?></h3>
-                    <h3><?php echo $price; ?></h3>
-                    <h2><i><?php echo $series; ?> Series</i></h2>
-                
-                    <p class="mb-4"> </p>
-                    <div>
-                    <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-          <?php } ?>
+              $name = $info['Name'];
+              $price = $info['Selling Price'];
+              $series = $info['Series'];
+              $pictures = $info['Picture']?>
+              
+              <div class="col-lg-4 col-md-6 mb-5">
+              <div class="product-item">
+              <figure>
+                  <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                  <h3 style="font-size: 3vh;" ><?php echo $name; ?></h3>
+                  <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                  <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
+              
+                  <p class="mb-4"> </p>
+                  <div>
+                  <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
+                  </div>
+              </div>
+              </div>
+          </div>
+      <?php } ?>
         </div>
       </div>
     </div>
@@ -205,7 +206,7 @@
                 <div class="card-body">
                   <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                   <div class="card_button">
-                      <button type="button" class="btn btn-outline-dark">View Locations</button>
+                      <button type="button" class="btn btn-black mr-1 rounded-0">View Locations</button>
                   </div>
                 </div>
               </div>

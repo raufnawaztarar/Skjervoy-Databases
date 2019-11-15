@@ -157,23 +157,24 @@ VALUES
   ('3000111122223346','Marken', 'Pen','10.99','82.99','1','img/pen/marken.jpg','0000000000000003', 'Elite'),
   ('3000111122223347','Luksus', 'Pen','10.99','99.99','1','img/pen/luksus.jpg','0000000000000003', 'Fire'),
   
-  ('3000111122223348','Vitaminer', 'Notebook','1.99','9.99','1','img/pen/vitaminer.jpg','0000000000000003', 'Fjord'),
-  ('3000111122223349','Utholdenhet', 'Notebook','1.99','19.99','1','img/pen/utholdenhet.jpg','0000000000000003', 'Excellence'),
-  ('3000111122223350','Gulrot', 'Notebook','1.99','19.99','1','img/pen/gulrot.jpg','0000000000000003', 'Elite'),
-  ('3000111122223351','Rockestjerne', 'Notebook','1.99','9.99','1','img/pen/rockestjerne.jpg','0000000000000003', 'Excellence'),
-  ('3000111122223352','Eleganse', 'Notebook','1.99','8.99','1','img/pen/eleganse.jpg','0000000000000003', 'Elite'),
-  ('3000111122223353','Forløsning', 'Notebook','1.99','7.99','1','img/pen/forlosning.jpg','0000000000000003', 'Fjord'),
-  ('3000111122223354','Nødvendig', 'Notebook','1.99','6.99','1','img/pen/nodvendig.jpg','0000000000000003', 'Elite'),
-  ('3000111122223355','Løve', 'Notebook','1.99','9.99','1','img/pen/love.jpg','0000000000000003', 'Fjord'),
-  ('3000111122223356','Kurer', 'Notebook','1.99','11.99','1','img/pen/kurer.jpg','0000000000000003', 'Elite'),
-  ('3000111122223357','Skapning', 'Notebook','1.99','12.99','1','img/pen/skapning.jpg','0000000000000003', 'Excellence'),
-  ('3000111122223358','Korn', 'Notebook','1.99','8.99','1','img/pen/korn.jpg','0000000000000003', 'Elite'),
-  ('3000111122223359','Moro', 'Notebook','1.99','7.99','1','img/pen/moro.jpg','0000000000000003', 'Fjord'),
-  ('3000111122223360','Kalibrering', 'Notebook','1.99','9.99','1','img/pen/kalibrering.jpg','0000000000000003', 'Elite'),
-  ('3000111122223361','Snikmorder', 'Notebook','0.99','8.99','1','img/pen/snikmorder.jpg','0000000000000003', 'Excellence'),
-  ('3000111122223362','Vann', 'Notebook','1.99','4.99','1','img/pen/vann.jpg','0000000000000003', 'Elite'),
-  ('3000111122223363','Safari', 'Pen','16.99','28.99','1','img/pen/vann.jpg','0000000000000001', 'Other'),
-  ('3500111122223333','Metropolitan', 'Pen','12.99','21.99','1','img/pen/vann.jpg','0000000000000002', 'Other')
+  ('3000111122223348','Vitaminer', 'Notebook','1.99','9.99','1','img/nb/vitaminer.jpg','0000000000000003', 'Fjord'),
+  ('3000111122223349','Utholdenhet', 'Notebook','1.99','19.99','1','img/nb/utholdenhet.jpg','0000000000000003', 'Excellence'),
+  ('3000111122223350','Gulrot', 'Notebook','1.99','19.99','1','img/nb/gulrot.jpg','0000000000000003', 'Elite'),
+  ('3000111122223351','Rockestjerne', 'Notebook','1.99','9.99','1','img/nb/rockestjerne.jpg','0000000000000003', 'Excellence'),
+  ('3000111122223352','Eleganse', 'Notebook','1.99','8.99','1','img/nb/eleganse.jpg','0000000000000003', 'Elite'),
+  ('3000111122223353','Forløsning', 'Notebook','1.99','7.99','1','img/nb/forlosning.jpg','0000000000000003', 'Fjord'),
+  ('3000111122223354','Nødvendig', 'Notebook','1.99','6.99','1','img/nb/nodvendig.jpg','0000000000000003', 'Elite'),
+  ('3000111122223355','Løve', 'Notebook','1.99','9.99','1','img/nb/love.jpg','0000000000000003', 'Fjord'),
+  ('3000111122223356','Kurer', 'Notebook','1.99','11.99','1','img/nb/kurer.jpg','0000000000000003', 'Elite'),
+  ('3000111122223357','Skapning', 'Notebook','1.99','12.99','1','img/nb/skapning.jpg','0000000000000003', 'Excellence'),
+  ('3000111122223358','Korn', 'Notebook','1.99','8.99','1','img/nb/korn.jpg','0000000000000003', 'Elite'),
+  ('3000111122223359','Moro', 'Notebook','1.99','7.99','1','img/nb/moro.jpg','0000000000000003', 'Fjord'),
+  ('3000111122223360','Kalibrering', 'Notebook','1.99','9.99','1','img/nb/kalibrering.jpg','0000000000000003', 'Elite'),
+  ('3000111122223361','Snikmorder', 'Notebook','0.99','8.99','1','img/nb/snikmorder.jpg','0000000000000003', 'Excellence'),
+  ('3000111122223362','Vann', 'Notebook','1.99','4.99','1','img/nb/vann.jpg','0000000000000003', 'Elite'),
+	       
+  ('3000111122223363','Safari', 'Pen','16.99','28.99','1','img/pen/safari.jpg','0000000000000001', 'Other'),
+  ('3500111122223333','Metropolitan', 'Pen','12.99','21.99','1','img/pen/metropolitan.jpg','0000000000000002', 'Other')
   ;
 
 /*!40000 ALTER TABLE `Products` ENABLE KEYS */;

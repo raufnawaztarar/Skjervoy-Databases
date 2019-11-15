@@ -159,7 +159,7 @@ VALUES
   
   ('3000111122223348','Vitaminer', 'Notebook','1.99','9.99','1','img/nb/vitaminer.jpg','0000000000000003', 'Fjord'),
   ('3000111122223349','Utholdenhet', 'Notebook','1.99','19.99','1','img/nb/utholdenhet.jpg','0000000000000003', 'Excellence'),
-  ('3000111122223350','Gulrot', 'Notebook','1.99','19.99','1','img/pen/gulrot.jpg','0000000000000003', 'Elite'),
+  ('3000111122223350','Gulrot', 'Notebook','1.99','19.99','1','img/nb/gulrot.jpg','0000000000000003', 'Elite'),
   ('3000111122223351','Rockestjerne', 'Notebook','1.99','9.99','1','img/nb/rockestjerne.jpg','0000000000000003', 'Excellence'),
   ('3000111122223352','Eleganse', 'Notebook','1.99','8.99','1','img/nb/eleganse.jpg','0000000000000003', 'Elite'),
   ('3000111122223353','Forløsning', 'Notebook','1.99','7.99','1','img/nb/forlosning.jpg','0000000000000003', 'Fjord'),
@@ -172,6 +172,7 @@ VALUES
   ('3000111122223360','Kalibrering', 'Notebook','1.99','9.99','1','img/nb/kalibrering.jpg','0000000000000003', 'Elite'),
   ('3000111122223361','Snikmorder', 'Notebook','0.99','8.99','1','img/nb/snikmorder.jpg','0000000000000003', 'Excellence'),
   ('3000111122223362','Vann', 'Notebook','1.99','4.99','1','img/nb/vann.jpg','0000000000000003', 'Elite'),
+	       
   ('3000111122223363','Safari', 'Pen','16.99','28.99','1','img/pen/safari.jpg','0000000000000001', 'Other'),
   ('3500111122223333','Metropolitan', 'Pen','12.99','21.99','1','img/pen/metropolitan.jpg','0000000000000002', 'Other')
   ;

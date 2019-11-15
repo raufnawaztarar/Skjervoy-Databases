@@ -49,6 +49,14 @@
     background-color: #000000;
 }
 
+.black_box_desc_div{
+    margin-left: 20%;
+    padding-top: 4px;
+    width: 60%;
+    background-color: #000000 ;
+}
+
+
 .black_box_desc_employee{
     margin: 0px;
     padding-top: 100px;
@@ -92,6 +100,10 @@
 .product_block{
     padding-top: 4%;
     padding-bottom: 2%;
+}
+
+.buffer{
+    padding: 4px;
 }
 
 .flag{
@@ -261,7 +273,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	vertical-align: baseline;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -269,7 +281,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;

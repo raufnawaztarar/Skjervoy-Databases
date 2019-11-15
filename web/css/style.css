@@ -1655,12 +1655,11 @@ h2, .h2{
   color: #adb5bd;
   letter-spacing: .2em;
   text-transform: uppercase;
-  font-weight: 700; }
+ ; }
 
 .section-title {
   color: #000;
-  font-size: 40px;
-  font-weight: 900; }
+  font-size: 33px; }
   @media (max-width: 991.98px) {
     .section-title {
       font-size: 30px; } }

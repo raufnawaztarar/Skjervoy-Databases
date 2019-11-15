@@ -93,7 +93,7 @@
                   <div class="card-body">
                     <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                     <div class="card_button">
-                        <button type="button" class="btn btn-outline-dark" onclick="">View Collection</button>
+                      <button type="button" class="btn btn-outline-dark" onclick="">View Collection</button>
                     </div>
                   </div>
                 </div>
@@ -152,7 +152,9 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-md-6 text-center">
-            <h3 class="card-title">Excellence Series</h3>
+            <a id="excellence">
+              <h3 class="section-title">Excellence Series</h3>
+            </a>
           </div>
         </div>
         <div class="row">
@@ -194,7 +196,7 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-md-6 text-center">
-            <h3 class="card-title">Fire Series</h3>
+            <h3 class="section-title">Fire Series</h3>
           </div>
         </div>
         <div class="row">
@@ -233,11 +235,11 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-md-6 text-center">
-            <h3 class="card-title">Elite Series</h3>
+            <h3 class="section-title">Elite Series</h3>
           </div>
         </div>
         <div class="row">
-        <?php
+          <?php
             $data = mysql_query("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Elite\"") or die(mysql_error('No Records Found'));
 
             while($info = mysql_fetch_array( $data ))
@@ -262,9 +264,47 @@
                     <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
                     </div>
                 </div>
-                </div>
+              </div>
             </div>
-        <?php } ?>
+          <?php } ?>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-6 text-center">
+            <h3 class="section-title">Others</h3>
+          </div>
+        </div>
+        <div class="row">
+          <?php
+            $data = mysql_query("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Other\"") or die(mysql_error('No Records Found'));
+
+            while($info = mysql_fetch_array( $data ))
+            { 
+                $name = $info['Name'];
+                $price = $info['Selling Price'];
+                $series = $info['Series'];
+                $pictures = $info['Picture']?>
+                
+                <div class="col-lg-4 col-md-6 mb-5">
+                <div class="product-item">
+                <figure>
+                    <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
+                </figure>
+                <div class="px-4">
+                    <h3><?php echo $name; ?></h3>
+                    <h3>£<?php echo $price; ?></h3>
+                    <h2><i><?php echo $series; ?> Series</i></h2>
+                
+                    <p class="mb-4"> </p>
+                    <div>
+                    <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          <?php } ?>
           </div>
         </div>
       </div>

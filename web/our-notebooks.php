@@ -165,7 +165,7 @@
                 <div class="col-lg-4 col-md-6 mb-5">
                 <div class="product-item">
                 <figure>
-                    <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+                  <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
                 </figure>
                 <div class="px-4">
                     <h3><?php echo $name; ?></h3>

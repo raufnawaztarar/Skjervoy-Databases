@@ -57,12 +57,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
-          <li class="nav-item"><a href="#" class="nav-link">Our Pens</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Our Notebooks</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Our Stores</a></li>
+        <li class="nav-item"><a href="our-pens.php" class="nav-link">Our Pens</a></li>
+          <li class="nav-item"><a href="our-notebooks.php" class="nav-link">Our Notebooks</a></li>
+          <li class="nav-item"><a href="our-locations.php" class="nav-link">Our Stores</a></li>
         </ul>
       </div>
-      <img class ="col-xs-4 justify-content-center" src="resources/black_logo.png" alt="logo" height="10%" width="10%" data-toggle="null" data-target="null">
+      <img class ="col-xs-4 justify-content-center" src="resources/black_logo.png" alt="logo" height="10%" width="10%" data-toggle="null" data-target="null" onclick="window.location.href = 'index.php';">
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
           <li href="#"><i class="nav-link fa fa-fw fa-search"></i> Search</li>

@@ -1747,7 +1747,8 @@ h2, .h2{
     visibility: visible;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
-    transform: scale(1); }
+    transform: scale(1);
+  }
   .product-item:hover figure img {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);

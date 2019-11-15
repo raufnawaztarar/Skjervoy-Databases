@@ -2,25 +2,28 @@
     padding-top: 0.3%;
     margin: 0px;
     background-color: #002868;
+
 }
 
 .redbar {
     padding-top: 0.3%;
     margin: 0px;
     background-color: #ef2b2d;
+
 }
 
 .whitebar {
     padding-top: 0.3%;
     margin: 0px;
     background-color: #ffffff;
+
 }
 
 .rainbow_group{
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0 ; 
-    z-index: 1;
+    z-index: 5;
 }
 
 .navbar{
@@ -28,6 +31,7 @@
     -webkit-box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;
     box-shadow: 0 8px 6px -6px #999;
+    z-index: 5;
 }
 
 .logo{

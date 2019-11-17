@@ -167,6 +167,94 @@
    
     </div>
 
+
+    <h1>Find a product ID </h1>
+<form name="Find a Product" action="" method="post"> 
+      Name:<input type="text" name="name_find" > <br/>
+      <input type="submit" name="submit_find" value="Find" /> <br/>
+    </form> 
+    <br/>
+
+    <?php
+      if (isset($_POST['submit_find'])) {
+        mysql_connect("silva.computing.dundee.ac.uk", "19ac3u05", "abc123") or die(mysql_error());
+        mysql_select_db("19ac3d05") or die(mysql_error());
+        $name_find = $_POST['name_find'];
+        // gets value sent over search form
+        $found = mysql_query("SELECT * FROM Products WHERE Name Like \"%$name_find%\"") or die(mysql_error('No Records Found'));
+        while ($info = mysql_fetch_array($found)) {
+            $name = $info['Name'];
+            $product_id_found = $info['Product ID'];
+            echo "$name: $product_id_found<br/>";
+            } 
+       } else {
+         //handle errors
+         echo "submit_find not set";
+       }
+    ?>
+    <!-- <?php 
+
+      // // mysql_connect("silva.computing.dundee.ac.uk","19ac3u05","abc123") or die(mysql_error());
+      // // mysql_select_db("19ac3d05") or die(mysql_error());
+      
+      // if (isset($_GET['s'])) {
+ 
+
+      // $name_find = $_GET['name_find']; 
+      // $result2 = mysql_query
+      //   ("SELECT Name, `Product ID` AS name_found, product_id_found FROM Products WHERE Name='$name_find'; ") or die(mysql_error('No Records Found'));
+      // $row2 = mysql_fetch_array($result2);
+      // $name_found = $row2["name_found"]; 
+      // $product_id_found = $row2["product_id_found"]; 
+
+      // echo "$name_found: $product_id_found";
+      // } else {
+      //   //handle errors
+      // }
+      ?> -->
+
+
+<h1>Delete a product </h1>
+<form name="Delete a Product" action="" method="post"> 
+      Product ID (16 digits):<input type="text" name="product_id_del" > <br/>
+      <input type="submit" name="submit_del" value="DELETE" /> <br/>
+    </form> 
+    <br/>
+
+    <?php 
+      try{
+        // Include the database connection 
+        
+        $mysql = new PDO("mysql:host=".$server.";dbname=".$database, $user, $pass); 
+        //not sure what the next line is, from
+        //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
+        $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        //$mysql = new mysqli($server, $user, $pass, $database);
+
+        // Check that a form has been submitted 
+        if( isset($_POST['submit_del']) ){
+          
+          $product_id_del = $_POST['product_id_del']; 
+          $stmt = $mysql->prepare("DELETE FROM Products WHERE `Product ID`=:Product_ID_del"); 
+          $stmt->bindParam(":Product_ID_del", $product_id_del); 
+          
+
+          // $stmt->debugDumpParams();
+          $stmt->execute(); 
+
+          echo "Product deleted: " . $product_id_del . ".";
+          
+          } else { 
+        // Error handling 
+        } 
+      }
+      catch(PDOException $e)
+      {
+        echo "Error deleting " . $name . ": " . $e->getMessage();
+      }
+      ?>    
+   
     
 
      <!-- Bottom Banner Colors-->

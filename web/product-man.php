@@ -96,7 +96,7 @@
       mysql_select_db("19ac3d05") or die(mysql_error());
       $result1 = mysql_query("SELECT MAX(`Product ID`) AS max_id FROM Products;") or die(mysql_error('No Records Found'));
       $row1 = mysql_fetch_array($result1);
-      $new_id = number_format($row1["max_id"] + 1, 0, "","");
+      $new_id = number_format($row1["max_id"] + 1, 0, "",""); //add 1 to the string number
      // $maxID = $maxID +1;
 
     ?>
@@ -120,7 +120,8 @@
         // Include the database connection 
         
         $mysql = new PDO("mysql:host=".$server.";dbname=".$database, $user, $pass); 
-  
+        //not sure what the next line is, from
+        //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
         $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         //$mysql = new mysqli($server, $user, $pass, $database);
@@ -152,7 +153,7 @@
           $series = $_POST['series']; 
           $stmt->execute(); 
 
-          echo "Product added successfully.";
+          echo "Product added successfully: " . $name . ".";
           
           } else { 
         // Error handling 
@@ -160,7 +161,7 @@
       }
       catch(PDOException $e)
       {
-        echo "Error: " . $e->getMessage();
+        echo "Error adding " . $name . ": " . $e->getMessage();
       }
       ?>    
    

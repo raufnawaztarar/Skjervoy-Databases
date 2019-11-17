@@ -51,7 +51,7 @@
 
     <!-- Splash Home Screen Image-->
     <div class="splash_container">
-      <img class ="splash" src="resources/front_page.jpg" alt="notepad with pen" style="width:100%;">
+      <img class ="splash" onclick="window.location.href = 'our-notebooks.php';" src="resources/front_page.jpg" alt="notepad with pen" style="width:100%;">
     </div>
 
     <!-- First Black Description Box-->
@@ -60,6 +60,7 @@
     </div>
 
     <!-- First List Of Product Category-->
+
     <div class = "product_block">
         <div class="row mb-2">
           <div class="col-sm d-flex justify-content-center">
@@ -75,7 +76,7 @@
                   <div class="card-body">
                     <p class="card-text">We offer a large range of stunning premium pens of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                     <div class="card_button">
-                        <button type="button" class="btn btn-outline-dark" onclick="window.location.href = 'our-pens.php';">View Collections</button>
+                        <button type="button" class="btn btn-outline-dark" style="color:white" onclick="window.location.href = 'our-pens.php';">View Collections</button>
                     </div>
                   </div>
                 </div>
@@ -97,7 +98,7 @@
                   <div class="card-body">
                     <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                     <div class="card_button">
-                        <button type="button" class="btn btn-outline-dark" onclick="window.location.href = 'our-notebooks.php';">View Collections</button>
+                        <button type="button" class="btn btn-outline-dark" style="color:white" onclick="window.location.href = 'our-notebooks.php';">View Collections</button>
                     </div>
                   </div>
                 </div>
@@ -130,7 +131,7 @@
                 <div class="card-body">
                   <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                   <div class="card_button">
-                      <button type="button" class="btn btn-outline-dark">View Locations</button>
+                      <button type="button" class="btn btn-outline-dark" style="color:white">View Locations</button>
                   </div>
                 </div>
               </div>

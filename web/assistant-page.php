@@ -77,6 +77,7 @@
     $role = $info['Role'];
     $id = $info['Employee ID'];
     $building = $info['Building'];
+    $picture = $info['Picture'];
   }
 
   $bldg = mysql_query("SELECT * FROM Buildings WHERE `Building Id` = \"$building\"") or die(mysql_error('No Records Found'));
@@ -102,7 +103,7 @@
 
   <!-- Avatar -->
   <div class="avatar-box">
-    <img class="avatar" src="resources/person_1.jpg" alt="Avatar">
+    <img class="avatar" src="<?php echo $picture ?>" alt="Avatar">
   </div>
 
   <!-- Section Divider -->

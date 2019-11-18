@@ -83,7 +83,27 @@
     padding-right: 25%;
 }
 
+<<<<<<< HEAD
 .center_splash_heading {
+=======
+.center_box_desc_employee{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    padding-top: 20px;
+    padding-bottom:20px;
+}
+
+.center_box_text_employee{
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    padding-bottom:20px;
+    font-family: 'Kollektif';
+}
+
+.center_splash_heading{
+>>>>>>> parent of 942d85f... Text fields updated employee-access
     position: inline;
     font-size: 50px;
 }

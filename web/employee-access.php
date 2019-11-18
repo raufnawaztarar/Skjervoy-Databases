@@ -108,9 +108,7 @@
     <!-- Third Section-->
     <div class="box_desc_employee">
       <p class="center_box_desc_employee"><font face="javanese-text"->- Database Access -</font></p>
-      <p class="left_box_text_employee">INVENTORY</p>
-      <p class="left_box_text_employee">EMPLOYEES</p>
-    </div>  
+    </div>   
       
     <!-- Bottom Banner Colors-->
     <div class="bluebar"></div>

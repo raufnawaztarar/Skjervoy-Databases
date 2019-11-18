@@ -1,3 +1,50 @@
+<?php           // Adapted from "https://phppot.com/php/simple-php-shopping-cart/"
+session_start();
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+
+if(!empty($_GET["action"])) {
+    switch($_GET["action"]) {
+        case "add":
+            if(!empty($_POST["quantity"])) {
+                $productByCode = $db_handle->runQuery("SELECT * FROM Products WHERE Name=\"" . $_GET["Name"] . "\"");
+                $itemArray = array($productByCode[0]["Name"]=>array('Name'=>$productByCode[0]["Name"], `Product ID`=>$productByCode[0]["Product ID"], 'quantity'=>$_POST["quantity"],`Selling Price`=>$productByCode[0]["Selling Price"], 'Picture'=>$productByCode[0]["Picture"]));
+                
+                if(!empty($_SESSION["cart_item"])) {
+                    if(in_array($productByCode[0]["Name"],array_keys($_SESSION["cart_item"]))) {
+                        foreach($_SESSION["cart_item"] as $k => $v) {
+                                if($productByCode[0]["Name"] == $k) {
+                                    if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+                                        $_SESSION["cart_item"][$k]["quantity"] = 0;
+                                    }
+                                    $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+                                }
+                        }
+                    } else {
+                        $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+                    }
+                } else {
+                    $_SESSION["cart_item"] = $itemArray;
+                }
+            }
+        break;
+        case "remove":
+            if(!empty($_SESSION["cart_item"])) {
+                foreach($_SESSION["cart_item"] as $k => $v) {
+                        if($_GET["Name"] == $k)
+                            unset($_SESSION["cart_item"][$k]);				
+                        if(empty($_SESSION["cart_item"]))
+                            unset($_SESSION["cart_item"]);
+                }
+            }
+        break;
+        case "empty":
+            unset($_SESSION["cart_item"]);
+        break;	
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -45,7 +92,6 @@
 
 <body>
 
-
   <!-- Top Banner Colors-->
   <div class="rainbow_group">
     <div class="bluebar"></div>
@@ -86,121 +132,53 @@
     <img class="splash" src="resources/fjord.jpg" alt="black and white fjord" style="width:100%;">
   </div>
 
-  <!-- Pens Product Category-->
 
-  <div class="product_block">
+    <!-- Cart -->
+    <table style="width: 100%">
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total Cost</th>
+    </tr>
 
-    <div class="row">
-      <div class="row mb-5 justify-content-center">
+    <?php
+    if(isset($_SESSION["cart_item"])){
+        $total_quantity = 0;
+        $total_price = 0;
+	
+        foreach ($_SESSION["cart_item"] as $item){
+            $item_price = $item["quantity"]*$item[`Selling Price`]; ?>
 
-        <div class="col-lg-3 col-md-6 mb-5">
-          <div class="product-item">
-            <figure>
-              <img src="resources/excellence.jpg" alt="Image" class="img-fluid">
-            </figure>
-            <div class="px-4">
-              <h3 style="font-size: 3vh;">Excellence Series</h3>
-              <h3 style="font-size: 2vh; color: #002868">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</h3>
-              <h2 style="font-size: 1.5vh"></h2>
-              <p class="mb-4"> </p>
-              <div>
-                <a href="#" class="btn btn-black mr-1 rounded-0">View Collection</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-5">
-          <div class="product-item">
-            <figure>
-              <img src="resources/fire.jpg" alt="Image" class="img-fluid">
-            </figure>
-            <div class="px-4">
-              <h3 style="font-size: 3vh;">Fire Series</h3>
-              <h3 style="font-size: 2vh; color: #002868">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</h3>
-              <h2 style="font-size: 1.5vh"></h2>
-
-              <p class="mb-4"> </p>
-              <div>
-                <a href="#" class="btn btn-black mr-1 rounded-0">View Collection</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-5">
-          <div class="product-item">
-            <figure>
-              <img src="resources/elite.jpg" alt="Image" class="img-fluid">
-            </figure>
-            <div class="px-4">
-              <h3 style="font-size: 3vh;">Elite Series</h3>
-              <h3 style="font-size: 2vh; color: #002868">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</h3>
-              <h2 style="font-size: 1.5vh"></h2>
-
-              <p class="mb-4"> </p>
-              <div>
-                <a href="#" class="btn btn-black mr-1 rounded-0">View Collection</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="site-section" id="products-section">
-    <div class="container">
-      <div class="row mb-5 justify-content-center">
-        <div class="col-md-6 text-center">
-          <h3 class="section-sub-title">Explore All</h3>
-          <h2 class="section-title mb-3">Our Pens</h2>
-        </div>
-      </div>
-      <div class="row">
+            <tr>
+                <td><?php echo $item["Name"]; ?></td>
+                <td><?php echo $item[`Selling Price`]; ?></td>
+                <td><?php echo $item["quantity"]; ?></td>
+                <td><?php echo $item_price; ?></td>
+                <td><a href="shopping-cart.php?action=remove&Name=<?php echo $item["Name"]; ?>" class="btnRemoveAction">Delete</a></td>
+            </tr>
         <?php
-
-        
-        require_once("dbcontroller.php");
-        $db_handle = new DBController();
-
-        $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Pen\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
-        if (!empty($product_array)) { 
-          foreach($product_array as $key=>$value){
-          $name = $product_array[$key]["Name"];
-          $price = $product_array[$key]["Selling Price"];
-          $series = $product_array[$key]["Series"];
-          $pictures = $product_array[$key]["Picture"]; ?>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-          <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
-            <div class="product-item">
-              <figure>
-                <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
-              </figure>
-              <div class="px-4">
-                <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
-                <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
-                <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-                <input type="text" name="quantity" value="1" size="2" />
-                <p class="mb-4"> </p>
-                <div>
-                  <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
-                </div>
-              </div>
-            </div>
-          </form>
-          </div>
-        <?php }
+        $total_quantity += $item["quantity"];
+        $total_price += ($item[`Selling Price`]*$item["quantity"]);  
         } ?>
-      </div>
-    </div>
-  </div>
-  </div>
+        <td>Total Price</td>
+        <td></td>
+        <td></td>
+        <td><?php echo $total_price; ?></td>
+        </table> <?php
 
-  <!-- Section Divider -->
-  <div class="black_box_desc_div">
+    } else { ?>
+        <div>Your Cart is Empty</div>
+    <?php } ?>
+
+    <!-- Button things -->
+    <div>
+        <button type="button" class="btn btn-black mr-1 rounded-0">Keep Shopping</button>
+        <button type="button" class="btn btn-black mr-1 rounded-0">Go to Checkout</button>
+    </div>
+
+<!-- Section Divider -->
+<div class="black_box_desc_div">
   </div>
 
   <!-- Find Other Locations Card-->
@@ -229,13 +207,12 @@
     </div>
   </div>
 
-
   <!-- Bottom Banner Colors-->
   <div class="bluebar"></div>
   <div class="whitebar"></div>
   <div class="redbar"></div>
 
-  <!-- Footer-->
+  <!-- Footer -->
   <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
       <div class="container">
@@ -261,6 +238,7 @@
               </ul>
             </div>
           </div>
+
           <div class="col text-center">
             <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
               <font face="kollektif">Store Opening Hours<br>
@@ -273,6 +251,7 @@
               <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
             </p>
           </div>
+
           <div class="col text-right">
             <div class="widget">
               <h5 class="widget-title">
@@ -283,7 +262,7 @@
                   <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
+                  <div class="thumb-content"><a href="#.">Employee Access</a></div>
                 </li>
               </ul>
             </div>
@@ -292,7 +271,6 @@
       </div>
     </div>
   </footer>
-
 </body>
 
 </html>

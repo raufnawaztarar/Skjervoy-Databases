@@ -44,118 +44,131 @@
     <img class="col-xs-4 justify-content-center" src="resources/black_logo.png" alt="logo" height="10%" width="10%" data-toggle="null" data-target="null" onclick="window.location.href = 'index.php';">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
-        <li>
-
-          <form action="search.php" method="GET">
-            <input type="text" name="query" value="" />
-            <input type="submit" class="submit-btn" value="Search" />
-          </form>
-
-        </li>
+        <li href="#"><i class="nav-link fa fa-fw fa-search"></i> Search</li>
         <li href="#"><i class="nav-link fa fa-shopping-cart"></i> Your Cart</li>
         <li href="#"><i class="nav-link fa fa-fw fa-user"></i> Login</li>
       </ul>
     </div>
   </nav>
 
-  <!-- Splash Home Screen Image-->
-  <div class="splash_container">
-    <img class="splash" onclick="window.location.href = 'our-notebooks.php';" src="resources/front_page.jpg" alt="notepad with pen" style="width:100%;">
-  </div>
-
   <!-- First Black Description Box-->
-  <div class="black_box_desc">
-    <p class="center_box_heading">
-      <font face="javanese-text" ->- Our Products -</font>
+  <div class="black_box_desc_employee">
+    <p class="center_box_heading_employee">
+      <font face="javanese-text" ->- Employee Login -</font>
     </p>
   </div>
 
-  <!-- First List Of Product Category-->
+  <?php
 
-  <div class="product_block">
-    <div class="row mb-2">
-      <div class="col-sm d-flex justify-content-center">
-        <div class="card mb-3" style="max-width: 1000px;">
-          <div class="row no-gutters">
-            <h5 class="card-title">Our Pen Collection</h5>
-          </div>
-          <div class="row no-gutters">
-            <div class="col-md-7">
-              <img src="resources/cat_pens.png" class="card-img" alt="Pen Category">
-            </div>
-            <div class="col-md-5">
-              <div class="card-body">
-                <p class="card-text">We offer a large range of stunning premium pens of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
-                <div class="card_button">
-                  <button type="button" class="btn btn-outline-dark" style="color:white" onclick="window.location.href = 'our-pens.php';">View Collections</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mb-2 ">
-      <div class="col-sm d-flex justify-content-center">
-        <div class="card mb-3" style="max-width: 1000px;">
-          <div class="row no-gutters">
-            <h5 class="card-title">Our Notebook Collection</h5>
-          </div>
-          <div class="row no-gutters">
-            <div class="col-md-7">
-              <img src="resources/cat_notebook.png" class="card-img-top" alt="Notebook Category">
-            </div>
-            <div class="col-md-5">
-              <div class="card-body">
-                <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
-                <div class="card_button">
-                  <button type="button" class="btn btn-outline-dark" style="color:white" onclick="window.location.href = 'our-notebooks.php';">View Collections</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  mysql_connect("silva.computing.dundee.ac.uk", "19ac3u05", "abc123") or die(mysql_error());
+  mysql_select_db("19ac3d05") or die(mysql_error());
+
+  session_start();
+
+  $id = $_SESSION['varname'];
+  $role = $_SESSION['varname2'];
+
+  $data = mysql_query("SELECT * FROM Employees WHERE `Employee ID` = \"$id\"") or die(mysql_error('No Records Found'));
+
+  while ($info = mysql_fetch_array($data)) {
+
+
+    $name = $info['Name'];
+    $role = $info['Role'];
+    $id = $info['Employee ID'];
+    $building = $info['Building'];
+  }
+
+  $bldg = mysql_query("SELECT * FROM Buildings WHERE `Building Id` = \"$building\"") or die(mysql_error('No Records Found'));
+
+  while ($info2 = mysql_fetch_array($bldg)) {
+
+    $addressid = $info2['Address'];
+    $type = $info2['Type'];
+  }
+
+  $address = mysql_query("SELECT * FROM Addresses WHERE `Address Id` = \"$addressid\"") or die(mysql_error('No Records Found'));
+
+  while ($info3 = mysql_fetch_array($address)) {
+
+    $firstline = $info3['First Line of Address'];
+    $secondline = $info3['Second Line of Address'];
+    $postcode = $info3['Postcode'];
+    $city = $info3['City'];
+    $country = $info3['Country'];
+  }
+
+  ?>
+
+  <!-- Avatar -->
+  <div class="avatar-box">
+    <img class="avatar" src="resources/person_1.jpg" alt="Avatar">
   </div>
 
-  <!-- Story Of Company Description-->
-  <div class="black_box_desc">
-    <p class="center_box_heading">- The Story of Skjerv&oslash;y -</p>
-    <p class="center_box_desc">Our story begins in 1925 when our beloved founder, Frank, first discovered the fine art of pen craftsmanship. Using only the best and highest quality materials he began to experiment with different designs. His unique sense of style and unparalleled eye for quality lead to him establishing a store and distribution chain which would become far greater then he could ever imagine.</p>
-    <img class="flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
+  <!-- Section Divider -->
+  <div class="black_box_desc_div">
   </div>
 
-  <!-- Find Other Locations Card-->
-  <div class="product_block">
-    <div class="row mb-2 ">
-      <div class="col-sm d-flex justify-content-center">
-        <div class="card mb-3" style="max-width: 1000px;">
-          <div class="row no-gutters">
-            <h5 class="card-title">Find one of our establishments</h5>
-          </div>
-          <div class="row no-gutters">
-            <div class="col-md-7">
-              <img src="resources/shop_scene.png" class="card-img" alt="shop_scene">
-            </div>
-            <div class="col-md-5">
-              <div class="card-body">
-                <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
-                <div class="card_button">
-                  <button type="button" class="btn btn-outline-dark" style="color:white">View Locations</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- First Section-->
+  <div class="box_desc_employee">
+    <p class="center_box_desc_employee">
+      <font face="javanese-text" ->- Your Details -</font>
+    </p>
+    <p class="center_box_text_employee">Name - <?php echo $name; ?></p>
+    <p class="center_box_text_employee">ID - <?php echo $id; ?> </p>
+  </div>
+
+  <!-- Section Divider -->
+  <div class="black_box_desc_div">
+  </div>
+
+  <!-- Second Section-->
+  <div class="box_desc_employee">
+    <p class="center_box_desc_employee">
+      <font face="javanese-text" ->- Your Role -</font>
+    </p>
+    <p class="center_box_text_employee">Position - <?php echo $role; ?> </p>
+    <p class="center_box_text_employee">Workplace Type - <?php echo $type; ?></p>
+
+
+    <!-- Section Divider -->
+    <div class="black_box_desc_div">
     </div>
-  </div>
 
-  <!-- Bottom Banner Colors-->
-  <div class="bluebar"></div>
-  <div class="whitebar"></div>
-  <div class="redbar"></div>
+    <!-- Third Section-->
+    <div class="box_desc_employee">
+      <p class="center_box_desc_employee">
+        <font face="javanese-text" ->- Workplace Address -</font>
+      </p>
+      <p class="center_box_text_employee">
+      <?php echo $firstline; ?>
+      <?php
+      if ($secondline == "") { } else { ?> <br> <?php
+                        echo $secondline;
+                      } ?><br>
+      <?php echo $city; ?><br>
+      <?php echo $postcode; ?><br>
+      <?php echo $country; ?><br>
+      </p>
+    </div>
+
+    <!-- Section Divider -->
+    <div class="black_box_desc_div">
+    </div>
+
+    <!-- Third Section-->
+    <div class="box_desc_employee">
+      <p class="center_box_desc_employee">
+        <font face="javanese-text" ->- Database Access -</font>
+      </p>
+      <p class="left_box_text_employee">INVENTORY</p>
+    </div>
+
+
+    <!-- Bottom Banner Colors-->
+    <div class="bluebar"></div>
+    <div class="whitebar"></div>
+    <div class="redbar"></div>
 
   <!-- Footer-->
   <footer id="footer" class="footer-1">

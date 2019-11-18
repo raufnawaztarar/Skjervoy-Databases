@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <!-- Tab Title-->
   <title>Skjervoy Pens

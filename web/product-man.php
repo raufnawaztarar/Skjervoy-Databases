@@ -142,11 +142,6 @@
   ?>
 
   <?php
-  // mysql_connect("silva.computing.dundee.ac.uk", "19ac3u05", "abc123") or die(mysql_error());
-  // mysql_select_db("19ac3d05") or die(mysql_error());
-  // $result1 = mysql_query("SELECT MAX(`Product ID`) AS max_id FROM Products;") or die(mysql_error('No Records Found'));
-  // $row1 = mysql_fetch_array($result1);
-  // $new_id = number_format($row1["max_id"] + 1, 0, "", ""); //add 1 to the string number
   $stmt = $mysql->prepare("SELECT MAX(`Product ID`) AS max_id FROM Products;");
 
   $stmt->execute();

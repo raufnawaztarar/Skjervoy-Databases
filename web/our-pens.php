@@ -173,8 +173,8 @@
           $series = $product_array[$key]["Series"];
           $pictures = $product_array[$key]["Picture"]; ?>
 
-          <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
           <div class="col-lg-4 col-md-6 mb-5">
+          <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
             <div class="product-item">
               <figure>
                 <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
@@ -190,8 +190,8 @@
                 </div>
               </div>
             </div>
-          </div>
           </form>
+          </div>
         <?php }
         } ?>
       </div>

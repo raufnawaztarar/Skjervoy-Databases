@@ -98,6 +98,14 @@
     padding-bottom:20px;
 }
 
+.left_box_text_employee{
+    margin-left: 20%;
+    font-size: 25px;
+    color: black;
+    padding-top: 15px;
+    padding-bottom:15px;
+}
+
 .center_box_text_employee{
     text-align: center;
     font-size: 25px;

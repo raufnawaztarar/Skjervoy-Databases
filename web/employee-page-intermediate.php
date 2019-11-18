@@ -25,7 +25,7 @@ while ($info = mysql_fetch_array($data)) {
 
 if ($role == NULL) { ?>
     <script type="text/javascript">
-        window.location.href = "error-page.php";
+        window.location.href = "error.php";
     </script>
 <?php } else if ($role == "Manager") { ?>
     <script type="text/javascript">

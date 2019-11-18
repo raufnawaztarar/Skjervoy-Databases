@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Tab Title-->
   <title>Skjervoy Pens
@@ -212,11 +213,11 @@ VALUE (:Product_ID, :Name, :Type, :Buying_price, :Selling_price, :Weight, :Pictu
           <!-- Supplier ID (16 digits): <input type="text" name="supplier" value="0000000000000003"> <br /> -->
           Supplier:
           <select name="supplier">
-            <option value="0000000000000003">Skjervoy
+            <option value="Skjervoy">Skjervoy
             </option>
-            <option value="0000000000000002">Pilot
+            <option value="Pilot">Pilot
             </option>
-            <option value="0000000000000001">Lamy
+            <option value="Lamy">Lamy
             </option>
           </select>
         </div>

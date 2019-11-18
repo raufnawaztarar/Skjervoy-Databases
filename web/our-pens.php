@@ -192,8 +192,7 @@
             </div>
           </form>
           </div>
-        <?php }
-        } ?>
+        <?php } } ?>
       </div>
     </div>
   </div>

@@ -123,8 +123,8 @@ CREATE TABLE `Products` (
   `Selling Price` real NOT NULL, 
   Weight          real NOT NULL, 
   Picture         varchar(255), 
-  Supplier        varchar(255) NOT NULL, 
-  Series          char(16) NOT NULL,
+  Supplier        char(16) NOT NULL, 
+  Series          varchar(255) NOT NULL,
   PRIMARY KEY (`Product ID`));
 
 LOCK TABLES `Products` WRITE;

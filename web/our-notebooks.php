@@ -231,7 +231,7 @@
                              <h5 class="widget-title"><font face="javanese-text">Quick Links</font><span></span></h5>
                                  <ul class="thumbnail-widget">
                                      <li>
-                                         <div class="thumb-content"><a href="#.">Home</a></div>	
+                                         <div class="thumb-content"><a href="index.php">Home</a></div>	
                                      </li>
                                      <li>
                                          <div class="thumb-content"><a href="#.">Products</a></div>	
@@ -265,7 +265,7 @@
                                          <div class="thumb-content"><a href="#.">Privacy Policy</a></div>	
                                      </li>
                                      <li>
-                                         <div class="thumb-content"><a href="#.">Employee Access</a></div>	
+                                         <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>	
                                      </li>
                                  </ul>
                              </div>

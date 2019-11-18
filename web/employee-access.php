@@ -34,12 +34,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
-          <li class="nav-item"><a href="#" class="nav-link">Our Pens</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Our Notebooks</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Our Stores</a></li>
+        <li class="nav-item"><a href="our-pens.php" class="nav-link">Our Pens</a></li>
+          <li class="nav-item"><a href="our-notebooks.php" class="nav-link">Our Notebooks</a></li>
+          <li class="nav-item"><a href="our-locations.php" class="nav-link">Our Stores</a></li>
         </ul>
       </div>
-      <img class ="col-xs-4 justify-content-center" src="resources/black_logo.png" alt="logo" height="10%" width="10%" data-toggle="null" data-target="null">
+      <img class ="col-xs-4 justify-content-center" src="resources/black_logo.png" alt="logo" height="10%" width="10%" data-toggle="null" data-target="null" onclick="window.location.href = 'index.php';">
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
           <li href="#"><i class="nav-link fa fa-fw fa-search"></i> Search</li>
@@ -72,9 +72,46 @@
           </div>        
       </form>
   </div>
-
       
+    <!-- Avatar -->
+    <div class="avatar-box">    
+          <img class="avatar" src="resources/person_1.jpg" alt="Avatar">
+    </div>
+      
+    <!-- Section Divider -->
+    <div class="black_box_desc_div">
+    </div>
 
+    <!-- First Section-->
+    <div class="box_desc_employee">
+      <p class="center_box_desc_employee"><font face="javanese-text"->- Your Details -</font></p>
+      <p class="center_box_text_employee">Name - </p>
+      <p class="center_box_text_employee">ID - </p>        
+    </div>
+      
+    <!-- Section Divider -->
+    <div class="black_box_desc_div">
+    </div>
+      
+    <!-- Second Section-->
+    <div class="box_desc_employee">
+      <p class="center_box_desc_employee"><font face="javanese-text"->- Your Role -</font></p>
+      <p class="center_box_text_employee">Position - </p>
+      <p class="center_box_text_employee">Place of work - </p>
+      <p class="center_box_text_employee">Division - </p>   
+    </div>
+      
+    <!-- Section Divider -->
+    <div class="black_box_desc_div">
+    </div>
+      
+    <!-- Third Section-->
+    <div class="box_desc_employee">
+      <p class="center_box_desc_employee"><font face="javanese-text"->- Database Access -</font></p>
+      <p class="left_box_text_employee">INVENTORY</p>
+      <p class="left_box_text_employee">EMPLOYEES</p>
+    </div>  
+      
     <!-- Bottom Banner Colors-->
     <div class="bluebar"></div>
     <div class="whitebar"></div>

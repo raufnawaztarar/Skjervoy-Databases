@@ -25,7 +25,7 @@ while ($info = mysql_fetch_array($data)) {
 
 if ($role == NULL) { ?>
     <script type="text/javascript">
-        window.location.href = "error-page.php";
+        window.location.href = "error.php";
     </script>
 <?php } else if ($role == "Manager") { ?>
     <script type="text/javascript">
@@ -37,11 +37,11 @@ if ($role == NULL) { ?>
     </script>
 <?php } else if ($role == "HR Manager") { ?>
     <script type="text/javascript">
-        window.location.href = "hrmanager-page.php";
+        window.location.href = "hr-manager-page.php";
     </script>
 <?php } else if ($role == "Product Manager") { ?>
     <script type="text/javascript">
-        window.location.href = "productmanager-page.php";
+        window.location.href = "product-manager-page.php";
     </script>
 <?php }
 

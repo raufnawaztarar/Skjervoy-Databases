@@ -160,35 +160,38 @@
       <div class="row">
         <?php
 
-        mysql_connect("silva.computing.dundee.ac.uk", "19ac3u05", "abc123") or die(mysql_error());
-        mysql_select_db("19ac3d05") or die(mysql_error());
+        
+        require_once("dbcontroller.php");
+        $db_handle = new DBController();
 
-        $data = mysql_query("SELECT * FROM Products WHERE Type=\"Notebook\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
-
-        while ($info = mysql_fetch_array($data)) {
-          $name = $info['Name'];
-          $price = $info['Selling Price'];
-          $series = $info['Series'];
-          $pictures = $info['Picture'] ?>
+        $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Notebook\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
+        if (!empty($product_array)) { 
+          foreach($product_array as $key=>$value){
+          $name = $product_array[$key]["Name"];
+          $price = $product_array[$key]["Selling Price"];
+          $series = $product_array[$key]["Series"];
+          $pictures = $product_array[$key]["Picture"]; ?>
 
           <div class="col-lg-4 col-md-6 mb-5">
-            <div class="product-item">
-              <figure>
-                <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
-              </figure>
-              <div class="px-4">
-                <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
-                <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
-                <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-
-                <p class="mb-4"> </p>
-                <div>
-                  <button class="btn btn-black mr-1 rounded-0">Add to cart</a>
+            <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
+              <div class="product-item">
+                <figure>
+                  <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
+                </figure>
+                <div class="px-4">
+                  <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
+                  <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                  <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
+                  <input type="text" name="quantity" value="1" size="2" />
+                  <p class="mb-4"> </p>
+                  <div>
+                    <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
-        <?php } ?>
+        <?php } } ?>
       </div>
     </div>
   </div>
@@ -230,7 +233,7 @@
   <div class="whitebar"></div>
   <div class="redbar"></div>
 
-  <!-- Footer -->
+  <!-- Footer-->
   <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
       <div class="container">
@@ -256,7 +259,6 @@
               </ul>
             </div>
           </div>
-
           <div class="col text-center">
             <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
               <font face="kollektif">Store Opening Hours<br>
@@ -269,7 +271,6 @@
               <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
             </p>
           </div>
-
           <div class="col text-right">
             <div class="widget">
               <h5 class="widget-title">
@@ -280,7 +281,7 @@
                   <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="#.">Employee Access</a></div>
+                  <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
                 </li>
               </ul>
             </div>
@@ -289,6 +290,7 @@
       </div>
     </div>
   </footer>
+
 </body>
 
 </html>

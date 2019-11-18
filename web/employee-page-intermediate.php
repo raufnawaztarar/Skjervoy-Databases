@@ -15,9 +15,6 @@ while ($info = mysql_fetch_array($data)) {
 
     $role = $info['Role'];
     $id = $info['Employee ID'];
-    echo $role;
-    echo $id;
-
 
     session_start();
 

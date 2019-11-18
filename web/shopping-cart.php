@@ -114,16 +114,13 @@ if(!empty($_GET["action"])) {
     <img class="col-xs-4 justify-content-center" src="resources/black_logo.png" alt="logo" height="10%" width="10%" data-toggle="null" data-target="null" onclick="window.location.href = 'index.php';">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
+        <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
+        <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
         <li>
-
-          <form action="search.php" method="GET">
-            <input type="text" name="query" value="" />
-            <input type="submit" class="submit-btn" value="Search" />
-          </form>
-
+        <form action="search.php" method="GET" class="form-inline">
+          <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
+        </form>
         </li>
-        <li href="#"><i class="nav-link fa fa-shopping-cart"></i> Your Cart</li>
-        <li href="#"><i class="nav-link fa fa-fw fa-user"></i> Login</li>
       </ul>
     </div>
   </nav>
@@ -134,48 +131,55 @@ if(!empty($_GET["action"])) {
 
 
     <!-- Cart -->
-    <table style="width: 100%">
-    <tr>
-        <th>Item</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total Cost</th>
-    </tr>
+  <div class="product_block">
+    <div class="row mb-8 justify-content-center">
+      <div class="col-lg-3 col-md-6 mb-5">
+        <table style="width: 100%">
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Cost</th>
+        </tr>
 
-    <?php
-    if(isset($_SESSION["cart_item"])){
-        $total_quantity = 0;
-        $total_price = 0;
-	
-        foreach ($_SESSION["cart_item"] as $item){
-            $item_price = $item["quantity"]*$item[`Selling Price`]; ?>
-
-            <tr>
-                <td><?php echo $item["Name"]; ?></td>
-                <td><?php echo $item[`Selling Price`]; ?></td>
-                <td><?php echo $item["quantity"]; ?></td>
-                <td><?php echo $item_price; ?></td>
-                <td><a href="shopping-cart.php?action=remove&Name=<?php echo $item["Name"]; ?>" class="btnRemoveAction">Delete</a></td>
-            </tr>
         <?php
-        $total_quantity += $item["quantity"];
-        $total_price += ($item[`Selling Price`]*$item["quantity"]);  
-        } ?>
-        <td>Total Price</td>
-        <td></td>
-        <td></td>
-        <td><?php echo $total_price; ?></td>
-        </table> <?php
+        if(isset($_SESSION["cart_item"])){
+            $total_quantity = 0;
+            $total_price = 0;
+      
+            foreach ($_SESSION["cart_item"] as $item){
+                $item_price = $item["quantity"]*$item[`Selling Price`]; ?>
 
-    } else { ?>
-        <div>Your Cart is Empty</div>
-    <?php } ?>
+                <tr>
+                    <td><?php echo $item["Name"]; ?></td>
+                    <td><?php echo $item[`Selling Price`]; ?></td>
+                    <td><?php echo $item["quantity"]; ?></td>
+                    <td><?php echo $item_price; ?></td>
+                    <td><a href="shopping-cart.php?action=remove&Name=<?php echo $item["Name"]; ?>" class="btnRemoveAction">Delete</a></td>
+                </tr>
 
-    <!-- Button things -->
-    <div>
-        <button type="button" class="btn btn-black mr-1 rounded-0">Keep Shopping</button>
-        <button type="button" class="btn btn-black mr-1 rounded-0">Go to Checkout</button>
+            <?php
+            $total_quantity += $item["quantity"];
+            $total_price += ($item[`Selling Price`]*$item["quantity"]);  
+            } ?>
+            <td>Total Price</td>
+            <td></td>
+            <td></td>
+            <td><?php echo $total_price; ?></td>
+            </table> <?php
+
+        } else { ?>
+            <div>Your Cart is Empty</div>
+        <?php } ?>
+
+        <!-- Button things -->
+        <div>
+            <button type="button" class="btn btn-black mr-1 rounded-0">Keep Shopping</button>
+            <button type="button" class="btn btn-black mr-1 rounded-0">Go to Checkout</button>
+        </div>
+      </div>
     </div>
+  </div>
 
 <!-- Section Divider -->
 <div class="black_box_desc_div">

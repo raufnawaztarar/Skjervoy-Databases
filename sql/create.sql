@@ -296,10 +296,10 @@ VALUES
 	('5000111122223333','21 Gravel St', '', 'BB1 2FF','Bikini Bottom', 'International Waters'),
 	('5000111122223334','1 Glass Dome Close', 'South Field', 'BB4 001','Bikini Bottom', 'International Waters'),
 	('5500111122223333','88 Perth road', '', 'DD1 1AA','Dundee', 'Scotland'),
-	('5500111122223334','88', '', 'g41 2nt','Glasgow', 'Scotland'),
-	('5600111122223333','55', '', 'g41 2nt','Glasgow', 'Scotland'),
-	('5600111122223334','78', '', 'g41 2nt','Glasgow', 'Scotland'),
-	('5600111122223335','99', '', 'g41 2nt','Glasgow', 'Scotland');
+	('5500111122223334','88 Perth Road', '', 'G41 2ZX','Glasgow', 'Scotland'),
+	('5600111122223333','55 Rosefied street', '', 'G41 2TT','Glasgow', 'Scotland'),
+	('5600111122223334','237 Marmorvegen', '', '2611','Lillehammer', 'Norway'),
+	('5600111122223335','99 Stepps Road', 'Stepps', 'G55 1LL','Glasgow', 'Scotland');
 
 /*!40000 ALTER TABLE Addresses ENABLE KEYS */;
 UNLOCK TABLES;

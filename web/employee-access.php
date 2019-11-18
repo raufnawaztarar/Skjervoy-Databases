@@ -72,9 +72,44 @@
           </div>        
       </form>
   </div>
-
       
+    <!-- Avatar -->
+    <div class="avatar-box">    
+          <img class="avatar" src="resources/person_1.jpg" alt="Avatar">
+    </div>
+      
+    <!-- Section Divider -->
+    <div class="black_box_desc_div">
+    </div>
 
+    <!-- First Section-->
+    <div class="box_desc_employee">
+      <p class="center_box_desc_employee"><font face="javanese-text"->- Your Details -</font></p>
+      <p class="center_box_text_employee">Name - </p>
+      <p class="center_box_text_employee">ID - </p>        
+    </div>
+      
+    <!-- Section Divider -->
+    <div class="black_box_desc_div">
+    </div>
+      
+    <!-- Second Section-->
+    <div class="box_desc_employee">
+      <p class="center_box_desc_employee"><font face="javanese-text"->- Your Role -</font></p>
+      <p class="center_box_text_employee">Position - </p>
+      <p class="center_box_text_employee">Place of work - </p>
+      <p class="center_box_text_employee">Division - </p>   
+    </div>
+      
+    <!-- Section Divider -->
+    <div class="black_box_desc_div">
+    </div>
+      
+    <!-- Third Section-->
+    <div class="box_desc_employee">
+      <p class="center_box_desc_employee"><font face="javanese-text"->- Database Access -</font></p>
+    </div>   
+      
     <!-- Bottom Banner Colors-->
     <div class="bluebar"></div>
     <div class="whitebar"></div>

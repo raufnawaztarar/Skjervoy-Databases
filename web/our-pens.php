@@ -161,17 +161,19 @@
       <div class="row">
         <?php
 
-        mysql_connect("silva.computing.dundee.ac.uk", "19ac3u05", "abc123") or die(mysql_error());
-        mysql_select_db("19ac3d05") or die(mysql_error());
+        
+        require_once("dbcontroller.php");
+        $db_handle = new DBController();
 
-        $data = mysql_query("SELECT * FROM Products WHERE Type=\"Pen\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
+        $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Pen\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
+        if (!empty($product_array)) { 
+          foreach($product_array as $key=>$value){
+          $name = $product_array[$key]["Name"];
+          $price = $product_array[$key]["Selling Price"];
+          $series = $product_array[$key]["Series"];
+          $pictures = $product_array[$key]["Picture"]; ?>
 
-        while ($info = mysql_fetch_array($data)) {
-          $name = $info['Name'];
-          $price = $info['Selling Price'];
-          $series = $info['Series'];
-          $pictures = $info['Picture'] ?>
-
+          <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
           <div class="col-lg-4 col-md-6 mb-5">
             <div class="product-item">
               <figure>
@@ -181,15 +183,17 @@
                 <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
                 <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
                 <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-
+                <input type="text" name="quantity" value="1" size="2" />
                 <p class="mb-4"> </p>
                 <div>
-                  <a href="#" class="btn btn-black mr-1 rounded-0">Add to cart</a>
+                  <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
                 </div>
               </div>
             </div>
           </div>
-        <?php } ?>
+          </form>
+        <?php }
+        } ?>
       </div>
     </div>
   </div>

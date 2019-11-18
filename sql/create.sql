@@ -131,40 +131,40 @@ LOCK TABLES `Products` WRITE;
 /*!40000 ALTER TABLE `Products` DISABLE KEYS */;
 INSERT INTO `Products` (`Product ID`,Name,Type,`Buying Price`,`Selling Price`,Weight, Picture, Supplier, Series)
 VALUES 
-  ('3000111122223333','Fargerik', 'Pen','10.99','99.99','1','img/pen/fargerik.jpg','Lamy', 'Excellence'),
-  ('3000111122223334','Glatt', 'Pen','10.99','199.99','1','img/pen/glatt.jpg','Pilot', 'Elite'),
+  ('3000111122223333','Fargerik', 'Pen','10.99','99.99','1','img/pen/fargerik.jpg','Skjervoy', 'Excellence'),
+  ('3000111122223334','Glatt', 'Pen','10.99','199.99','1','img/pen/glatt.jpg','Skjervoy', 'Elite'),
   ('3000111122223335','Tre', 'Pen','10.99','9.99','1','img/pen/tre.jpg','Skjervoy', 'Fire'),
   ('3000111122223336','Levende', 'Pen','10.99','59.99','1','img/pen/levende.jpg','Skjervoy', 'Elite'),
   ('3000111122223337','Titan', 'Pen','10.99','49.99','1','img/pen/titan.jpg','Skjervoy', 'Excellence'),
   ('3000111122223338','Sukker', 'Pen','10.99','999.99','1','img/pen/sukker.jpg','Skjervoy', 'Fire'),
   ('3000111122223339','Energi', 'Pen','10.99','69.69','1','img/pen/energi.jpg','Skjervoy', 'Elite'),
-  ('3000111122223340','Syndiket', 'Pen','10.99','420','1','img/pen/syndikat.jpg','Lamy', 'Excellence'),
-  ('3000111122223341','Halogen', 'Pen','10.99','99.99','1','img/pen/halogen.jpg','Lamy', 'Elite'),
-  ('3000111122223342','Vestlig', 'Pen','10.99','99.99','1','img/pen/vestlig.jpg','Lamy', 'Excellence'),
-  ('3000111122223343','Brann', 'Pen','10.99','129.99','1','img/pen/brann.jpg','Pilot', 'Fire'),
-  ('3000111122223344','Sunn', 'Pen','10.99','89.99','1','img/pen/sunn.jpg','Pilot', 'Elite'),
-  ('3000111122223345','Metallutstyr', 'Pen','5.99','18.99','1','img/pen/metallutstyr.jpg','Pilot', 'Excellence'),
-  ('3000111122223346','Marken', 'Pen','10.99','82.99','1','img/pen/marken.jpg','Pilot', 'Elite'),
-  ('3000111122223347','Luksus', 'Pen','10.99','99.99','1','img/pen/luksus.jpg','Lamy', 'Fire'),
+  ('3000111122223340','Syndiket', 'Pen','10.99','420','1','img/pen/syndikat.jpg','Skjervoy', 'Excellence'),
+  ('3000111122223341','Halogen', 'Pen','10.99','99.99','1','img/pen/halogen.jpg','Skjervoy', 'Elite'),
+  ('3000111122223342','Vestlig', 'Pen','10.99','99.99','1','img/pen/vestlig.jpg','Skjervoy', 'Excellence'),
+  ('3000111122223343','Brann', 'Pen','10.99','129.99','1','img/pen/brann.jpg','Skjervoy', 'Fire'),
+  ('3000111122223344','Sunn', 'Pen','10.99','89.99','1','img/pen/sunn.jpg','Skjervoy', 'Elite'),
+  ('3000111122223345','Metallutstyr', 'Pen','5.99','18.99','1','img/pen/metallutstyr.jpg','Skjervoy', 'Excellence'),
+  ('3000111122223346','Marken', 'Pen','10.99','82.99','1','img/pen/marken.jpg','Skjervoy', 'Elite'),
+  ('3000111122223347','Luksus', 'Pen','10.99','99.99','1','img/pen/luksus.jpg','Skjervoy', 'Fire'),
 
-  ('3000111122223348','Vitaminer', 'Notebook','1.99','9.99','1','img/nb/vitaminer.jpg','Lamy', 'Fjord'),
+  ('3000111122223348','Vitaminer', 'Notebook','1.99','9.99','1','img/nb/vitaminer.jpg','Skjervoy', 'Fjord'),
   ('3000111122223349','Utholdenhet', 'Notebook','1.99','19.99','1','img/nb/utholdenhet.jpg','Skjervoy', 'Excellence'),
   ('3000111122223350','Gulrot', 'Notebook','1.99','19.99','1','img/nb/gulrot.jpg','Skjervoy', 'Elite'),
-  ('3000111122223351','Rockestjerne', 'Notebook','1.99','9.99','1','img/nb/rockestjerne.jpg','Lamy', 'Excellence'),
+  ('3000111122223351','Rockestjerne', 'Notebook','1.99','9.99','1','img/nb/rockestjerne.jpg','Skjervoy', 'Excellence'),
   ('3000111122223352','Eleganse', 'Notebook','1.99','8.99','1','img/nb/eleganse.jpg','Skjervoy', 'Elite'),
   ('3000111122223353','Forløsning', 'Notebook','1.99','7.99','1','img/nb/forlosning.jpg','Skjervoy', 'Fjord'),
-  ('3000111122223354','Nødvendig', 'Notebook','1.99','6.99','1','img/nb/nodvendig.jpg','Lamy', 'Elite'),
+  ('3000111122223354','Nødvendig', 'Notebook','1.99','6.99','1','img/nb/nodvendig.jpg','Skjervoy', 'Elite'),
   ('3000111122223355','Løve', 'Notebook','1.99','9.99','1','img/nb/love.jpg','Skjervoy', 'Fjord'),
-  ('3000111122223356','Kurer', 'Notebook','1.99','11.99','1','img/nb/kurer.jpg','Lamy', 'Elite'),
+  ('3000111122223356','Kurer', 'Notebook','1.99','11.99','1','img/nb/kurer.jpg','Skjervoy', 'Elite'),
   ('3000111122223357','Skapning', 'Notebook','1.99','12.99','1','img/nb/skapning.jpg','Skjervoy', 'Excellence'),
   ('3000111122223358','Korn', 'Notebook','1.99','8.99','1','img/nb/korn.jpg','Skjervoy', 'Elite'),
   ('3000111122223359','Moro', 'Notebook','1.99','7.99','1','img/nb/moro.jpg','Skjervoy', 'Fjord'),
-  ('3000111122223360','Kalibrering', 'Notebook','1.99','9.99','1','img/nb/kalibrering.jpg','Lamy', 'Elite'),
-  ('3000111122223361','Snikmorder', 'Notebook','0.99','8.99','1','img/nb/snikmorder.jpg','Lamy', 'Excellence'),
-  ('3000111122223362','Vann', 'Notebook','1.99','4.99','1','img/nb/vann.jpg','Lamy', 'Elite'),
+  ('3000111122223360','Kalibrering', 'Notebook','1.99','9.99','1','img/nb/kalibrering.jpg','Skjervoy', 'Elite'),
+  ('3000111122223361','Snikmorder', 'Notebook','0.99','8.99','1','img/nb/snikmorder.jpg','Skjervoy', 'Excellence'),
+  ('3000111122223362','Vann', 'Notebook','1.99','4.99','1','img/nb/vann.jpg','Skjervoy', 'Elite'),
 
   ('3000111122223363','Safari', 'Pen','16.99','28.99','1','img/pen/safari.jpg','Lamy', 'Other'),
-  ('3500111122223333','Metropolitan', 'Pen','12.99','21.99','1','img/pen/metropolitan.jpg','Lamy', 'Other')
+  ('3500111122223333','Metropolitan', 'Pen','12.99','21.99','1','img/pen/metropolitan.jpg','Pilot', 'Other')
   ;
 
 /*!40000 ALTER TABLE `Products` ENABLE KEYS */;

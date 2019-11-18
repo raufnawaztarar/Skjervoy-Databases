@@ -179,8 +179,11 @@
                   <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
                   <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
                   <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-                  <input type="text" name="quantity" value="1" size="2" />
-                  <p class="mb-4"> </p>
+                  <div class="def-number-input number-input safari_only">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                    <input class="quantity" min="1" name="quantity" value="1" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                  </div>
                   <div>
                     <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
                   </div>

@@ -174,8 +174,12 @@ if(!empty($_GET["action"])) {
 
         <!-- Button things -->
         <div>
-            <button type="button" class="btn btn-black mr-1 rounded-0">Keep Shopping</button>
-            <button type="button" class="btn btn-black mr-1 rounded-0">Go to Checkout</button>
+          <a href="our-pens.php"><button type="button" class="btn btn-black mr-1 rounded-0">Keep Shopping Pens</button></a>
+          <a href="our-notebooks.php"><button type="button" class="btn btn-black mr-1 rounded-0">Keep Shopping Notebooks</button></a>
+          <a href="error.php"><button type="button" class="btn btn-black mr-1 rounded-0">Go to Checkout</button></a>
+          <form class="form" method="post" action="shopping-cart.php?action=empty">
+            <input type="submit" class="btn btn-black mr-1 rounded-0" value="Clear Cart"/>
+          </form>
         </div>
       </div>
     </div>

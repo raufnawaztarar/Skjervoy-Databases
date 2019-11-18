@@ -88,42 +88,65 @@
         <div class="container">
             <div class="row">
 
+                <?php
+                $server = "silva.computing.dundee.ac.uk";
+                $user = "19ac3u05";
+                $pass = "abc123";
+                $database = "19ac3d05";
+
+
+                $mysql = new PDO("mysql:host=" . $server . ";dbname=" . $database, $user, $pass);
+                //not sure what the next line is, from
+                //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
+                $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                ?>
 
                 <?php
+                try {
+                    $stmt = $mysql->prepare("SELECT * FROM Products WHERE Name LIKE concat('%', :Query, '%')
+                    OR Series LIKE concat('%', :Query,'%')");
+                    $stmt->bindParam(":Query", $query);
 
-                mysql_connect("silva.computing.dundee.ac.uk", "19ac3u05", "abc123") or die(mysql_error());
-                mysql_select_db("19ac3d05") or die(mysql_error());
+                    // gets value sent over search form
+                    $query = $_GET['query'];
 
+                    $stmt->execute();
 
-                $query = $_GET['query'];
-                // gets value sent over search form
+                    $found_some = false;
+                    while ($info = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $found_some = true;
+                        $name = $info['Name'];
+                        $price = $info['Selling Price'];
+                        $series = $info['Series'];
+                        $pictures = $info['Picture'] ?>
 
-                $data = mysql_query("SELECT * FROM Products WHERE Name Like \"%$query%\" OR Series Like \"%$query%\"") or die(mysql_error('No Records Found'));
+                        <div class="col-lg-4 col-md-6 mb-5">
+                            <div class="product-item">
+                                <figure>
+                                    <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
+                                </figure>
+                                <div class="px-4">
+                                    <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
+                                    <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                                    <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
 
-                while ($info = mysql_fetch_array($data)) {
-                    $name = $info['Name'];
-                    $price = $info['Selling Price'];
-                    $series = $info['Series'];
-                    $pictures = $info['Picture'] ?>
-
-                    <div class="col-lg-4 col-md-6 mb-5">
-                        <div class="product-item">
-                            <figure>
-                                <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
-                            </figure>
-                            <div class="px-4">
-                                <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
-                                <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
-                                <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-
-                                <p class="mb-4"> </p>
-                                <div>
-                                    <button class="btn btn-black mr-1 rounded-0">Add to cart</a>
+                                    <p class="mb-4"> </p>
+                                    <div>
+                                        <button class="btn btn-black mr-1 rounded-0">Add to cart</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php } ?>
+                    <?php }
+                        if (!$found_some) {
+                        ?>
+                            <h3 style="font-size: 3vh;"><?php echo $query; ?> not found 😢</h3>
+                        <?php
+                    }
+                } catch (PDOException $e) {
+                    echo "Error:" . $e->getMessage();
+                }
+                ?>
 
 
             </div>

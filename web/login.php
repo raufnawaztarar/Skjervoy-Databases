@@ -112,6 +112,9 @@
             </font>
           </p>
           <img class = "flag" src="../web/resources/flag.png" alt="norsk flag" height=auto width=auto>
+          <p>
+              <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
+            </p>
         </div>
         <div class="col text-right">
           <div class="widget">

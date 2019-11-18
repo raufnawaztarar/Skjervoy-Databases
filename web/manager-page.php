@@ -69,8 +69,25 @@
 
   session_start();
 
-  $id = $_SESSION['varname'];
-  $role = $_SESSION['varname2'];
+
+  if(isset($_SESSION['varname2']))
+  {
+    echo $_SESSION['varname2'];
+    $id = $_SESSION['varname'];
+    $role = $_SESSION['varname2'];
+
+    if ($role != "Manager") {
+      
+    ?> <script type="text/javascript">
+        window.location.href = "error.php";
+    </script> <?php
+    }
+
+  } else {
+    ?> <script type="text/javascript">
+        window.location.href = "error.php";
+    </script> <?php
+  }
 
   $data = mysql_query("SELECT * FROM Employees WHERE `Employee ID` = \"$id\"") or die(mysql_error('No Records Found'));
 
@@ -102,7 +119,6 @@
     $city = $info3['City'];
     $country = $info3['Country'];
   }
-
   ?>
 
   <!-- Avatar -->
@@ -175,6 +191,11 @@
     <div class="bluebar"></div>
     <div class="whitebar"></div>
     <div class="redbar"></div>
+
+   <!-- Bottom Banner Colors-->
+   <div class="bluebar"></div>
+  <div class="whitebar"></div>
+  <div class="redbar"></div>
 
   <!-- Footer-->
   <footer id="footer" class="footer-1">

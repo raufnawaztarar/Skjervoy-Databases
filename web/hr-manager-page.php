@@ -91,19 +91,38 @@
   //not sure what the next line is, from
   //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
   $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  ?>
 
-  <?php
-  try {
+  session_start();
+  //preventing direct link access
 
-    //$mysql = new mysqli($server, $user, $pass, $database);
+  if (isset($_SESSION['varname2']))
+  {
+    $id = $_SESSION['varname'];
+    $role = $_SESSION['varname2'];
 
-      $stmt = $mysql->prepare(
-        "SELECT `Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details` FROM Employees"
-      );
+    if ($role != "HR Manager") {
 
-      $stmt->execute();
-      echo "<table>\n
+      ?> <script type="text/javascript">
+        window.location.href = "error.php";
+      </script> <?php
+                  }
+                } 
+  else {
+                  ?> <script type="text/javascript">
+      window.location.href = "error.php";
+    </script> <?php
+              }
+
+              try {
+
+                //$mysql = new mysqli($server, $user, $pass, $database);
+
+                $stmt = $mysql->prepare(
+                  "SELECT `Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details` FROM Employees"
+                );
+
+                $stmt->execute();
+                echo "<table>\n
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -113,15 +132,15 @@
             <th>Role</th>
             <th>Bank details</th>
         </tr>";
-      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $employee_id_found = $row['Employee ID'];
-        $name = $row['Name'];
-        $email = $row['Email'];
-        $phone = $row['Phone'];
-        $salary = $row['Salary'];
-        $role = $row['Role'];
-        $bank_details = $row['Bank Details'];
-        echo "<tr>
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                  $employee_id_found = $row['Employee ID'];
+                  $name = $row['Name'];
+                  $email = $row['Email'];
+                  $phone = $row['Phone'];
+                  $salary = $row['Salary'];
+                  $role = $row['Role'];
+                  $bank_details = $row['Bank Details'];
+                  echo "<tr>
             <td>$employee_id_found</td>
             <td>$name</td>
             <td>$email</td>
@@ -134,15 +153,13 @@
             type=\"submit\" value=\"$employee_id_found\" name=\"employee-id-button\">
                 Edit</button></form></td>
         </tr>";
-      }
-      echo "</table>";
-      if (!isset($employee_id_found)) {
-        echo "No employees found 😢 <br/>";
-      }
-
-  } catch (PDOException $e) {
-  }
-  ?>
+                }
+                echo "</table>";
+                if (!isset($employee_id_found)) {
+                  echo "No employees found 😢 <br/>";
+                }
+              } catch (PDOException $e) { }
+              ?>
 
   </div>
 
@@ -152,7 +169,7 @@
   <div class="whitebar"></div>
   <div class="redbar"></div>
 
-  <!-- Footer -->
+  <!-- Footer-->
   <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
       <div class="container">
@@ -178,7 +195,6 @@
               </ul>
             </div>
           </div>
-
           <div class="col text-center">
             <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
               <font face="kollektif">Store Opening Hours<br>
@@ -191,7 +207,6 @@
               <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
             </p>
           </div>
-
           <div class="col text-right">
             <div class="widget">
               <h5 class="widget-title">
@@ -202,7 +217,7 @@
                   <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="#.">Employee Access</a></div>
+                  <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
                 </li>
               </ul>
             </div>
@@ -211,7 +226,6 @@
       </div>
     </div>
   </footer>
-
 
 </body>
 

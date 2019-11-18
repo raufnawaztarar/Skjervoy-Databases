@@ -216,7 +216,7 @@ if(!empty($_GET["action"])) {
   <div class="whitebar"></div>
   <div class="redbar"></div>
 
-  <!-- Footer -->
+  <!-- Footer-->
   <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
       <div class="container">
@@ -242,7 +242,6 @@ if(!empty($_GET["action"])) {
               </ul>
             </div>
           </div>
-
           <div class="col text-center">
             <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
               <font face="kollektif">Store Opening Hours<br>
@@ -255,7 +254,6 @@ if(!empty($_GET["action"])) {
               <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
             </p>
           </div>
-
           <div class="col text-right">
             <div class="widget">
               <h5 class="widget-title">
@@ -266,7 +264,7 @@ if(!empty($_GET["action"])) {
                   <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="#.">Employee Access</a></div>
+                  <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
                 </li>
               </ul>
             </div>
@@ -275,6 +273,7 @@ if(!empty($_GET["action"])) {
       </div>
     </div>
   </footer>
+
 </body>
 
 </html>

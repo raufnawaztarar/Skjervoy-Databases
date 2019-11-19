@@ -251,12 +251,12 @@
 
               $building_id = $row['Building'];
               $buildingstmt = $mysql->prepare(
-                "SELECT City FROM Addresses INNER JOIN Buildings ON Addresses.`Address ID` = Buildings.Address 
+                "SELECT City, Country FROM Addresses INNER JOIN Buildings ON Addresses.`Address ID` = Buildings.Address 
                 WHERE Buildings.`Building ID`=:Building_ID");
-              $buildingstmt->bindParam(':building_ID', $building_id);
+              $buildingstmt->bindParam(':Building_ID', $building_id);
               $buildingstmt->execute();
               $buildingrow = $buildingstmt->fetch(PDO::FETCH_ASSOC);
-              $city = $buildingrow['City'];
+              $city = $buildingrow['City'] . ", " . $buildingrow['Country'];
 
               echo "<tr>
 <td>$employee_id_found</td>

@@ -1,0 +1,10 @@
+The images were downloaded from unsplash.com. Under the Unsplash license, the photos published in their library can be used for free and crediting the source is not required. 
+
+The our-pens, our-notebooks, and our-locations pages contain parts from the free Selling template by Colorlib. The template is available via colorlib.com/wp/template/selling. 
+Specifically, we reused the Products section and adapted it to showcase our pens and notebooks, as well as the Featured Products sections to display our stores. 
+All the files in ../web/css/, ../web/scss/, ../web/fonts/, and ../web/js/ folders are copied from this template, with modifications made to CSS. 
+
+The footer is based on the Codepen public template available via codepen.io/digitalavinash/pen/VjGGgp. We reused mostly the CSS which was appended to the ../web/style.css file. 
+
+For nav bar, search bar, and buttons we used Bootstrap libraries and modified them to match the initial designs. 
+

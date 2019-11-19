@@ -194,6 +194,11 @@
     <!-- Section Divider -->
     <div class="black_box_desc_div">
     </div>
+
+    <p class="center_box_desc_employee">
+        <font face="javanese-text" ->- Product Tools -</font>
+      </p>
+      
     <!-- Pens Product Category-->
     <div class="flex container">
       <div class="row">
@@ -418,13 +423,16 @@ VALUE (:Product_ID, :Name, :Type, :Buying_price, :Selling_price, :Weight, :Pictu
         </div>
       </div>
     </div>
+    <div class="black_box_desc_div" style ="margin-top:50px;">
+    </div>
 
     <!-- Third Section-->
     <div class="box_desc_employee">
       <p class="center_box_desc_employee">
-        <font face="javanese-text" ->- Database Access -</font>
+        <font face="javanese-text" ->- Product Database -</font>
       </p>
-
+      
+      <div class="flex container">
       <table style="width:100%">
         <tr>
           <th>Product ID</th>
@@ -433,11 +441,16 @@ VALUE (:Product_ID, :Name, :Type, :Buying_price, :Selling_price, :Weight, :Pictu
           <th>Name</th>
           <th>Buying Price</th>
           <th>Selling Price</th>
+          <th>Order</th>
         </tr>
 
         <?php
 
-        $stmt = $mysql->prepare("SELECT * FROM Products");
+
+        // $productdata = mysql_query("SELECT * FROM Products") or die(mysql_error('No Records Found'));
+
+
+        $stmt = $mysql->prepare("SELECT * FROM Products ORDER BY Name ASC");
         $stmt->execute();
         while ($prod = $stmt->fetch(PDO::FETCH_ASSOC)) {
           $productid = $prod['Product ID'];
@@ -462,7 +475,10 @@ VALUE (:Product_ID, :Name, :Type, :Buying_price, :Selling_price, :Weight, :Pictu
 
         <?php } ?>
       </table>
+      </div>
 
+      <div class="black_box_desc_div" style ="margin-bottom:50px;margin-top:50px;">
+    </div>
 
       <!-- Bottom Banner Colors-->
       <div class="bluebar"></div>

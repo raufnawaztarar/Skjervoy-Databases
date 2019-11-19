@@ -137,6 +137,31 @@
     padding-right: 25%;
 }
 
+.center_form_heading {
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    padding-top: 50px;
+    padding-bottom: 5px;
+}
+
+.center_form_span{
+    background: black;
+    display: block;
+    height: 1.7px;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.center_form_item{
+    text-align: left;
+    font-size: 15px;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
 .center_splash_heading {
     position: inline;
     font-size: 50px;

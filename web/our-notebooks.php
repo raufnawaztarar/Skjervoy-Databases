@@ -93,7 +93,7 @@
         <div class="col-lg-3 col-md-6 mb-5">
           <div class="product-item">
             <figure>
-              <img src="resources/excellence.jpg" alt="Image" class="img-fluid">
+              <img src="resources/fjord-nb.jpg" alt="Image" class="img-fluid">
             </figure>
             <div class="px-4">
               <h3 style="font-size: 3vh;">Fjord Series</h3>
@@ -110,7 +110,7 @@
         <div class="col-lg-3 col-md-6 mb-5">
           <div class="product-item">
             <figure>
-              <img src="resources/fire.jpg" alt="Image" class="img-fluid">
+              <img src="resources/excellence-nb.jpg" alt="Image" class="img-fluid">
             </figure>
             <div class="px-4">
               <h3 style="font-size: 3vh;">Excellence Series</h3>
@@ -127,7 +127,7 @@
         <div class="col-lg-3 col-md-6 mb-5">
           <div class="product-item">
             <figure>
-              <img src="resources/elite.jpg" alt="Image" class="img-fluid">
+              <img src="resources/elite-nb.jpg" alt="Image" class="img-fluid">
             </figure>
             <div class="px-4">
               <h3 style="font-size: 3vh;">Elite Series</h3>

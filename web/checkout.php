@@ -91,60 +91,69 @@
   </div>
   
   <!-- Delivery Address -->
-  <div>
+  <?php if (isset($_SESSION['name'])) { ?>
+  <div class="container">
     <form action="confirm.php" method="post">
-        <div>
-            <div class="form-group">
-                <label>First Line of Address</label>
-                <input type="text" class="form-control" name="first" placeholder="123 House Street">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>First Line of Address</label>
+                    <input type="text" class="form-control" name="first" placeholder="123 House Street">
+                </div>
+                
+                <div class="form-group">
+                    <label>Second Line of Address</label>
+                    <input type="text" class="form-control" name="second">
+                </div>
+                
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" name="city" placeholder="Cityville">
+                </div>
+                
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control" name="country" placeholder="Countryland">
+                </div>
+                
+                <div class="form-group">
+                    <label>Postcode</label>
+                    <input type="text" class="form-control" name="postcode" placeholder="PO57 1AD">
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label>Second Line of Address</label>
-                <input type="text" class="form-control" name="second">
+            <div class="col">
+                <div class="form-group">
+                    <label>Name on Card</label>
+                    <input type="text" class="form-control" name="card-name" placeholder="Mr Firstname Surname">
+                </div>
+                
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="number" class="form-control" name="card-number" placeholder="1234 4321 1234 4321">
+                </div>
+                
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="text" class="form-control" name="card-date" placeholder="05/25">
+                </div>
+                
+                <div class="form-group">
+                    <label>CVC Number</label>
+                    <input type="number" class="form-control" name="card-cvc" min="0" max="999" placeholder="666">
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label>City</label>
-                <input type="text" class="form-control" name="city" placeholder="Cityville">
-            </div>
-            
-            <div class="form-group">
-                <label>Country</label>
-                <input type="text" class="form-control" name="country" placeholder="Countryland">
-            </div>
-            
-            <div class="form-group">
-                <label>Postcode</label>
-                <input type="text" class="form-control" name="postcode" placeholder="PO57 1AD">
-            </div>
-        </div>
-        <div>
-            <div class="form-group">
-                <label>Name on Card</label>
-                <input type="text" class="form-control" name="card-name" placeholder="Mr Firstname Surname">
-            </div>
-            
-            <div class="form-group">
-                <label>Card Number</label>
-                <input type="number" class="form-control" name="card-number" placeholder="1234 4321 1234 4321">
-            </div>
-            
-            <div class="form-group">
-                <label>Expiry Date</label>
-                <input type="text" class="form-control" name="card-date" placeholder="05/25">
-            </div>
-            
-            <div class="form-group">
-                <label>CVC Number</label>
-                <input type="number" class="form-control" name="card-cvc" min="0" max="999" placeholder="666">
-            </div>
-        </div>
+          </div>
         <div class="form-group">
             <input type="submit" class="btn btn-black mr-1 rounded-0" value="Continue">
         </div>
-    </form>
-</div>
+        </form>
+    </div>
+  <?php } else { ?>
+    <div>
+        <p> Please log in </p>
+  </div>
+  <?php } ?>
+
 
 
 

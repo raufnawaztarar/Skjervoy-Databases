@@ -122,23 +122,32 @@
                         $series = $info['Series'];
                         $pictures = $info['Picture'] ?>
 
-                        <div class="col-lg-4 col-md-6 mb-5">
-                            <div class="product-item">
-                                <figure>
-                                    <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
-                                </figure>
-                                <div class="px-4">
-                                    <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
-                                    <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
-                                    <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-
-                                    <p class="mb-4"> </p>
-                                    <div>
-                                        <button class="btn btn-black mr-1 rounded-0">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  <div class="col-lg-4 col-md-6 mb-5">
+                  <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $info["Name"]; ?>">
+                  <div class="product-item">
+                    <figure>
+                      <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
+                    </figure>
+                    <div class="px-4">
+                      <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
+                      <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                      <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
+                      <div class="form-group">
+                        <select class="form-control" name="quantity">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+                      <div>
+                          <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+                      </div>
+                </div>
+              </div>
+            </form>
+          </div>
                     <?php }
                         if (!$found_some) {
                         ?>

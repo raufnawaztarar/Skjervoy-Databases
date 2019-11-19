@@ -148,11 +148,11 @@
 
 
   <div class="site-section" id="products-section">
-    <div class="container">
+  <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-md-6 text-center">
-          <h3 class="section-sub-title">Explore All</h3>
-          <h2 class="section-title mb-3">Our Pens</h2>
+          <h3 class="section-sub-title">Explore Our</h3>
+          <h2 class="section-title mb-3">Excellence Series</h2>
         </div>
       </div>
       <div class="row">
@@ -162,7 +162,7 @@
         require_once("dbcontroller.php");
         $db_handle = new DBController();
 
-        $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Pen\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
+        $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Excellence\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
 
         if (!empty($product_array)) { 
           foreach($product_array as $key=>$value){
@@ -196,7 +196,154 @@
         <?php } } ?>
       </div>
     </div>
-  </div>
+
+
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-md-6 text-center">
+          <h3 class="section-sub-title">Explore Our</h3>
+          <h2 class="section-title mb-3">Fire Series</h2>
+        </div>
+      </div>
+      <div class="row">
+        <?php
+
+        
+        require_once("dbcontroller.php");
+        $db_handle = new DBController();
+
+        $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Fire\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
+
+        if (!empty($product_array)) { 
+          foreach($product_array as $key=>$value){
+          $name = $product_array[$key]["Name"];
+          $price = $product_array[$key]["Selling Price"];
+          $series = $product_array[$key]["Series"];
+          $pictures = $product_array[$key]["Picture"]; ?>
+
+          <div class="col-lg-4 col-md-6 mb-5">
+          <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
+            <div class="product-item">
+              <figure>
+                <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
+                <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
+                <div class="def-number-input number-input safari_only">
+                  <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                  <input class="quantity" min="1" name="quantity" value="1" type="number">
+                  <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                </div>
+                <div>
+                  <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+                </div>
+              </div>
+            </div>
+          </form>
+          </div>
+        <?php } } ?>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-md-6 text-center">
+          <h3 class="section-sub-title">Explore Our</h3>
+          <h2 class="section-title mb-3">Elite Series</h2>
+        </div>
+      </div>
+      <div class="row">
+        <?php
+
+        
+        require_once("dbcontroller.php");
+        $db_handle = new DBController();
+
+        $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Excellence\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
+
+        if (!empty($product_array)) { 
+          foreach($product_array as $key=>$value){
+          $name = $product_array[$key]["Name"];
+          $price = $product_array[$key]["Selling Price"];
+          $series = $product_array[$key]["Series"];
+          $pictures = $product_array[$key]["Picture"]; ?>
+
+          <div class="col-lg-4 col-md-6 mb-5">
+          <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
+            <div class="product-item">
+              <figure>
+                <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
+                <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
+                <div class="def-number-input number-input safari_only">
+                  <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                  <input class="quantity" min="1" name="quantity" value="1" type="number">
+                  <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                </div>
+                <div>
+                  <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+                </div>
+              </div>
+            </div>
+          </form>
+          </div>
+        <?php } } ?>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-md-6 text-center">
+          <h3 class="section-sub-title">Explore Our</h3>
+          <h2 class="section-title mb-3">Other Pens</h2>
+        </div>
+      </div>
+      <div class="row">
+        <?php
+
+        
+        require_once("dbcontroller.php");
+        $db_handle = new DBController();
+
+        $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Pen\" AND Series=\"Other\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
+
+        if (!empty($product_array)) { 
+          foreach($product_array as $key=>$value){
+          $name = $product_array[$key]["Name"];
+          $price = $product_array[$key]["Selling Price"];
+          $series = $product_array[$key]["Series"];
+          $pictures = $product_array[$key]["Picture"]; ?>
+
+          <div class="col-lg-4 col-md-6 mb-5">
+          <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
+            <div class="product-item">
+              <figure>
+                <img src="<?php echo $pictures ?>" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
+                <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
+                <div class="def-number-input number-input safari_only">
+                  <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                  <input class="quantity" min="1" name="quantity" value="1" type="number">
+                  <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                </div>
+                <div>
+                  <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+                </div>
+              </div>
+            </div>
+          </form>
+          </div>
+        <?php } } ?>
+      </div>
+    </div>
   </div>
 
   <!-- Section Divider -->

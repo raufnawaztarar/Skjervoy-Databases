@@ -53,7 +53,7 @@
         <div class="redbar"></div>
     </div>
 
-    <!-- Navigation -->
+  <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -83,77 +83,73 @@
     </div>
   </nav>
 
-
-    <br><br>
-
-    <div class="site-section" id="products-section">
-        <div class="container">
-            <div class="row">
-
-                <?php
-                $server = "silva.computing.dundee.ac.uk";
-                $user = "19ac3u05";
-                $pass = "abc123";
-                $database = "19ac3d05";
-
-
-                $mysql = new PDO("mysql:host=" . $server . ";dbname=" . $database, $user, $pass);
-                //not sure what the next line is, from
-                //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
-                $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                ?>
-
-                <?php
-                try {
-                    $stmt = $mysql->prepare("SELECT * FROM Products WHERE Name LIKE concat('%', :Query, '%')
-                    OR Series LIKE concat('%', :Query,'%')");
-                    $stmt->bindParam(":Query", $query);
-
-                    // gets value sent over search form
-                    $query = $_GET['query'];
-
-                    $stmt->execute();
-
-                    $found_some = false;
-                    while ($info = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        $found_some = true;
-                        $name = $info['Name'];
-                        $price = $info['Selling Price'];
-                        $series = $info['Series'];
-                        $pictures = $info['Picture'] ?>
-
-                        <div class="col-lg-4 col-md-6 mb-5">
-                            <div class="product-item">
-                                <figure>
-                                    <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
-                                </figure>
-                                <div class="px-4">
-                                    <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
-                                    <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
-                                    <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-
-                                    <p class="mb-4"> </p>
-                                    <div>
-                                        <button class="btn btn-black mr-1 rounded-0">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php }
-                        if (!$found_some) {
-                        ?>
-                            <h3 style="font-size: 3vh;"><?php echo $query; ?> not found 😢</h3>
-                        <?php
-                    }
-                } catch (PDOException $e) {
-                    echo "Error:" . $e->getMessage();
-                }
-                ?>
-
-
+  <!-- Display Cost -->
+  <div style="margin-top: 150px">
+      <div>
+          <h1> Total Cost: <?php echo $_SESSION['total_price']; ?> </h1>
+    </div>
+  </div>
+  
+  <!-- Delivery Address -->
+  <div>
+    <form action="confirm.php" method="post">
+        <div>
+            <div class="form-group">
+                <label>First Line of Address</label>
+                <input type="text" class="form-control" name="first" placeholder="123 House Street">
+            </div>
+            
+            <div class="form-group">
+                <label>Second Line of Address</label>
+                <input type="text" class="form-control" name="second">
+            </div>
+            
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" class="form-control" name="city" placeholder="Cityville">
+            </div>
+            
+            <div class="form-group">
+                <label>Country</label>
+                <input type="text" class="form-control" name="country" placeholder="Countryland">
+            </div>
+            
+            <div class="form-group">
+                <label>Postcode</label>
+                <input type="text" class="form-control" name="postcode" placeholder="PO57 1AD">
             </div>
         </div>
-    </div>
+        <div>
+            <div class="form-group">
+                <label>Name on Card</label>
+                <input type="text" class="form-control" name="card-name" placeholder="Mr Firstname Surname">
+            </div>
+            
+            <div class="form-group">
+                <label>Card Number</label>
+                <input type="number" class="form-control" name="card-number" placeholder="1234 4321 1234 4321">
+            </div>
+            
+            <div class="form-group">
+                <label>Expiry Date</label>
+                <input type="text" class="form-control" name="card-date" placeholder="05/25">
+            </div>
+            
+            <div class="form-group">
+                <label>CVC Number</label>
+                <input type="number" class="form-control" name="card-cvc" min="0" max="999" placeholder="666">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-black mr-1 rounded-0" value="Continue">
+        </div>
+    </form>
+</div>
+
+
+
+
+
 
     <!-- Bottom Banner Colors-->
     <div class="bluebar"></div>

@@ -86,7 +86,7 @@
           <div class="col-md-6 text-center">
             <h3 class="section-sub-title">Where to find us</h3>
             <h2 class="section-title mb-3">Our Stores</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.</p>
+            <p>Skjervoy luxury stationary shops offer you the best experience when buying a new pen or a notebook for those life-changing decisions. All of our stores offer you the most luxurious experience when shopping, so you can rest easy that you are getting the most high-quality products available!</p>
           </div>
         </div>
 
@@ -101,8 +101,8 @@
             <div class="col-md-5 ml-auto product-title-wrap">
               <span class="number">SCOT</span>
               <h3 class="text-black mb-4 font-weight-bold">Glasgow</h3>
-              <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+              <p class="mb-4">Skjervoy luxury stationary shops offer you the best experience when buying a new pen or a notebook for those life-changing decisions. All of our stores offer you the most luxurious experience when shopping, so you can rest easy that you are getting the most high-quality products available!</p>
+              <p>New Christmas Series coming soon!</p>
             </div>
           </div>
         </div>
@@ -117,8 +117,8 @@
             <div class="col-md-5 ml-auto product-title-wrap">
               <span class="number">NOR</span>
               <h3 class="text-black mb-4 font-weight-bold">Oslo</h3>
-              <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+              <p class="mb-4">Skjervoy luxury stationary shops offer you the best experience when buying a new pen or a notebook for those life-changing decisions. All of our stores offer you the most luxurious experience when shopping, so you can rest easy that you are getting the most high-quality products available!</p>
+              <p>New Christmas Series coming soon!</p>
             </div>
           </div>
         </div>
@@ -132,8 +132,8 @@
             <div class="col-md-5 ml-auto product-title-wrap">
               <span class="number">ENG</span>
               <h3 class="text-black mb-4 font-weight-bold">London</h3>
-              <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+              <p class="mb-4">Skjervoy luxury stationary shops offer you the best experience when buying a new pen or a notebook for those life-changing decisions. All of our stores offer you the most luxurious experience when shopping, so you can rest easy that you are getting the most high-quality products available!</p>
+              <p>New Christmas Series coming soon!</p>
             </div>
           </div>
         </div>

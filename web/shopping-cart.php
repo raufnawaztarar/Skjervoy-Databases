@@ -194,6 +194,7 @@ $total_price += ($item[`Selling Price`]*$item["quantity"]);
         </td> 
       </table>
       <?php
+      $_SESSION['total_price'] = $total_price;
 } else { ?>
       <!-- Section Divider -->
       <div class="cart-divider">

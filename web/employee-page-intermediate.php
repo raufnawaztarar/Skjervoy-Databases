@@ -35,6 +35,10 @@ if ($role == NULL) { ?>
     <script type="text/javascript">
         window.location.href = "assistant-page.php";
     </script>
+<?php } else if ($role == "Warehouse Assistant") { ?>
+    <script type="text/javascript">
+        window.location.href = "warehouse-assistant-page.php";
+    </script>
 <?php } else if ($role == "HR Manager") { ?>
     <script type="text/javascript">
         window.location.href = "hr-manager-page.php";

@@ -155,11 +155,10 @@
         </div>
     </div>
 
-    <!-- Bottom Banner Colors-->
-    <div class="bluebar"></div>
-    <div class="whitebar"></div>
-    <div class="redbar"></div>
-
+  <!-- Bottom Banner Colors-->
+  <div class="bluebar"></div>
+  <div class="whitebar"></div>
+  <div class="redbar"></div>
 
   <!-- Footer-->
   <footer id="footer" class="footer-1">

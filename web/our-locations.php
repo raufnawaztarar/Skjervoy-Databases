@@ -80,7 +80,6 @@
         <img class ="splash" src="resources/stores.jpg" alt="black and white fjord" style="width:100%;">
     </div>
       
-      
     <div class="site-section bg-light">
       <div class="container">
         <div class="row mb-5 justify-content-center">
@@ -90,31 +89,34 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.</p>
           </div>
         </div>
-          
-        <div class="bg-white py-4 mb-4">
+
+
+
+  <div class="bg-white py-4 mb-4">
           <div class="row mx-4 my-4 product-item-2 align-items-start">
             <div class="col-md-6 mb-5 mb-md-0">
-              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+              <img src="img/location/location1.jpg" alt="Image" class="img-fluid">
             </div>
            
             <div class="col-md-5 ml-auto product-title-wrap">
-              <span class="number">01.</span>
-              <h3 class="text-black mb-4 font-weight-bold">Location 1</h3>
+              <span class="number">SCOT</span>
+              <h3 class="text-black mb-4 font-weight-bold">Glasgow</h3>
               <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
             </div>
           </div>
         </div>
 
+
         <div class="bg-white py-4 mb-4">
           <div class="row mx-4 my-4 product-item-2 align-items-start">
             <div class="col-md-6 mb-5 mb-md-0">
-              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+              <img src="img/location/location2.jpg" alt="Image" class="img-fluid">
             </div>
            
             <div class="col-md-5 ml-auto product-title-wrap">
-              <span class="number">02.</span>
-              <h3 class="text-black mb-4 font-weight-bold">Location 2</h3>
+              <span class="number">NOR</span>
+              <h3 class="text-black mb-4 font-weight-bold">Oslo</h3>
               <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
             </div>
@@ -124,12 +126,12 @@
         <div class="bg-white py-4 mb-4">
           <div class="row mx-4 my-4 product-item-2 align-items-start">
             <div class="col-md-6 mb-5 mb-md-0">
-              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+              <img src="img/location/location3.jpg" alt="Image" class="img-fluid">
             </div>
            
             <div class="col-md-5 ml-auto product-title-wrap">
-              <span class="number">03.</span>
-              <h3 class="text-black mb-4 font-weight-bold">Location 3</h3>
+              <span class="number">ENG</span>
+              <h3 class="text-black mb-4 font-weight-bold">London</h3>
               <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
             </div>
@@ -142,62 +144,69 @@
       
     
 
-     <!-- Bottom Banner Colors-->
-     <div class="bluebar"></div>
-     <div class="whitebar"></div>
-     <div class="redbar"></div>
-     
-     <!-- Footer -->
-     <footer id="footer" class="footer-1">
-     <div class="main-footer widgets-dark typo-light">
-         <div class="container">
-             <div class="row justify-content-center">
-                     <div class="col text-left">
-                         <div class="widget">
-                             <h5 class="widget-title"><font face="javanese-text">Quick Links</font><span></span></h5>
-                                 <ul class="thumbnail-widget">
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Home</a></div>	
-                                     </li>
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Products</a></div>	
-                                     </li>
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Store Guide</a></div>	
-                                     </li>
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Track Orders</a></div>	
-                                     </li>
-                             </ul>
-                         </div>
-                     </div>
-     
-                     <div class="col text-center">
-                         <p><img class ="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
-                             <font face="kollektif" >Store Opening Hours<br>
-                             Mon - Fri: 9 AM - 6 PM<br>
-                             Sat - Sun: 10 AM - 5 PM<br>
-                             </font>
-                         </p>
-                         <img class = "flag" src="../web/resources/flag.png" alt="norsk flag" height=auto width=auto>
-                     </div>
- 
-                     <div class="col text-right">
-                             <div class="widget">
-                                 <h5 class="widget-title"><font face="javanese-text">Company Information</font><span></span></h5>
-                                 <ul class="thumbnail-widget">
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Privacy Policy</a></div>	
-                                     </li>
-                                     <li>
-                                         <div class="thumb-content"><a href="#.">Employee Access</a></div>	
-                                     </li>
-                                 </ul>
-                             </div>
-                     </div>     
-                </div>
+  <!-- Bottom Banner Colors-->
+  <div class="bluebar"></div>
+  <div class="whitebar"></div>
+  <div class="redbar"></div>
+
+  <!-- Footer-->
+  <footer id="footer" class="footer-1">
+    <div class="main-footer widgets-dark typo-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col text-left">
+            <div class="widget">
+              <h5 class="widget-title">
+                <font face="javanese-text">Quick Links</font><span></span>
+              </h5>
+              <ul class="thumbnail-widget">
+                <li>
+                  <div class="thumb-content"><a href="#.">Home</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="#.">Products</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="#.">Store Guide</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="#.">Track Orders</a></div>
+                </li>
+              </ul>
             </div>
-         </div>
-    </footer>
+          </div>
+          <div class="col text-center">
+            <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
+              <font face="kollektif">Store Opening Hours<br>
+                Mon - Fri: 9 AM - 6 PM<br>
+                Sat - Sun: 10 AM - 5 PM<br>
+              </font>
+            </p>
+            <img class="flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
+            <p>
+              <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
+            </p>
+          </div>
+          <div class="col text-right">
+            <div class="widget">
+              <h5 class="widget-title">
+                <font face="javanese-text">Company Information</font><span></span>
+              </h5>
+              <ul class="thumbnail-widget">
+                <li>
+                  <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
+
 </html>

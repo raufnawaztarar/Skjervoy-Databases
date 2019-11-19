@@ -174,7 +174,7 @@ if (isset($_POST['inputted-username']))
               <div class="card-body">
                 <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                 <div class="card_button">
-                  <button type="button" class="btn btn-outline-dark" style="color:white">View Locations</button>
+                  <button type="button" class="btn btn-outline-dark" style="color:white" onclick="window.location.href = 'our-locations.php';">View Locations</button>
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@ if (isset($_POST['inputted-username']))
                   <div class="thumb-content"><a href="index.php">Home</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="our-pens.php">Our Pen Collection</a></div>
+                  <div class="thumb-content"><a href="our-pens.php">Our Pens</a></div>
                 </li>
                 <li>
                   <div class="thumb-content"><a href="our-notebooks.php">Our Notebooks</a></div>
@@ -233,9 +233,6 @@ if (isset($_POST['inputted-username']))
                 <font face="javanese-text">Company Information</font><span></span>
               </h5>
               <ul class="thumbnail-widget">
-                <li>
-                  <div class="thumb-content"><a href="error.php">Privacy Policy</a></div>
-                </li>
                 <li>
                   <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
                 </li>

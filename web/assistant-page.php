@@ -45,7 +45,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
         <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
-        <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+        <?php if (!isset($_SESSION['name'])) { ?>
+          <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+        <?php } else { ?>
+          <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
+        <?php } ?>
         <li>
           <form action="search.php" method="GET" class="form-inline">
             <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
@@ -165,8 +169,8 @@
         <?php echo $firstline; ?>
         <?php
         if ($secondline == "") { } else { ?> <br> <?php
-                                                  echo $secondline;
-                                                } ?><br>
+                                                    echo $secondline;
+                                                  } ?><br>
         <?php echo $city; ?><br>
         <?php echo $postcode; ?><br>
         <?php echo $country; ?><br>
@@ -184,40 +188,40 @@
       </p>
 
       <table style="width:100%">
-          <tr>
-            <th>Product ID</th>
-            <th>Type</th>
-            <th>Series</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Buying Price</th>
-            <th>Selling Price</th>
-            <th>Minimum Required</th>
-            <th>Order</th>
-          </tr>
+        <tr>
+          <th>Product ID</th>
+          <th>Type</th>
+          <th>Series</th>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Buying Price</th>
+          <th>Selling Price</th>
+          <th>Minimum Required</th>
+          <th>Order</th>
+        </tr>
 
-      <?php
+        <?php
 
-      $invdata = mysql_query("SELECT * FROM Inventory WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
+        $invdata = mysql_query("SELECT * FROM Inventory WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
 
-      while ($inv = mysql_fetch_array($invdata)) {
+        while ($inv = mysql_fetch_array($invdata)) {
 
-        $productid = $inv['Product ID'];
-        $quantity = $inv['Quantity'];
-        $minquantity = $inv['Minimum Required Quantity'];
-        
-        $productdata = mysql_query("SELECT * FROM Products WHERE `Product ID` = \"$productid\"") or die(mysql_error('No Records Found'));
-        while ($prod = mysql_fetch_array($productdata)) {
-          $productname = $prod['Name'];
-          $producttype = $prod['Type'];
-          $productseries = $prod['Series'];
-          $buyingprice = $prod['Buying Price'];
-          $sellingprice = $prod['Selling Price'];
-        }
+          $productid = $inv['Product ID'];
+          $quantity = $inv['Quantity'];
+          $minquantity = $inv['Minimum Required Quantity'];
 
-        ?>
+          $productdata = mysql_query("SELECT * FROM Products WHERE `Product ID` = \"$productid\"") or die(mysql_error('No Records Found'));
+          while ($prod = mysql_fetch_array($productdata)) {
+            $productname = $prod['Name'];
+            $producttype = $prod['Type'];
+            $productseries = $prod['Series'];
+            $buyingprice = $prod['Buying Price'];
+            $sellingprice = $prod['Selling Price'];
+          }
 
-        
+          ?>
+
+
           <tr>
             <td><?php echo $productid; ?></td>
             <td><?php echo $producttype; ?></td>
@@ -227,28 +231,29 @@
             <td><?php echo $buyingprice; ?></td>
             <td><?php echo $sellingprice; ?></td>
             <td><?php echo $minquantity; ?></td>
-            <td><?php 
+            <td><?php
 
-            if($quantity<$minquantity)
-            {
-              ?><button class="btn btn-black mr-1 rounded-0" onclick=""><font color="white">Order More</font></button><?php
-            }
-            else{}
-            
-            ?></td>
+                  if ($quantity < $minquantity) {
+                    ?><button class="btn btn-black mr-1 rounded-0" onclick="">
+                  <font color="white">Order More</font>
+                </button><?php
+                            } else { }
+
+                            ?></td>
           </tr>
 
-      <?php } ?>
+        <?php } ?>
       </table>
     </div>
 
+    <div class="black_box_desc_div" style="margin-top:50px;margin-bottom:50px;"></div>
 
     <!-- Bottom Banner Colors-->
     <div class="bluebar"></div>
     <div class="whitebar"></div>
     <div class="redbar"></div>
 
-    <!-- Footer-->
+  <!-- Footer-->
   <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
       <div class="container">
@@ -263,7 +268,7 @@
                   <div class="thumb-content"><a href="index.php">Home</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="our-pens.php">Our Pen Collection</a></div>
+                  <div class="thumb-content"><a href="our-pens.php">Our Pens</a></div>
                 </li>
                 <li>
                   <div class="thumb-content"><a href="our-notebooks.php">Our Notebooks</a></div>
@@ -292,9 +297,6 @@
                 <font face="javanese-text">Company Information</font><span></span>
               </h5>
               <ul class="thumbnail-widget">
-                <li>
-                  <div class="thumb-content"><a href="error.php">Privacy Policy</a></div>
-                </li>
                 <li>
                   <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
                 </li>

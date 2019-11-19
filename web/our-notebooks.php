@@ -1,34 +1,12 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
   <!-- Tab Title-->
-  <title>Skjervoy Notebooks</title>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
-  <link rel="stylesheet" href="css/aos.css">
-
-  <link rel="stylesheet" href="css/style.css">
+  <title>Skjervoy - Notebooks</title>
 
   <!-- Bootstrap Link-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -75,9 +53,9 @@
           <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
         <?php } ?>
         <li>
-        <form action="search.php" method="GET" class="form-inline">
-          <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
-        </form>
+          <form action="search.php" method="GET" class="form-inline">
+            <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
+          </form>
         </li>
       </ul>
     </div>
@@ -162,45 +140,46 @@
       <div class="row">
         <?php
 
-        
+
         require_once("dbcontroller.php");
         $db_handle = new DBController();
 
         $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Notebook\" AND Series=\"Fjord\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
-        if (!empty($product_array)) { 
-          foreach($product_array as $key=>$value){
-          $name = $product_array[$key]["Name"];
-          $price = $product_array[$key]["Selling Price"];
-          $series = $product_array[$key]["Series"];
-          $pictures = $product_array[$key]["Picture"]; ?>
+        if (!empty($product_array)) {
+          foreach ($product_array as $key => $value) {
+            $name = $product_array[$key]["Name"];
+            $price = $product_array[$key]["Selling Price"];
+            $series = $product_array[$key]["Series"];
+            $pictures = $product_array[$key]["Picture"]; ?>
 
-          <div class="col-lg-4 col-md-6 mb-5">
-            <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
-              <div class="product-item">
-                <figure>
-                  <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
-                </figure>
-                <div class="px-4">
-                  <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
-                  <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
-                  <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-                  <div class="form-group">
-                  <select class="form-control" name="quantity">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                  <div>
-                    <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+            <div class="col-lg-4 col-md-6 mb-5">
+              <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
+                <div class="product-item">
+                  <figure>
+                    <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
+                  </figure>
+                  <div class="px-4">
+                    <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
+                    <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                    <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
+                    <div class="form-group">
+                      <select class="form-control" name="quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <div>
+                      <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
-          </div>
-        <?php } } ?>
+              </form>
+            </div>
+        <?php }
+        } ?>
       </div>
     </div>
   </div>
@@ -216,45 +195,46 @@
       <div class="row">
         <?php
 
-        
+
         require_once("dbcontroller.php");
         $db_handle = new DBController();
 
         $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Notebook\" AND Series=\"Excellence\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
-        if (!empty($product_array)) { 
-          foreach($product_array as $key=>$value){
-          $name = $product_array[$key]["Name"];
-          $price = $product_array[$key]["Selling Price"];
-          $series = $product_array[$key]["Series"];
-          $pictures = $product_array[$key]["Picture"]; ?>
+        if (!empty($product_array)) {
+          foreach ($product_array as $key => $value) {
+            $name = $product_array[$key]["Name"];
+            $price = $product_array[$key]["Selling Price"];
+            $series = $product_array[$key]["Series"];
+            $pictures = $product_array[$key]["Picture"]; ?>
 
-          <div class="col-lg-4 col-md-6 mb-5">
-            <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
-              <div class="product-item">
-                <figure>
-                  <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
-                </figure>
-                <div class="px-4">
-                  <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
-                  <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
-                  <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-                  <div class="form-group">
-                  <select class="form-control" name="quantity">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                  <div>
-                    <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+            <div class="col-lg-4 col-md-6 mb-5">
+              <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
+                <div class="product-item">
+                  <figure>
+                    <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
+                  </figure>
+                  <div class="px-4">
+                    <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
+                    <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                    <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
+                    <div class="form-group">
+                      <select class="form-control" name="quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <div>
+                      <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
-          </div>
-        <?php } } ?>
+              </form>
+            </div>
+        <?php }
+        } ?>
       </div>
     </div>
   </div>
@@ -270,45 +250,46 @@
       <div class="row">
         <?php
 
-        
+
         require_once("dbcontroller.php");
         $db_handle = new DBController();
 
         $product_array = $db_handle->runQuery("SELECT * FROM Products WHERE Type=\"Notebook\" AND Series=\"Elite\" ORDER BY Name ASC") or die(mysql_error('No Records Found'));
-        if (!empty($product_array)) { 
-          foreach($product_array as $key=>$value){
-          $name = $product_array[$key]["Name"];
-          $price = $product_array[$key]["Selling Price"];
-          $series = $product_array[$key]["Series"];
-          $pictures = $product_array[$key]["Picture"]; ?>
+        if (!empty($product_array)) {
+          foreach ($product_array as $key => $value) {
+            $name = $product_array[$key]["Name"];
+            $price = $product_array[$key]["Selling Price"];
+            $series = $product_array[$key]["Series"];
+            $pictures = $product_array[$key]["Picture"]; ?>
 
-          <div class="col-lg-4 col-md-6 mb-5">
-            <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
-              <div class="product-item">
-                <figure>
-                  <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
-                </figure>
-                <div class="px-4">
-                  <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
-                  <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
-                  <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
-                  <div class="form-group">
-                  <select class="form-control" name="quantity">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                  <div>
-                    <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+            <div class="col-lg-4 col-md-6 mb-5">
+              <form class="form" method="post" action="shopping-cart.php?action=add&Name=<?php echo $product_array[$key]["Name"]; ?>">
+                <div class="product-item">
+                  <figure>
+                    <img src="<?php echo $pictures; ?>" alt="Image" class="img-fluid">
+                  </figure>
+                  <div class="px-4">
+                    <h3 style="font-size: 3vh;"><?php echo $name; ?></h3>
+                    <h3 style="font-size: 2vh; color: #002868">£<?php echo $price; ?></h3>
+                    <h2 style="font-size: 1.5vh"><?php echo $series; ?> Series</h2>
+                    <div class="form-group">
+                      <select class="form-control" name="quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <div>
+                      <input class="btn btn-black mr-1 rounded-0" type="submit" value="Add to Cart" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
-          </div>
-        <?php } } ?>
+              </form>
+            </div>
+        <?php }
+        } ?>
       </div>
     </div>
   </div>
@@ -333,7 +314,7 @@
               <div class="card-body">
                 <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                 <div class="card_button">
-                  <button type="button" class="btn btn-black mr-1 rounded-0">View Locations</button>
+                <button type="button" class="btn btn-outline-dark" style="color:white" onclick="window.location.href = 'our-locations.php';">View Locations</button>
                 </div>
               </div>
             </div>
@@ -364,7 +345,7 @@
                   <div class="thumb-content"><a href="index.php">Home</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="our-pens.php">Our Pen Collection</a></div>
+                  <div class="thumb-content"><a href="our-pens.php">Our Pens</a></div>
                 </li>
                 <li>
                   <div class="thumb-content"><a href="our-notebooks.php">Our Notebooks</a></div>
@@ -393,9 +374,6 @@
                 <font face="javanese-text">Company Information</font><span></span>
               </h5>
               <ul class="thumbnail-widget">
-                <li>
-                  <div class="thumb-content"><a href="error.php">Privacy Policy</a></div>
-                </li>
                 <li>
                   <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
                 </li>

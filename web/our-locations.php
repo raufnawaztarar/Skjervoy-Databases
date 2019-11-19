@@ -95,7 +95,7 @@
   <div class="bg-white py-4 mb-4">
           <div class="row mx-4 my-4 product-item-2 align-items-start">
             <div class="col-md-6 mb-5 mb-md-0">
-              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+              <img src="img/location/location1.jpg" alt="Image" class="img-fluid">
             </div>
            
             <div class="col-md-5 ml-auto product-title-wrap">
@@ -111,7 +111,7 @@
         <div class="bg-white py-4 mb-4">
           <div class="row mx-4 my-4 product-item-2 align-items-start">
             <div class="col-md-6 mb-5 mb-md-0">
-              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+              <img src="img/location/location2.jpg" alt="Image" class="img-fluid">
             </div>
            
             <div class="col-md-5 ml-auto product-title-wrap">
@@ -126,7 +126,7 @@
         <div class="bg-white py-4 mb-4">
           <div class="row mx-4 my-4 product-item-2 align-items-start">
             <div class="col-md-6 mb-5 mb-md-0">
-              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+              <img src="img/location/location3.jpg" alt="Image" class="img-fluid">
             </div>
            
             <div class="col-md-5 ml-auto product-title-wrap">

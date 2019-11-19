@@ -331,9 +331,9 @@
             </div>
             <div class="col-md-5">
               <div class="card-body">
-                <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
+                <p class="card-text">We offer a large range of stunning premium pens and notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                 <div class="card_button">
-                  <button type="button" class="btn btn-black mr-1 rounded-0">View Locations</button>
+                <button type="button" class="btn btn-outline-dark"  onclick="window.location.href = 'our-locations.php';" style="color:white">View Locations</button>
                 </div>
               </div>
             </div>

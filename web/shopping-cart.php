@@ -6,24 +6,24 @@ if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
 case "add":
 if(!empty($_POST["quantity"])) {
-$productByCode = $db_handle->runQuery("SELECT * FROM Products WHERE Name=\"" . $_GET["Name"] . "\"");
-$itemArray = array($productByCode[0]["Name"]=>array('Name'=>$productByCode[0]["Name"], `Product ID`=>$productByCode[0]["Product ID"], 'quantity'=>$_POST["quantity"],`Selling Price`=>$productByCode[0]["Selling Price"], 'Picture'=>$productByCode[0]["Picture"]));
-if(!empty($_SESSION["cart_item"])) {
-if(in_array($productByCode[0]["Name"],array_keys($_SESSION["cart_item"]))) {
-foreach($_SESSION["cart_item"] as $k => $v) {
-if($productByCode[0]["Name"] == $k) {
-if(empty($_SESSION["cart_item"][$k]["quantity"])) {
-$_SESSION["cart_item"][$k]["quantity"] = 0;
-}
-$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
-}
-}
-} else {
-$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
-}
-} else {
-$_SESSION["cart_item"] = $itemArray;
-}
+  $productByCode = $db_handle->runQuery("SELECT * FROM Products WHERE Name=\"" . $_GET["Name"] . "\"");
+  $itemArray = array($productByCode[0]["Name"]=>array('Name'=>$productByCode[0]["Name"], `Product ID`=>$productByCode[0]["Product ID"], 'quantity'=>$_POST["quantity"],`Selling Price`=>$productByCode[0]["Selling Price"], 'Picture'=>$productByCode[0]["Picture"]));
+  if(!empty($_SESSION["cart_item"])) {
+    if(in_array($productByCode[0]["Name"],array_keys($_SESSION["cart_item"]))) {
+      foreach($_SESSION["cart_item"] as $k => $v) {
+        if($productByCode[0]["Name"] == $k) {
+          if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+            $_SESSION["cart_item"][$k]["quantity"] = 0;
+          }
+          $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+        }
+      }
+    } else {
+    $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+    }
+  } else {
+    $_SESSION["cart_item"] = $itemArray;
+  }
 }
 break;
 case "remove":
@@ -261,8 +261,7 @@ $total_price += ($item[`Selling Price`]*$item["quantity"]);
                   <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.
                   </p>
                   <div class="card_button">
-                    <button type="button" class="btn btn-black mr-1 rounded-0">View Locations
-                    </button>
+                  <button type="button" class="btn btn-outline-dark" href="our-locations.php" style="color:white">View Locations</button>
                   </div>
                 </div>
               </div>

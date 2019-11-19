@@ -126,7 +126,7 @@ if(!empty($_GET["action"])) {
   </nav>
 
   <div class="splash-container">
-    <img class="splash" src="resources/fjord.jpg" alt="black and white fjord" style="width:100%;">
+    <img class="splash" src="resources/cart.jpg" alt="black and white fjord monutains town" style="width:100%;">
   </div>
 
 

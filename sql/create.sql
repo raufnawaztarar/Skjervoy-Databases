@@ -264,9 +264,9 @@ CREATE TABLE OrderContents (
   );
 
 LOCK TABLES OrderContents WRITE;
-/*!40000 ALTER TABLE Orders DISABLE KEYS */;
-INSERT INTO OrderContent 
-	(`Content ID`, Order, Product, Quantity)
+/*!40000 ALTER TABLE OrderContents DISABLE KEYS */;
+INSERT INTO OrderContents 
+	(`Content ID`, `Order ID`, `Product ID`, Quantity)
 VALUES 
 	('1111222233334444', '2000111122223333', '3000111122223333', '1'),
 	('1111222233334445', '2000111122223334', '3000111122223334', '2');

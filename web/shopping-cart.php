@@ -6,24 +6,24 @@ if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
 case "add":
 if(!empty($_POST["quantity"])) {
-$productByCode = $db_handle->runQuery("SELECT * FROM Products WHERE Name=\"" . $_GET["Name"] . "\"");
-$itemArray = array($productByCode[0]["Name"]=>array('Name'=>$productByCode[0]["Name"], `Product ID`=>$productByCode[0]["Product ID"], 'quantity'=>$_POST["quantity"],`Selling Price`=>$productByCode[0]["Selling Price"], 'Picture'=>$productByCode[0]["Picture"]));
-if(!empty($_SESSION["cart_item"])) {
-if(in_array($productByCode[0]["Name"],array_keys($_SESSION["cart_item"]))) {
-foreach($_SESSION["cart_item"] as $k => $v) {
-if($productByCode[0]["Name"] == $k) {
-if(empty($_SESSION["cart_item"][$k]["quantity"])) {
-$_SESSION["cart_item"][$k]["quantity"] = 0;
-}
-$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
-}
-}
-} else {
-$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
-}
-} else {
-$_SESSION["cart_item"] = $itemArray;
-}
+  $productByCode = $db_handle->runQuery("SELECT * FROM Products WHERE Name=\"" . $_GET["Name"] . "\"");
+  $itemArray = array($productByCode[0]["Name"]=>array('Name'=>$productByCode[0]["Name"], `Product ID`=>$productByCode[0]["Product ID"], 'quantity'=>$_POST["quantity"],`Selling Price`=>$productByCode[0]["Selling Price"], 'Picture'=>$productByCode[0]["Picture"]));
+  if(!empty($_SESSION["cart_item"])) {
+    if(in_array($productByCode[0]["Name"],array_keys($_SESSION["cart_item"]))) {
+      foreach($_SESSION["cart_item"] as $k => $v) {
+        if($productByCode[0]["Name"] == $k) {
+          if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+            $_SESSION["cart_item"][$k]["quantity"] = 0;
+          }
+          $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+        }
+      }
+    } else {
+    $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+    }
+  } else {
+    $_SESSION["cart_item"] = $itemArray;
+  }
 }
 break;
 case "remove":

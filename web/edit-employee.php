@@ -4,7 +4,7 @@
 <head>
 
   <!-- Tab Title-->
-  <title>Skjervoy Pens</title>
+  <title>Edit Employee</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -75,8 +75,12 @@
     </div>
   </nav>
 
-  <div class="splash-container">
-    <img class="splash" src="resources/fjord.jpg" alt="black and white fjord" style="width:100%;">
+
+  <!-- First Black Description Box-->
+  <div class="black_box_desc_employee">
+    <p class="center_box_heading_employee">
+      <font face="javanese-text" ->- Employee Login -</font>
+    </p>
   </div>
 
   <?php

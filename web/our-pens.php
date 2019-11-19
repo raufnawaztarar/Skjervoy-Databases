@@ -97,11 +97,11 @@
             </figure>
             <div class="px-4">
               <h3 style="font-size: 3vh;">Excellence Series</h3>
-              <h3 style="font-size: 2vh; color: #002868">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</h3>
+              <h3 style="font-size: 2vh; color: #002868">We offer a large range of stunning premium pens of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</h3>
               <h2 style="font-size: 1.5vh"></h2>
               <p class="mb-4"> </p>
               <div>
-                <a href="#" class="btn btn-black mr-1 rounded-0">View Collection</a>
+                <a href="#excellence-series" class="btn btn-black mr-1 rounded-0">View Collection</a>
               </div>
             </div>
           </div>
@@ -114,12 +114,12 @@
             </figure>
             <div class="px-4">
               <h3 style="font-size: 3vh;">Fire Series</h3>
-              <h3 style="font-size: 2vh; color: #002868">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</h3>
+              <h3 style="font-size: 2vh; color: #002868">We offer a large range of stunning premium pens of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</h3>
               <h2 style="font-size: 1.5vh"></h2>
 
               <p class="mb-4"> </p>
               <div>
-                <a href="#" class="btn btn-black mr-1 rounded-0">View Collection</a>
+                <a href="#fire-series" class="btn btn-black mr-1 rounded-0">View Collection</a>
               </div>
             </div>
           </div>
@@ -132,12 +132,12 @@
             </figure>
             <div class="px-4">
               <h3 style="font-size: 3vh;">Elite Series</h3>
-              <h3 style="font-size: 2vh; color: #002868">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</h3>
+              <h3 style="font-size: 2vh; color: #002868">We offer a large range of stunning premium pens of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</h3>
               <h2 style="font-size: 1.5vh"></h2>
 
               <p class="mb-4"> </p>
               <div>
-                <a href="#" class="btn btn-black mr-1 rounded-0">View Collection</a>
+                <a href="#elite-series" class="btn btn-black mr-1 rounded-0">View Collection</a>
               </div>
             </div>
           </div>
@@ -151,7 +151,7 @@
   <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-md-6 text-center">
-          <h3 class="section-sub-title">Explore Our</h3>
+          <h3 class="section-sub-title"  id="excellence-series">Explore Our</h3>
           <h2 class="section-title mb-3">Excellence Series</h2>
         </div>
       </div>
@@ -201,7 +201,7 @@
     <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-md-6 text-center">
-          <h3 class="section-sub-title">Explore Our</h3>
+          <h3 class="section-sub-title"  id="fire-series" >Explore Our</h3>
           <h2 class="section-title mb-3">Fire Series</h2>
         </div>
       </div>
@@ -250,7 +250,7 @@
     <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-md-6 text-center">
-          <h3 class="section-sub-title">Explore Our</h3>
+          <h3 class="section-sub-title" id="elite-series">Explore Our</h3>
           <h2 class="section-title mb-3">Elite Series</h2>
         </div>
       </div>

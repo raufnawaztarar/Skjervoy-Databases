@@ -85,6 +85,14 @@
   <!-- Display Cost -->
   <div style="margin-top: 150px" class="flex-container justify-content-center">
       <div>
+      <?php if ($_SESSION['total_price']==0)
+      { ?>
+        <script type="text/javascript">
+        window.location.href = "empty-cart.php";
+      </script>
+     <?php }
+      ?>
+
           <h1> Total Cost: £<?php echo $_SESSION['total_price']; ?> </h1>
     </div>
   </div>

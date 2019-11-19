@@ -138,6 +138,8 @@
         $salary_emp = $row['Salary'];
         $role_emp = $row['Role'];
         $bank_details_emp = $row['Bank Details'];
+
+        $building_id_emp = $row['Building'];
       } else {
         $datafound = false;
       }
@@ -156,7 +158,74 @@
         Salary (£): <input style="margin-top:10px;" type="text" name="salary" value="<?php echo $salary_emp ?>"> <br />
         Role: <input style="margin-top:10px;" type="text" name="role" value="<?php echo $role_emp ?>"> <br />
         Bank Details: <input style="margin-top:10px;" type="text" name="bank_details" value="<?php echo $bank_details_emp ?>"> <br />
+        <?php 
+        echo "Building: ";
+        $buildingstmt = $mysql->prepare(
+          "SELECT Address 
+          FROM Buildings
+          WHERE `Building ID`=:Building_ID");
+        $buildingstmt->bindParam(':Building_ID', $building_id_emp);
+        $buildingstmt->execute();
+        $building_address_row = $buildingstmt->fetch(PDO::FETCH_ASSOC);
+        $building_address = $building_address_row['Address'];
+
+        $address1stmt = $mysql->prepare(
+          "SELECT `Address ID`, `First Line of Address`,`Second Line of Address`,Postcode, City, Country
+          FROM Addresses
+          WHERE `Address ID`=:Address_ID");
+        $address1stmt->bindParam(':Address_ID', $building_address);
+        $address1stmt->execute();
+
+        echo "<select name=\"building_address\">";
+        $address1row =  $address1stmt->fetch(PDO::FETCH_ASSOC);
+        $address1display =  $address1row['First Line of Address'] . ", "
+        . $address1row['Second Line of Address'] .", " . $address1row['Postcode']
+        . ", " . $address1row['City'] . ", " . $address1row['Country']; 
+        echo "<option value=\"$building_id_emp\"> $address1display </option>";
+
+
+        $building2stmt = $mysql->prepare(
+          "SELECT `Building ID`,  Address 
+          FROM Buildings
+          WHERE `Building ID`<>:Building_ID");
+        $building2stmt->bindParam(':Building_ID', $building_id_emp);
+        $building2stmt->execute();
+
+        while ($building2_address_row = $building2stmt->fetch(PDO::FETCH_ASSOC)) {
+          $building2_id = $building2_address_row['Building ID'];
+          $building2_address = $building2_address_row['Address'];
+          $address2stmt = $mysql->prepare(
+            "SELECT `Address ID`, `First Line of Address`,`Second Line of Address`,Postcode, City, Country
+           FROM Addresses
+           WHERE `Address ID`=:Address_ID");
+          $address2stmt->bindParam(':Address_ID', $building2_address);
+          $address2stmt->execute();
+          $address2row = $address2stmt->fetch(PDO::FETCH_ASSOC);
+          $address2display = $address2row['First Line of Address'] . ", "
+          . $address2row['Second Line of Address'] .", " . $address2row['Postcode']
+          . ", " . $address2row['City'] . ", " . $address2row['Country']; 
+
+          echo "<option value=\"$building2_id\"> $address2display </option>";
+        }
+
+        // $addressstmt = $mysql->prepare(
+        //   "SELECT `Address ID`, `First Line of Address`,`Second Line of Address`,Postcode, City, Country
+        //    FROM Addresses INNER JOIN Buildings ON Addresses.`Address ID`=Buildings.Address
+        //    WHERE `Address ID`<>:Address_ID");
+        // $addressstmt->bindParam(':Address_ID', $building_address);
+        // $addressstmt->execute();
+        // while ($addressrow = $addressstmt->fetch(PDO::FETCH_ASSOC)){
+        //   $addressdisplay = $addressrow['First Line of Address'] . ", "
+        //     . $addressrow['Second Line of Address'] .", " . $addressrow['Postcode']
+        //     . ", " . $addressrow['City'] . ", " . $addressrow['Country']; 
+        //   $other_address_id = $addressrow['Address ID'];
+        //     echo "<option value=\"$$other_address_id\"> $addressdisplay </option>";
+
+        echo "</select>";
+        ?>
+        <br/>
         <input style="margin-top:10px;" type="hidden" name="emp_id" value="<?php echo $emp_id_emp ?>" />
+        <input style="margin-top:10px;" type="hidden" name="emp_building_id" value="<?php echo $emp_building_id ?>" />
         <input style="margin-top:10px;" type="submit" name="submit_edit_emp" value="Submit" /> <br />
       <?php } ?>
     </form>
@@ -171,11 +240,13 @@
       $salary_new = $_POST['salary'];
       $role_new = $_POST['role'];
       $bank_details_new = $_POST['bank_details'];
+      $building_new = $_POST['building_address'];
       $emp_id = $_POST['emp_id'];
 
       $stmt = $mysql->prepare("UPDATE `Employees`
         SET `Name` = :Name_new, `Email` = :Email_new, `Phone` = :Phone_new, 
-            `Salary` = :Salary_new, `Role` = :Role_new, `Bank Details`=:Bank_new
+            `Salary` = :Salary_new, `Role` = :Role_new, `Bank Details`=:Bank_new,
+            `Building` = :Building_new
         WHERE `Employee ID`=:Emp_ID");
 
       // $stmt = $mysql->prepare("SELECT * FROM `Employees`
@@ -186,6 +257,7 @@
       $stmt->bindParam(":Salary_new", $salary_new);
       $stmt->bindParam(":Role_new", $role_new);
       $stmt->bindParam(":Bank_new", $bank_details_new);
+      $stmt->bindParam(":Building_new", $building_new);
       $stmt->bindParam(":Emp_ID", $emp_id);
 
       $succ = $stmt->execute();

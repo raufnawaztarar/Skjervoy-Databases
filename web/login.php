@@ -78,12 +78,12 @@
           <div class="clearfix">
               <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
               <a  class="pull-right" data-toggle="modal" data-target="#forgotpassword">Forgot Password?</a>
+              <a href="register.php" class="pull-right">Register?</a>
           </div>        
       </form>
   </div>
-
-   <!-- Modal -->
-      <div class="modal fade" id="forgotpassword" tabindex="-1" role="dialog" aria-labelledby="forgotpasswordLabel" aria-hidden="true">
+     <!-- Modal -->
+     <div class="modal fade" id="forgotpassword" tabindex="-1" role="dialog" aria-labelledby="forgotpasswordLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -101,6 +101,8 @@
                       </div>
                     </div>
                   </div>
+
+      
 
     <!-- Bottom Banner Colors-->
     <div class="bluebar"></div>

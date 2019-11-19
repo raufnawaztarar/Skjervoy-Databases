@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<?php session_start() ?>
+
 
 <head>
 
@@ -84,6 +86,23 @@
   </div>
 
   <?php
+  if (isset($_SESSION['varname2'])) {
+    $id = $_SESSION['varname'];
+    $role = $_SESSION['varname2'];
+    if ($role != "HR Manager") {
+      ?>
+      <script type="text/javascript">
+        window.location.href = "error.php";
+      </script>
+    <?php
+      }
+    } else {
+      ?>
+    <script type="text/javascript">
+      window.location.href = "error.php";
+    </script>
+  <?php }
+
   $server = "silva.computing.dundee.ac.uk";
   $user = "19ac3u05";
   $pass = "abc123";
@@ -96,94 +115,90 @@
   $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   ?>
   <div class="flex container" style="padding-top:100px;padding-bottom:50px;text-align:left;">
-  <?php
-  try {
+    <?php
+    try {
 
-    //$mysql = new mysqli($server, $user, $pass, $database);
-      if(isset($_POST['employee-id-button'])) {
-          $datafound = true;
-      $stmt = $mysql->prepare(
-        "SELECT `Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details`, 
+      //$mysql = new mysqli($server, $user, $pass, $database);
+      if (isset($_POST['employee-id-button'])) {
+        $datafound = true;
+        $stmt = $mysql->prepare(
+          "SELECT `Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details`, 
         Picture, Building FROM Employees WHERE `EMPloyee ID`=:EmpID"
-        //"SELECT * FROM Employees WHERE `Employee ID`=:EmpID"
-      );
-      $stmt->bindParam(':EmpID', $employee_ID);
-      $employee_ID = $_POST['employee-id-button'];
-      $stmt->execute();
+          //"SELECT * FROM Employees WHERE `Employee ID`=:EmpID"
+        );
+        $stmt->bindParam(':EmpID', $employee_ID);
+        $employee_ID = $_POST['employee-id-button'];
+        $stmt->execute();
 
-      $row = $stmt->fetch(PDO::FETCH_ASSOC);
-      $emp_id_emp = $row['Employee ID']; 
-      $name_emp = $row['Name'];
-      $email_emp = $row['Email'];
-      $phone_emp = $row['Phone'];
-      $salary_emp = $row['Salary'];
-      $role_emp = $row['Role'];
-      $bank_details_emp = $row['Bank Details'];
-
-      
-      
-     } else {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $emp_id_emp = $row['Employee ID'];
+        $name_emp = $row['Name'];
+        $email_emp = $row['Email'];
+        $phone_emp = $row['Phone'];
+        $salary_emp = $row['Salary'];
+        $role_emp = $row['Role'];
+        $bank_details_emp = $row['Bank Details'];
+      } else {
         $datafound = false;
-    }
-  } catch (PDOException $e) {
+      }
+    } catch (PDOException $e) {
       $datafound = false;
-  }
-  ?>
+    }
+    ?>
 
-  <form name="Edit Employee" action="" method="post">
-      <?php if($datafound) { ?>
-    <?php echo $emp_id_emp; ?><br/>
-    Name: <input style ="margin-top:10px;"type="text" name="name" value="<?php echo $name_emp ?>"> <br />
-    <!-- Series: <input type="text" name="series" value="Elite"> <br /> -->
-    Email: <input style ="margin-top:10px;" type="text" name="email" value="<?php echo $email_emp ?>"> <br />
-    Phone: <input style ="margin-top:10px;" type="text" name="phone" value="<?php echo $phone_emp ?>"> <br />
-    Salary (£): <input style ="margin-top:10px;" type="text" name="salary" value="<?php echo $salary_emp ?>"> <br />
-    Role: <input style ="margin-top:10px;" type="text" name="role" value="<?php echo $role_emp ?>"> <br />
-    Bank Details: <input style ="margin-top:10px;" type="text" name="bank_details" value="<?php echo $bank_details_emp ?>"> <br />
-    <input style ="margin-top:10px;" type="hidden" name="emp_id" value="<?php echo $emp_id_emp ?>" />
-    <input style ="margin-top:10px;" type="submit" name="submit_edit_emp" value="Submit" /> <br />
+    <form name="Edit Employee" action="" method="post">
+      <?php if ($datafound) { ?>
+        <?php echo $emp_id_emp; ?><br />
+        Name: <input style="margin-top:10px;" type="text" name="name" value="<?php echo $name_emp ?>"> <br />
+        <!-- Series: <input type="text" name="series" value="Elite"> <br /> -->
+        Email: <input style="margin-top:10px;" type="text" name="email" value="<?php echo $email_emp ?>"> <br />
+        Phone: <input style="margin-top:10px;" type="text" name="phone" value="<?php echo $phone_emp ?>"> <br />
+        Salary (£): <input style="margin-top:10px;" type="text" name="salary" value="<?php echo $salary_emp ?>"> <br />
+        Role: <input style="margin-top:10px;" type="text" name="role" value="<?php echo $role_emp ?>"> <br />
+        Bank Details: <input style="margin-top:10px;" type="text" name="bank_details" value="<?php echo $bank_details_emp ?>"> <br />
+        <input style="margin-top:10px;" type="hidden" name="emp_id" value="<?php echo $emp_id_emp ?>" />
+        <input style="margin-top:10px;" type="submit" name="submit_edit_emp" value="Submit" /> <br />
       <?php } ?>
-  </form>
+    </form>
 
-  <?php 
-    if (isset($_POST['submit_edit_emp']) ) {
-      
+    <?php
+    if (isset($_POST['submit_edit_emp'])) {
 
-        $name_new = $_POST['name'];
-        $email_new = $_POST['email'];
-        $phone_new = $_POST['phone'];
-        $salary_new = $_POST['salary'];
-        $role_new = $_POST['role'];
-        $bank_details_new = $_POST['bank_details'];
-        $emp_id = $_POST['emp_id'];
 
-        $stmt = $mysql->prepare("UPDATE `Employees`
+      $name_new = $_POST['name'];
+      $email_new = $_POST['email'];
+      $phone_new = $_POST['phone'];
+      $salary_new = $_POST['salary'];
+      $role_new = $_POST['role'];
+      $bank_details_new = $_POST['bank_details'];
+      $emp_id = $_POST['emp_id'];
+
+      $stmt = $mysql->prepare("UPDATE `Employees`
         SET `Name` = :Name_new, `Email` = :Email_new, `Phone` = :Phone_new, 
             `Salary` = :Salary_new, `Role` = :Role_new, `Bank Details`=:Bank_new
         WHERE `Employee ID`=:Emp_ID");
-        
-        // $stmt = $mysql->prepare("SELECT * FROM `Employees`
-        // WHERE `Employee ID`=:Emp_ID");
-        $stmt->bindParam(":Name_new", $name_new);
-        $stmt->bindParam(":Email_new", $email_new);
-        $stmt->bindParam(":Phone_new", $phone_new);
-        $stmt->bindParam(":Salary_new", $salary_new);
-        $stmt->bindParam(":Role_new", $role_new);
-        $stmt->bindParam(":Bank_new", $bank_details_new);
-        $stmt->bindParam(":Emp_ID", $emp_id);
-      
+
+      // $stmt = $mysql->prepare("SELECT * FROM `Employees`
+      // WHERE `Employee ID`=:Emp_ID");
+      $stmt->bindParam(":Name_new", $name_new);
+      $stmt->bindParam(":Email_new", $email_new);
+      $stmt->bindParam(":Phone_new", $phone_new);
+      $stmt->bindParam(":Salary_new", $salary_new);
+      $stmt->bindParam(":Role_new", $role_new);
+      $stmt->bindParam(":Bank_new", $bank_details_new);
+      $stmt->bindParam(":Emp_ID", $emp_id);
+
       $succ = $stmt->execute();
-      
-      if($succ) {
+
+      if ($succ) {
         echo "$name_new updated successfully.<br/>";
         echo "<a href=\"#\" onclick=\"window.close();return false;\">Close this tab.</a>
         Hit refresh on the employee details page to see changes";
       } else {
         echo "Something went wrong ¯\_(ツ)_/¯ <br/>";
       }
-      
     }
-  ?>
+    ?>
 
   </div>
   </div>

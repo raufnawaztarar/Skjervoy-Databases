@@ -217,7 +217,7 @@
         try {
           //$mysql = new mysqli($server, $user, $pass, $database);
           $stmt = $mysql->prepare(
-            "SELECT `Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details` FROM Employees"
+            "SELECT `Employee ID`, Name, Email, Phone, Salary, Role, `Bank Details`, Building FROM Employees"
           );
           $stmt->execute(); ?>
           <table style="width:100%">
@@ -236,6 +236,8 @@
               </th>
               <th>Bank details
               </th>
+              <th>City
+              </th>
             </tr>
           <?php
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -246,6 +248,16 @@
               $salary = $row['Salary'];
               $role = $row['Role'];
               $bank_details = $row['Bank Details'];
+
+              $building_id = $row['Building'];
+              $buildingstmt = $mysql->prepare(
+                "SELECT City FROM Addresses INNER JOIN Buildings ON Addresses.`Address ID` = Buildings.Address 
+                WHERE Buildings.`Building ID`=:Building_ID");
+              $buildingstmt->bindParam(':building_ID', $building_id);
+              $buildingstmt->execute();
+              $buildingrow = $buildingstmt->fetch(PDO::FETCH_ASSOC);
+              $city = $buildingrow['City'];
+
               echo "<tr>
 <td>$employee_id_found</td>
 <td>$name</td>
@@ -254,6 +266,7 @@
 <td>$salary</td>
 <td>$role</td>
 <td>$bank_details</td>
+<td>$city</td>
 <td><form><button formmethod=\"post\" formaction=\"edit-employee.php\"
 formtarget=\"_blank\"
 type=\"submit\" value=\"$employee_id_found\" name=\"employee-id-button\">

@@ -72,7 +72,6 @@
 
   if(isset($_SESSION['varname2']))
   {
-    echo $_SESSION['varname2'];
     $id = $_SESSION['varname'];
     $role = $_SESSION['varname2'];
 

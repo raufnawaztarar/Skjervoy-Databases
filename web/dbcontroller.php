@@ -1,4 +1,4 @@
-<?php
+<?php 		// Adapted from "https://phppot.com/php/simple-php-shopping-cart/"
 class DBController {
 	private $host = "silva.computing.dundee.ac.uk";
 	private $user = "19ac3u05";

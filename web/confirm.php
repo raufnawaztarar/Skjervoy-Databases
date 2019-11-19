@@ -1,4 +1,99 @@
-<?php session_start(); ?>
+<?php session_start(); 
+  // Adapted from "https://www.w3schools.com/php/php_mysql_insert.asp"
+  $server = "silva.computing.dundee.ac.uk";
+  $user = "19ac3u05";
+  $pass = "abc123";
+  $database = "19ac3d05";
+  
+  try {
+      $mysql = new PDO("mysql:host=$server;dbname=$database", $user, $pass);
+      // set the PDO error mode to exception
+      
+      $stmt = $mysql->prepare("SELECT MAX(`Address ID`) AS max_id FROM Addresses;");
+      $stmt->execute();
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      $max_id = $row['max_id'];
+      $a_id = number_format($max_id + 1, 0, "", "");
+
+      $stmt = $mysql->prepare(
+        "INSERT INTO Addresses (`Address ID`,`First Line of Address`,`Second Line of Address`,Postcode, City, Country)
+VALUE (:AID, :First, :Second, :Postcode, :City, :Country)"
+      );
+      $stmt->bindParam(":AID", $a_id);
+      $stmt->bindParam(":First", $first);
+      $stmt->bindParam(":Second", $second);
+      $stmt->bindParam(":Postcode", $postcode);
+      $stmt->bindParam(":City", $city);
+      $stmt->bindParam(":Country", $country);
+
+      // Insert one row 
+      $first = $_POST['first'];
+      $second = $_POST['second'];
+      $postcode = $_POST['postcode'];
+      $city = $_POST['city'];
+      $country = $_POST['country'];
+
+      $stmt->execute();
+
+
+
+      $stmt = $mysql->prepare("SELECT MAX(`Order ID`) AS max_id FROM Orders;");
+      $stmt->execute();
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      $max_id = $row['max_id'];
+      $o_id = number_format($max_id + 1, 0, "", "");
+
+      $stmt = $mysql->prepare(
+        "INSERT INTO Orders (`Order ID`, Date, Address, `Payment Details`, `Customer ID`, `Courier Name`)
+VALUE (:OID, :Date, :Address, :Pay, :CID, :Courier)"
+      );
+      $stmt->bindParam(":OID", $o_id);
+      $stmt->bindParam(":Date", $date);
+      $stmt->bindParam(":Address", $a_id);
+      $stmt->bindParam(":Pay", $pay);
+      $stmt->bindParam(":CID", $c_id);
+      $stmt->bindParam(":Courier", $courier);
+
+      // Insert one row 
+      $date = date("Y-m-d");
+      $pay = "Card ending " . $_POST['card-number'];
+      $c_id = $_SESSION['id'];
+      $courier = $_POST['country'];
+
+      $stmt->execute();
+
+
+//       foreach ($_SESSION["cart_item"] as $item){
+
+//         $stmt = $mysql->prepare("SELECT MAX(`Content ID`) AS max_id FROM OrderContents;");
+//         $stmt->execute();
+//         $row = $stmt->fetch(PDO::FETCH_ASSOC);
+//         $max_id = $row['max_id'];
+//         $new_id = number_format($max_id + 1, 0, "", "");
+
+//         $stmt = $mysql->prepare(
+//           "INSERT INTO OrderContents (`Content ID`, Order, Product, Quantity)
+// VALUE (:CID, :Order, :Product, :Quantity)"
+//         );
+//         $stmt->bindParam(":CID", $new_id);
+//         $stmt->bindParam(":Order", $o_id);
+//         $stmt->bindParam(":Product", $p_id);
+//         $stmt->bindParam(":Quantity", $quantity);
+
+//         // Insert one row 
+//         $quantity = $item["quantity"];
+//         $p_id = $item["Product ID"];
+
+//          $stmt->execute();
+//       }
+    }
+    catch(PDOException $e)
+        { echo "sup";}
+      
+  
+  $conn = null;
+  ?> 
+
 <!DOCTYPE html>
 <html>
 

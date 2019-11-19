@@ -43,7 +43,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
         <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
-        <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+        <?php if (!isset($_SESSION['name'])) { ?>
+            <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+          <?php } else { ?>
+            <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
+          <?php } ?>
         <li>
         <form action="search.php" method="GET" class="form-inline">
           <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
@@ -60,12 +64,12 @@
 
     <!-- Login Box From https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=simple-login-form-->
     <div class="login-form">
-      <form action="/examples/actions/confirmation.php" method="post">      
+      <form action="index.php" method="post">      
           <div class="form-group">
-              <input type="text" class="form-control" placeholder="Username" required="required">
+              <input type="text" class="form-control" placeholder="Username" required="required" name="inputted-username">
           </div>
           <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password" required="required">
+              <input type="password" class="form-control" placeholder="Password" required="required" name="inputted-password">
           </div>
           <div class="form-group">
               <button type="submit" class="btn btn-primary btn-block">Log in</button>

@@ -86,7 +86,7 @@
   <!-- Display Cost -->
   <div style="margin-top: 150px" class="flex-container justify-content-center">
       <div>
-          <h1> Total Cost: <?php echo $_SESSION['total_price']; ?> </h1>
+          <h1> Total Cost: £<?php echo $_SESSION['total_price']; ?> </h1>
     </div>
   </div>
   

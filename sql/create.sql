@@ -306,7 +306,12 @@ VALUES
 	('5500111122223334','88 Perth Road', '', 'G41 2ZX','Glasgow', 'Scotland'),
 	('5600111122223333','55 Rosefied street', '', 'G41 2TT','Glasgow', 'Scotland'),
 	('5600111122223334','237 Marmorvegen', '', '2611','Lillehammer', 'Norway'),
-	('5600111122223335','99 Stepps Road', 'Stepps', 'G55 1LL','Glasgow', 'Scotland');
+	('5600111122223335','99 Stepps Road', 'Stepps', 'G55 1LL','Glasgow', 'Scotland'),
+    
+    ('0000000000000001','199 Archies road', 'blacknes', 'DD9 9II','Dundee', 'Scotland'),
+    ('0000000000000002','39 QMB', 'Perth', 'D55 1QL','Dundee', 'Scotland'),
+    ('0000000000000003','79 Union Road', 'Thurso', 'T55 1QL','Thurso', 'Scotland');
+
 
 /*!40000 ALTER TABLE Addresses ENABLE KEYS */;
 UNLOCK TABLES;

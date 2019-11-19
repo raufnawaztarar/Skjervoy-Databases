@@ -195,7 +195,7 @@ if (isset($_POST['inputted-username']))
               <div class="card-body">
                 <p class="card-text">We offer a large range of stunning premium notebooks of the highest quality from our hand picked partners. We ensure the best products are chosen and pride our self's on ensuring no defects are found.</p>
                 <div class="card_button">
-                  <button type="button" class="btn btn-outline-dark" style="color:white">View Locations</button>
+                  <button type="button" class="btn btn-outline-dark" href="our-locations.php" style="color:white">View Locations</button>
                 </div>
               </div>
             </div>

@@ -86,7 +86,7 @@
                   <div class="thumb-content"><a href="index.php">Home</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="our-pens.php">Our Pen Collection</a></div>
+                  <div class="thumb-content"><a href="our-pens.php">Our Pens</a></div>
                 </li>
                 <li>
                   <div class="thumb-content"><a href="our-notebooks.php">Our Notebooks</a></div>
@@ -115,9 +115,6 @@
                 <font face="javanese-text">Company Information</font><span></span>
               </h5>
               <ul class="thumbnail-widget">
-                <li>
-                  <div class="thumb-content"><a href="error.php">Privacy Policy</a></div>
-                </li>
                 <li>
                   <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
                 </li>

@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
-    <!-- Tab Title-->
-    <title>Skjervoy</title>
+<head>
 
-    <!-- Bootstrap Link-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    <!-- Our External Style Sheet-->
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Tab Title-->
+  <title>Skjervoy</title>
 
-    <!-- Icon Libary-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap Link-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  </head>
-  <body>
+  <!-- Our External Style Sheet-->
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-    <!-- Top Banner Colors-->
-    <div class ="rainbow_group">
-        <div class="bluebar"></div>
-        <div class="whitebar"></div>
-        <div class="redbar"></div>
-    </div>
+  <!-- Icon Libary-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Navigation -->
+</head>
+
+<body>
+
+  <!-- Top Banner Colors-->
+  <div class="rainbow_group">
+    <div class="bluebar"></div>
+    <div class="whitebar"></div>
+    <div class="redbar"></div>
+  </div>
+
+  <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -44,42 +46,44 @@
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
         <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
         <?php if (!isset($_SESSION['name'])) { ?>
-            <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+          <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
         <?php } else { ?>
           <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
         <?php } ?>
         <li>
-        <form action="search.php" method="GET" class="form-inline">
-          <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
-        </form>
+          <form action="search.php" method="GET" class="form-inline">
+            <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
+          </form>
         </li>
       </ul>
     </div>
   </nav>
 
-    <!-- First Black Description Box-->
-    <div class="black_box_desc_employee">
-      <p class="center_box_heading_employee"><font face="javanese-text"->- Employee Login -</font></p>
-    </div>
-
-    <!-- Login Box From https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=simple-login-form-->
-    <div class="login-form">
-      <form action="employee-page-intermediate.php" method="post">      
-          <div class="form-group">
-              <input type="text" class="form-control" placeholder="Username" required="required" name="inputted-username">
-          </div>
-          <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password" required="required" name="inputted-password">
-          </div>
-          <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block">Log in</button>
-          </div>
-          <div class="clearfix">
-              <a href="#" class="pull-right">Forgot Password?</a>
-          </div>        
-      </form>
+  <!-- First Black Description Box-->
+  <div class="black_box_desc_employee">
+    <p class="center_box_heading_employee">
+      <font face="javanese-text" ->- Employee Login -</font>
+    </p>
   </div>
-      
+
+  <!-- Login Box From https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=simple-login-form-->
+  <div class="login-form">
+    <form action="employee-page-intermediate.php" method="post">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Username" required="required" name="inputted-username">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password" required="required" name="inputted-password">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </div>
+      <div class="clearfix">
+        <a href="#" class="pull-right">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+
   <!-- Bottom Banner Colors-->
   <div class="bluebar"></div>
   <div class="whitebar"></div>
@@ -100,7 +104,7 @@
                   <div class="thumb-content"><a href="index.php">Home</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="our-pens.php">Our Pen Collection</a></div>
+                  <div class="thumb-content"><a href="our-pens.php">Our Pens</a></div>
                 </li>
                 <li>
                   <div class="thumb-content"><a href="our-notebooks.php">Our Notebooks</a></div>
@@ -129,9 +133,6 @@
                 <font face="javanese-text">Company Information</font><span></span>
               </h5>
               <ul class="thumbnail-widget">
-                <li>
-                  <div class="thumb-content"><a href="error.php">Privacy Policy</a></div>
-                </li>
                 <li>
                   <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
                 </li>

@@ -113,7 +113,6 @@ VALUE (:Customer_ID, :Name, :Address, :Phone, :Email, :Password)"
           $phone = $_POST['phone'];
           $email = $_POST['email'];
           $password = hash('sha256', $_POST['inpassword']);
-          echo $address .  $name . $phone . $email . $password;
 
           $stmt2 = $mysql->prepare("SELECT MAX(`Customer ID`) AS max_id FROM Customers;");
           $stmt2->execute();

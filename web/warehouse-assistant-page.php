@@ -156,45 +156,71 @@
     <p class="center_box_text_employee">Position - <?php echo $role; ?> </p>
     <p class="center_box_text_employee">Workplace Type - <?php echo $type; ?></p>
 
-
-    <!-- Section Divider -->
-    <div class="black_box_desc_div">
-    </div>
-
-    <!-- Third Section-->
-    <div class="box_desc_employee">
-      <p class="center_box_desc_employee">
-        <font face="javanese-text" ->- Workplace Address -</font>
-      </p>
-      <p class="center_box_text_employee">
-      <?php echo $firstline; ?>
-      <?php
-      if ($secondline == "") { } else { ?> <br> <?php
-                        echo $secondline;
-                      } ?><br>
-      <?php echo $city; ?><br>
-      <?php echo $postcode; ?><br>
-      <?php echo $country; ?><br>
-      </p>
-    </div>
-
-    <!-- Section Divider -->
-    <div class="black_box_desc_div">
-    </div>
-
     <!-- Third Section-->
     <div class="box_desc_employee">
       <p class="center_box_desc_employee">
         <font face="javanese-text" ->- Database Access -</font>
       </p>
-      <p class="left_box_text_employee">INVENTORY</p>
+
+      <table style="width:100%">
+          <tr>
+            <th>Product ID</th>
+            <th>Type</th>
+            <th>Series</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Buying Price</th>
+            <th>Selling Price</th>
+            <th>Minimum Required</th>
+            <th>Order</th>
+          </tr>
+
+      <?php
+
+      $invdata = mysql_query("SELECT * FROM Inventory WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
+
+      while ($inv = mysql_fetch_array($invdata)) {
+
+        $productid = $inv['Product ID'];
+        $quantity = $inv['Quantity'];
+        $minquantity = $inv['Minimum Required Quantity'];
+        
+        $productdata = mysql_query("SELECT * FROM Products WHERE `Product ID` = \"$productid\"") or die(mysql_error('No Records Found'));
+        while ($prod = mysql_fetch_array($productdata)) {
+          $productname = $prod['Name'];
+          $producttype = $prod['Type'];
+          $productseries = $prod['Series'];
+          $buyingprice = $prod['Buying Price'];
+          $sellingprice = $prod['Selling Price'];
+        }
+
+        ?>
+
+        
+          <tr>
+            <td><?php echo $productid; ?></td>
+            <td><?php echo $producttype; ?></td>
+            <td><?php echo $productseries; ?></td>
+            <td><?php echo $productname; ?></td>
+            <td><?php echo $quantity; ?></td>
+            <td><?php echo $buyingprice; ?></td>
+            <td><?php echo $sellingprice; ?></td>
+            <td><?php echo $minquantity; ?></td>
+            <td><?php 
+
+            if($quantity<$minquantity)
+            {
+              ?><button class="btn btn-black mr-1 rounded-0" onclick=""><font color="white">Order More</font></button><?php
+            }
+            else{}
+            
+            ?></td>
+          </tr>
+
+      <?php } ?>
+      </table>
     </div>
 
-
-    <!-- Bottom Banner Colors-->
-    <div class="bluebar"></div>
-    <div class="whitebar"></div>
-    <div class="redbar"></div>
 
    <!-- Bottom Banner Colors-->
    <div class="bluebar"></div>

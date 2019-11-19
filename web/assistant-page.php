@@ -4,7 +4,7 @@
 <head>
 
   <!-- Tab Title-->
-  <title>Skjervoy</title>
+  <title>Skjervoy Pens</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -176,8 +176,6 @@
     </p>
     <p class="center_box_text_employee">Position - <?php echo $role; ?> </p>
     <p class="center_box_text_employee">Workplace Type - <?php echo $type; ?></p>
-
-
     <!-- Section Divider -->
     <div class="black_box_desc_div">
     </div>
@@ -191,8 +189,8 @@
         <?php echo $firstline; ?>
         <?php
         if ($secondline == "") { } else { ?> <br> <?php
-                                                  echo $secondline;
-                                                } ?><br>
+                                                    echo $secondline;
+                                                  } ?><br>
         <?php echo $city; ?><br>
         <?php echo $postcode; ?><br>
         <?php echo $country; ?><br>
@@ -209,7 +207,8 @@
         <font face="javanese-text" ->- Database Access -</font>
       </p>
 
-      <table style="width:100%">
+      <div class="flex container">
+        <table style="width:100%">
           <tr>
             <th>Product ID</th>
             <th>Type</th>
@@ -222,50 +221,92 @@
             <th>Order</th>
           </tr>
 
-      <?php
-
-      $invdata = mysql_query("SELECT * FROM Inventory WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
-
-      while ($inv = mysql_fetch_array($invdata)) {
-
-        $productid = $inv['Product ID'];
-        $quantity = $inv['Quantity'];
-        $minquantity = $inv['Minimum Required Quantity'];
-        
-        $productdata = mysql_query("SELECT * FROM Products WHERE `Product ID` = \"$productid\"") or die(mysql_error('No Records Found'));
-        while ($prod = mysql_fetch_array($productdata)) {
-          $productname = $prod['Name'];
-          $producttype = $prod['Type'];
-          $productseries = $prod['Series'];
-          $buyingprice = $prod['Buying Price'];
-          $sellingprice = $prod['Selling Price'];
-        }
-
-        ?>
-
-        
           <tr>
-            <td><?php echo $productid; ?></td>
-            <td><?php echo $producttype; ?></td>
-            <td><?php echo $productseries; ?></td>
-            <td><?php echo $productname; ?></td>
-            <td><?php echo $quantity; ?></td>
-            <td><?php echo $buyingprice; ?></td>
-            <td><?php echo $sellingprice; ?></td>
-            <td><?php echo $minquantity; ?></td>
-            <td><?php 
+            <?php
+            $invdata = mysql_query("SELECT * FROM Inventory WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
+            while ($inv = mysql_fetch_array($invdata)) {
+              $productid = $inv['Product ID'];
+              $quantity = $inv['Quantity'];
+              $minquantity = $inv['Minimum Required Quantity'];
+              $productdata = mysql_query("SELECT * FROM Products WHERE `Product ID` = \"$productid\"") or die(mysql_error('No Records Found'));
+              while ($prod = mysql_fetch_array($productdata)) {
+                $productname = $prod['Name'];
+                $producttype = $prod['Type'];
+                $productseries = $prod['Series'];
+                $buyingprice = $prod['Buying Price'];
+                $sellingprice = $prod['Selling Price'];
+                $supplier = $prod['Supplier'];
+                ?>
 
-            if($quantity<$minquantity)
-            {
-              ?><button class="btn btn-black mr-1 rounded-0" onclick=""><font color="white">Order More</font></button><?php
-            }
-            else{}
-            
-            ?></td>
+
+                <td><?php echo $productid; ?></td>
+                <td><?php echo $producttype; ?></td>
+                <td><?php echo $productseries; ?></td>
+                <td><?php echo $productname; ?></td>
+                <td><?php echo $quantity; ?></td>
+                <td><?php echo $buyingprice; ?></td>
+                <td><?php echo $sellingprice; ?></td>
+                <td><?php echo $minquantity; ?></td>
+                <td>
+
+                  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#<?php echo $productname; ?>">
+                    Order More
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="<?php echo $productname; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $productname; ?>Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="<?php echo $productname; ?>Label"><?php echo $productname; ?></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <?php
+                              $supplierdata = mysql_query("SELECT * FROM Suppliers WHERE `Name` = \"$supplier\"") or die(mysql_error('No Records Found'));
+                              while ($sup = mysql_fetch_array($supplierdata)) {
+                                $supname = $sup['Name'];
+                                $supaddress = $sup['Address'];
+                                $supemail = $sup['Email'];
+                                $supplieraddress = mysql_query("SELECT * FROM Addresses WHERE `Address ID` = \"$supaddress\"") or die(mysql_error('No Records Found'));
+                                while ($supaddr = mysql_fetch_array($supplieraddress)) {
+                                  $firstlinesup = $supaddr['First Line of Address'];
+                                  $secondlinesup = $supaddr['Second Line of Address'];
+                                  $postcodesup = $supaddr['Postcode'];
+                                  $citysup = $supaddr['City'];
+                                  $countrysup = $supaddr['Country'];
+                                }
+                                ?>
+                            <h1>Supplier: </h1><?php echo $supname; ?><br><br>
+                            <h2>Address: </h2><?php echo $firstlinesup; ?><br>
+                            <?php echo $secondlinesup; ?><br>
+                            <?php echo $postcodesup; ?><br>
+                            <?php echo $citysup; ?><br>
+                            <?php echo $countrysup; ?><br><br>
+                            <h2>Email: <br></h2><?php echo $supemail; ?><br>
+
+                          <?php } ?>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
           </tr>
 
-      <?php } ?>
-      </table>
+      <?php }
+      } ?>
+        </table>
+      </div>
+    </div>
+
+    <div class="black_box_desc_div" style ="margin-bottom:50px;margin-top:50px;">
     </div>
 
 

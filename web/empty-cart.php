@@ -85,28 +85,26 @@
     <!-- First Black Description Box-->
     <div class="black_box_desc_employee">
         <p class="center_box_heading_employee">
-            <font face="javanese-text" ->Oh No!</font>
+            <font face="javanese-text" ->Your Cart is Empty!</font>
         </p>
     </div>
     <div class="flex-container justify-content-center">
-        <p>Your cart is empty!</p>
-        <div class="cart-divider-bottom">
-        </div>
-        <div class="flex container">
+        
             <div class="row">
-                <div class="d-flex justify-content-start">
+                <div class="d-flex justify-content-center">
                     <a href="our-pens.php">
                         <button type="button" class="btn btn-black mr-1 rounded-0">Keep Shopping Pens
                         </button>
                     </a>
                 </div>
-                <div class="d-flex justify-content-start">
+                <div class="d-flex justify-content-center">
                     <a href="our-notebooks.php">
                         <button type="button" class="btn btn-black mr-1 rounded-0">Keep Shopping Notebooks
                         </button>
                     </a>
                 </div>
             </div>
+        </div>
 
             <!-- Bottom Banner Colors-->
             <div class="bluebar"></div>

@@ -101,7 +101,7 @@
               <h2 style="font-size: 1.5vh"></h2>
               <p class="mb-4"> </p>
               <div>
-                <a href="#" class="btn btn-black mr-1 rounded-0">View Collection</a>
+                <a href="#fjord-series" class="btn btn-black mr-1 rounded-0">View Collection</a>
               </div>
             </div>
           </div>
@@ -118,7 +118,7 @@
               <h2 style="font-size: 1.5vh"></h2>
               <p class="mb-4"> </p>
               <div>
-                <a href="#" class="btn btn-black mr-1 rounded-0">View Collection</a>
+                <a href="#excellence-series" class="btn btn-black mr-1 rounded-0">View Collection</a>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@
 
               <p class="mb-4"> </p>
               <div>
-                <a href="#" class="btn btn-black mr-1 rounded-0">View Collection</a>
+                <a href="#elite-series" class="btn btn-black mr-1 rounded-0">View Collection</a>
               </div>
             </div>
           </div>
@@ -150,7 +150,7 @@
     <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-md-6 text-center">
-          <h3 class="section-sub-title">Explore Our</h3>
+          <h3 class="section-sub-title" id="fjord-series">Explore Our</h3>
           <h2 class="section-title mb-3">Fjord Series</h2>
         </div>
       </div>
@@ -200,7 +200,7 @@
     <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-md-6 text-center">
-          <h3 class="section-sub-title">Explore Our</h3>
+          <h3 class="section-sub-title" id="excellence-series">Explore Our</h3>
           <h2 class="section-title mb-3">Excellence Series</h2>
         </div>
       </div>
@@ -250,7 +250,7 @@
     <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-md-6 text-center">
-          <h3 class="section-sub-title">Explore Our</h3>
+          <h3 class="section-sub-title" id="elite-series">Explore Our</h3>
           <h2 class="section-title mb-3">Elite Series</h2>
         </div>
       </div>

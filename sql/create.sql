@@ -310,7 +310,7 @@ VALUES
     
     ('0000000000000001','199 Archies road', 'blacknes', 'DD9 9II','Dundee', 'Scotland'),
     ('0000000000000002','39 QMB', 'Perth', 'D55 1QL','Dundee', 'Scotland'),
-    ('0000000000000003','79 Union Road', 'Thurso', 'T55 1QL','Thurso', 'Scotland');
+    ('0000000000000003','79 Union Road', 'Thurso', 'T55 1QL','Oslo', 'Norway');
 
 
 /*!40000 ALTER TABLE Addresses ENABLE KEYS */;

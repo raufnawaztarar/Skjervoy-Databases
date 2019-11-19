@@ -47,9 +47,9 @@
         <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
         <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
         <li>
-        <form action="search.php" method="GET" class="form-inline">
-          <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
-        </form>
+          <form action="search.php" method="GET" class="form-inline">
+            <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
+          </form>
         </li>
       </ul>
     </div>
@@ -70,61 +70,56 @@
   session_start();
 
   //preventing direct link access
-        
-  if (isset($_SESSION['varname2']))
-  {
+
+  if (isset($_SESSION['varname2'])) {
     $id = $_SESSION['varname'];
     $role = $_SESSION['varname2'];
 
-    if ($role != "Warehouse Assistant")
-    {
-      ?> 
+    if ($role != "Warehouse Assistant") {
+      ?>
       <script type="text/javascript">
         window.location.href = "error.php";
-      </script> 
-      <?php
-                  }
-        
-        }
-                
-      else {
-                  ?> <script type="text/javascript">
+      </script>
+    <?php
+      }
+    } else {
+      ?> <script type="text/javascript">
       window.location.href = "error.php";
     </script> <?php
               }
 
-  $data = mysql_query("SELECT * FROM Employees WHERE `Employee ID` = \"$id\"") or die(mysql_error('No Records Found'));
+              $data = mysql_query("SELECT * FROM Employees WHERE `Employee ID` = \"$id\"") or die(mysql_error('No Records Found'));
 
-  while ($info = mysql_fetch_array($data)) {
+              while ($info = mysql_fetch_array($data)) {
 
 
-    $name = $info['Name'];
-    $role = $info['Role'];
-    $id = $info['Employee ID'];
-    $building = $info['Building'];
-    $picture = $info['Picture'];
-  }
+                $name = $info['Name'];
+                $role = $info['Role'];
+                $id = $info['Employee ID'];
+                $building = $info['Building'];
+                $picture = $info['Picture'];
+              }
 
-  $bldg = mysql_query("SELECT * FROM Buildings WHERE `Building Id` = \"$building\"") or die(mysql_error('No Records Found'));
+              $bldg = mysql_query("SELECT * FROM Buildings WHERE `Building Id` = \"$building\"") or die(mysql_error('No Records Found'));
 
-  while ($info2 = mysql_fetch_array($bldg)) {
+              while ($info2 = mysql_fetch_array($bldg)) {
 
-    $addressid = $info2['Address'];
-    $type = $info2['Type'];
-  }
+                $addressid = $info2['Address'];
+                $type = $info2['Type'];
+              }
 
-  $address = mysql_query("SELECT * FROM Addresses WHERE `Address Id` = \"$addressid\"") or die(mysql_error('No Records Found'));
+              $address = mysql_query("SELECT * FROM Addresses WHERE `Address Id` = \"$addressid\"") or die(mysql_error('No Records Found'));
 
-  while ($info3 = mysql_fetch_array($address)) {
+              while ($info3 = mysql_fetch_array($address)) {
 
-    $firstline = $info3['First Line of Address'];
-    $secondline = $info3['Second Line of Address'];
-    $postcode = $info3['Postcode'];
-    $city = $info3['City'];
-    $country = $info3['Country'];
-  }
+                $firstline = $info3['First Line of Address'];
+                $secondline = $info3['Second Line of Address'];
+                $postcode = $info3['Postcode'];
+                $city = $info3['City'];
+                $country = $info3['Country'];
+              }
 
-  ?>
+              ?>
 
   <!-- Avatar -->
   <div class="avatar-box">
@@ -162,7 +157,8 @@
         <font face="javanese-text" ->- Database Access -</font>
       </p>
 
-      <table style="width:100%">
+      <div class="flex container">
+        <table style="width:100%">
           <tr>
             <th>Product ID</th>
             <th>Type</th>
@@ -175,115 +171,162 @@
             <th>Order</th>
           </tr>
 
-      <?php
-
-      $invdata = mysql_query("SELECT * FROM Inventory WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
-
-      while ($inv = mysql_fetch_array($invdata)) {
-
-        $productid = $inv['Product ID'];
-        $quantity = $inv['Quantity'];
-        $minquantity = $inv['Minimum Required Quantity'];
-        
-        $productdata = mysql_query("SELECT * FROM Products WHERE `Product ID` = \"$productid\"") or die(mysql_error('No Records Found'));
-        while ($prod = mysql_fetch_array($productdata)) {
-          $productname = $prod['Name'];
-          $producttype = $prod['Type'];
-          $productseries = $prod['Series'];
-          $buyingprice = $prod['Buying Price'];
-          $sellingprice = $prod['Selling Price'];
-        }
-
-        ?>
-
-        
           <tr>
-            <td><?php echo $productid; ?></td>
-            <td><?php echo $producttype; ?></td>
-            <td><?php echo $productseries; ?></td>
-            <td><?php echo $productname; ?></td>
-            <td><?php echo $quantity; ?></td>
-            <td><?php echo $buyingprice; ?></td>
-            <td><?php echo $sellingprice; ?></td>
-            <td><?php echo $minquantity; ?></td>
-            <td><?php 
+            <?php
 
-            if($quantity<$minquantity)
-            {
-              ?><button class="btn btn-black mr-1 rounded-0" onclick=""><font color="white">Order More</font></button><?php
-            }
-            else{}
-            
-            ?></td>
+            $invdata = mysql_query("SELECT * FROM Inventory WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
+
+            while ($inv = mysql_fetch_array($invdata)) {
+
+              $productid = $inv['Product ID'];
+              $quantity = $inv['Quantity'];
+              $minquantity = $inv['Minimum Required Quantity'];
+
+              $productdata = mysql_query("SELECT * FROM Products WHERE `Product ID` = \"$productid\"") or die(mysql_error('No Records Found'));
+              while ($prod = mysql_fetch_array($productdata)) {
+                $productname = $prod['Name'];
+                $producttype = $prod['Type'];
+                $productseries = $prod['Series'];
+                $buyingprice = $prod['Buying Price'];
+                $sellingprice = $prod['Selling Price'];
+                $supplier = $prod['Supplier'];
+
+
+                ?>
+
+
+                <td><?php echo $productid; ?></td>
+                <td><?php echo $producttype; ?></td>
+                <td><?php echo $productseries; ?></td>
+                <td><?php echo $productname; ?></td>
+                <td><?php echo $quantity; ?></td>
+                <td><?php echo $buyingprice; ?></td>
+                <td><?php echo $sellingprice; ?></td>
+                <td><?php echo $minquantity; ?></td>
+                <td>
+
+                  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#<?php echo $productname; ?>">
+                    Order More
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="<?php echo $productname; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $productname; ?>Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="<?php echo $productname; ?>Label"><?php echo $productname; ?></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <?php
+                              $supplierdata = mysql_query("SELECT * FROM Suppliers WHERE `Name` = \"$supplier\"") or die(mysql_error('No Records Found'));
+                              while ($sup = mysql_fetch_array($supplierdata)) {
+                                $supname = $sup['Name'];
+                                $supaddress = $sup['Address'];
+                                $supemail = $sup['Email'];
+
+                                $supplieraddress = mysql_query("SELECT * FROM Addresses WHERE `Address ID` = \"$supaddress\"") or die(mysql_error('No Records Found'));
+                                while ($supaddr = mysql_fetch_array($supplieraddress)) {
+                                  $firstlinesup = $supaddr['First Line of Address'];
+                                  $secondlinesup = $supaddr['Second Line of Address'];
+                                  $postcodesup = $supaddr['Postcode'];
+                                  $citysup = $supaddr['City'];
+                                  $countrysup = $supaddr['Country'];
+                                }
+
+                                ?>
+                            <h1>Supplier: </h1><?php echo $supname; ?><br><br>
+                            <h2>Address: </h2><?php echo $firstlinesup; ?><br>
+                            <?php echo $secondlinesup; ?><br>
+                            <?php echo $postcodesup; ?><br>
+                            <?php echo $citysup; ?><br>
+                            <?php echo $countrysup; ?><br><br>
+                            <h2>Email: <br></h2><?php echo $supemail; ?><br>
+
+                          <?php } ?>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
           </tr>
 
-      <?php } ?>
-      </table>
+      <?php }
+      } ?>
+        </table>
+      </div>
     </div>
 
 
-   <!-- Bottom Banner Colors-->
-   <div class="bluebar"></div>
-  <div class="whitebar"></div>
-  <div class="redbar"></div>
+    <!-- Bottom Banner Colors-->
+    <div class="bluebar"></div>
+    <div class="whitebar"></div>
+    <div class="redbar"></div>
 
-  <!-- Footer-->
-  <footer id="footer" class="footer-1">
-    <div class="main-footer widgets-dark typo-light">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col text-left">
-            <div class="widget">
-              <h5 class="widget-title">
-                <font face="javanese-text">Quick Links</font><span></span>
-              </h5>
-              <ul class="thumbnail-widget">
-                <li>
-                  <div class="thumb-content"><a href="#.">Home</a></div>
-                </li>
-                <li>
-                  <div class="thumb-content"><a href="#.">Products</a></div>
-                </li>
-                <li>
-                  <div class="thumb-content"><a href="#.">Store Guide</a></div>
-                </li>
-                <li>
-                  <div class="thumb-content"><a href="#.">Track Orders</a></div>
-                </li>
-              </ul>
+    <!-- Footer-->
+    <footer id="footer" class="footer-1">
+      <div class="main-footer widgets-dark typo-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col text-left">
+              <div class="widget">
+                <h5 class="widget-title">
+                  <font face="javanese-text">Quick Links</font><span></span>
+                </h5>
+                <ul class="thumbnail-widget">
+                  <li>
+                    <div class="thumb-content"><a href="#.">Home</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="#.">Products</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="#.">Store Guide</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="#.">Track Orders</a></div>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="col text-center">
-            <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
-              <font face="kollektif">Store Opening Hours<br>
-                Mon - Fri: 9 AM - 6 PM<br>
-                Sat - Sun: 10 AM - 5 PM<br>
-              </font>
-            </p>
-            <img class="flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
-            <p>
-              <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
-            </p>
-          </div>
-          <div class="col text-right">
-            <div class="widget">
-              <h5 class="widget-title">
-                <font face="javanese-text">Company Information</font><span></span>
-              </h5>
-              <ul class="thumbnail-widget">
-                <li>
-                  <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
-                </li>
-                <li>
-                  <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
-                </li>
-              </ul>
+            <div class="col text-center">
+              <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
+                <font face="kollektif">Store Opening Hours<br>
+                  Mon - Fri: 9 AM - 6 PM<br>
+                  Sat - Sun: 10 AM - 5 PM<br>
+                </font>
+              </p>
+              <img class="flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
+              <p>
+                <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
+              </p>
+            </div>
+            <div class="col text-right">
+              <div class="widget">
+                <h5 class="widget-title">
+                  <font face="javanese-text">Company Information</font><span></span>
+                </h5>
+                <ul class="thumbnail-widget">
+                  <li>
+                    <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
 </body>
 

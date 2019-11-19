@@ -99,10 +99,30 @@
               <button type="submit" class="btn btn-primary btn-block">Log in</button>
           </div>
           <div class="clearfix">
-              <a href="#" class="pull-right">Forgot Password?</a>
+          <a  class="pull-right" data-toggle="modal" data-target="#forgotpassword">Forgot Password?</a>
           </div>        
       </form>
   </div>
+
+   <!-- Modal -->
+   <div class="modal fade" id="forgotpassword" tabindex="-1" role="dialog" aria-labelledby="forgotpasswordLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="forgotpasswordLabel">Forgot Password</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Due to the nature of our elusive customer base, we require personal verification before resetting your password.<br><br>Please write an email to us at info@skjervoy.com from your registered email address</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
       
   <!-- Bottom Banner Colors-->
   <div class="bluebar"></div>

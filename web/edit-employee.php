@@ -79,7 +79,7 @@
   <!-- First Black Description Box-->
   <div class="black_box_desc_employee">
     <p class="center_box_heading_employee">
-      <font face="javanese-text" ->- Employee Login -</font>
+      <font face="javanese-text" ->- Edit Employee Details -</font>
     </p>
   </div>
 
@@ -95,7 +95,7 @@
   //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
   $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   ?>
-
+  <div class="flex container" style="padding-top:100px;padding-bottom:50px;text-align:left;">
   <?php
   try {
 
@@ -133,15 +133,15 @@
   <form name="Edit Employee" action="" method="post">
       <?php if($datafound) { ?>
     <?php echo $emp_id_emp; ?><br/>
-    Name: <input type="text" name="name" value="<?php echo $name_emp ?>"> <br />
+    Name: <input style ="margin-top:10px;"type="text" name="name" value="<?php echo $name_emp ?>"> <br />
     <!-- Series: <input type="text" name="series" value="Elite"> <br /> -->
-    Email: <input type="text" name="email" value="<?php echo $email_emp ?>"> <br />
-    Phone: <input type="text" name="phone" value="<?php echo $phone_emp ?>"> <br />
-    Salary: <input type="text" name="salary" value="<?php echo $salary_emp ?>">£ <br />
-    Role: <input type="text" name="role" value="<?php echo $role_emp ?>"> <br />
-    Bank Details: <input type="text" name="bank_details" value="<?php echo $bank_details_emp ?>"> <br />
-    <input type="hidden" name="emp_id" value="<?php echo $emp_id_emp ?>" />
-    <input type="submit" name="submit_edit_emp" value="Submit" /> <br />
+    Email: <input style ="margin-top:10px;" type="text" name="email" value="<?php echo $email_emp ?>"> <br />
+    Phone: <input style ="margin-top:10px;" type="text" name="phone" value="<?php echo $phone_emp ?>"> <br />
+    Salary (£): <input style ="margin-top:10px;" type="text" name="salary" value="<?php echo $salary_emp ?>"> <br />
+    Role: <input style ="margin-top:10px;" type="text" name="role" value="<?php echo $role_emp ?>"> <br />
+    Bank Details: <input style ="margin-top:10px;" type="text" name="bank_details" value="<?php echo $bank_details_emp ?>"> <br />
+    <input style ="margin-top:10px;" type="hidden" name="emp_id" value="<?php echo $emp_id_emp ?>" />
+    <input style ="margin-top:10px;" type="submit" name="submit_edit_emp" value="Submit" /> <br />
       <?php } ?>
   </form>
 
@@ -186,7 +186,7 @@
   ?>
 
   </div>
-
+  </div>
 
 
   <!-- Bottom Banner Colors-->

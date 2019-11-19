@@ -1,33 +1,48 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
+<?php session_start(); ?>
 
 <head>
-
   <!-- Tab Title-->
-  <title>Skjervoy</title>
-
+  <title>Skjervoy Pens
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
   <!-- Bootstrap Link-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
   <!-- Our External Style Sheet-->
   <link rel="stylesheet" type="text/css" href="style.css">
-
   <!-- Icon Libary-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
-
   <!-- Top Banner Colors-->
   <div class="rainbow_group">
-    <div class="bluebar"></div>
-    <div class="whitebar"></div>
-    <div class="redbar"></div>
+    <div class="bluebar">
+    </div>
+    <div class="whitebar">
+    </div>
+    <div class="redbar">
+    </div>
   </div>
 
   <!-- Navigation -->
@@ -46,11 +61,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
         <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
-        <?php if (!isset($_SESSION['name'])) { ?>
-          <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
-        <?php } else { ?>
-          <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
-        <?php } ?>
+        <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
         <li>
           <form action="search.php" method="GET" class="form-inline">
             <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
@@ -59,7 +70,6 @@
       </ul>
     </div>
   </nav>
-
   <!-- First Black Description Box-->
   <div class="black_box_desc_employee">
     <p class="center_box_heading_employee">
@@ -86,48 +96,48 @@
                   ?> <script type="text/javascript">
       window.location.href = "error.php";
     </script>
+    
+    <?php }
+              $server = "silva.computing.dundee.ac.uk";
+              $user = "19ac3u05";
+              $pass = "abc123";
+              $database = "19ac3d05";
+              $mysql = new PDO("mysql:host=" . $server . ";dbname=" . $database, $user, $pass);
+              //not sure what the next line is, from
+              //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
+              // $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  <?php }
-  $server = "silva.computing.dundee.ac.uk";
-  $user = "19ac3u05";
-  $pass = "abc123";
-  $database = "19ac3d05";
-  $mysql = new PDO("mysql:host=" . $server . ";dbname=" . $database, $user, $pass);
-  //not sure what the next line is, from
-  //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
-  // $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-  //preventing direct link access
+              //preventing direct link access
 
 
-  $stmt = $mysql->prepare("SELECT * FROM Employees WHERE `Employee ID` = \"$id\"");
-  $stmt->execute();
-  while ($info = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $name = $info['Name'];
-    $role = $info['Role'];
-    $id = $info['Employee ID'];
-    $building = $info['Building'];
-    $picture = $info['Picture'];
-  }
+              $stmt = $mysql->prepare("SELECT * FROM Employees WHERE `Employee ID` = \"$id\"");
+              $stmt->execute();
+              while ($info = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $name = $info['Name'];
+                $role = $info['Role'];
+                $id = $info['Employee ID'];
+                $building = $info['Building'];
+                $picture = $info['Picture'];
+              }
 
-  $stmt2 = $mysql->prepare("SELECT * FROM Buildings WHERE `Building Id` = \"$building\"");
-  $stmt2->execute();
-  while ($info2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+              $stmt2 = $mysql->prepare("SELECT * FROM Buildings WHERE `Building Id` = \"$building\"");
+              $stmt2->execute();
+              while ($info2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
 
-    $addressid = $info2['Address'];
-    $type = $info2['Type'];
-  }
+                $addressid = $info2['Address'];
+                $type = $info2['Type'];
+              }
 
-  $stmt3 = $mysql->prepare("SELECT * FROM Addresses WHERE `Address Id` = \"$addressid\"");
-  $stmt3->execute();
-  while ($info3 = $stmt3->fetch(PDO::FETCH_ASSOC)) {
-    $firstline = $info3['First Line of Address'];
-    $secondline = $info3['Second Line of Address'];
-    $postcode = $info3['Postcode'];
-    $city = $info3['City'];
-    $country = $info3['Country'];
-  }
-  ?>
+              $stmt3 = $mysql->prepare("SELECT * FROM Addresses WHERE `Address Id` = \"$addressid\"");
+              $stmt3->execute();
+              while ($info3 = $stmt3->fetch(PDO::FETCH_ASSOC)) {
+                $firstline = $info3['First Line of Address'];
+                $secondline = $info3['Second Line of Address'];
+                $postcode = $info3['Postcode'];
+                $city = $info3['City'];
+                $country = $info3['Country'];
+              }
+              ?>
 
   <!-- Avatar -->
   <div class="avatar-box">
@@ -186,9 +196,9 @@
     </div>
 
     <p class="center_box_desc_employee">
-      <font face="javanese-text" ->- Product Tools -</font>
-    </p>
-
+        <font face="javanese-text" ->- Product Tools -</font>
+      </p>
+      
     <!-- Pens Product Category-->
     <div class="flex container">
       <div class="row">
@@ -413,7 +423,7 @@ VALUE (:Product_ID, :Name, :Type, :Buying_price, :Selling_price, :Weight, :Pictu
         </div>
       </div>
     </div>
-    <div class="black_box_desc_div" style="margin-top:50px;">
+    <div class="black_box_desc_div" style ="margin-top:50px;">
     </div>
 
     <!-- Third Section-->
@@ -421,54 +431,54 @@ VALUE (:Product_ID, :Name, :Type, :Buying_price, :Selling_price, :Weight, :Pictu
       <p class="center_box_desc_employee">
         <font face="javanese-text" ->- Product Database -</font>
       </p>
-
+      
       <div class="flex container">
-        <table style="width:100%">
+      <table style="width:100%">
+        <tr>
+          <th>Product ID</th>
+          <th>Type</th>
+          <th>Series</th>
+          <th>Name</th>
+          <th>Buying Price</th>
+          <th>Selling Price</th>
+          <th>Order</th>
+        </tr>
+
+        <?php
+
+
+        // $productdata = mysql_query("SELECT * FROM Products") or die(mysql_error('No Records Found'));
+
+
+        $stmt = $mysql->prepare("SELECT * FROM Products ORDER BY Name ASC");
+        $stmt->execute();
+        while ($prod = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          $productid = $prod['Product ID'];
+          $productname = $prod['Name'];
+          $producttype = $prod['Type'];
+          $productseries = $prod['Series'];
+          $buyingprice = $prod['Buying Price'];
+          $sellingprice = $prod['Selling Price'];
+
+
+          ?>
+
+
           <tr>
-            <th>Product ID</th>
-            <th>Type</th>
-            <th>Series</th>
-            <th>Name</th>
-            <th>Buying Price</th>
-            <th>Selling Price</th>
-            <th>Order</th>
+            <td><?php echo $productid; ?></td>
+            <td><?php echo $producttype; ?></td>
+            <td><?php echo $productseries; ?></td>
+            <td><?php echo $productname; ?></td>
+            <td><?php echo $buyingprice; ?></td>
+            <td><?php echo $sellingprice; ?></td>
           </tr>
 
-          <?php
-
-
-          // $productdata = mysql_query("SELECT * FROM Products") or die(mysql_error('No Records Found'));
-
-
-          $stmt = $mysql->prepare("SELECT * FROM Products ORDER BY Name ASC");
-          $stmt->execute();
-          while ($prod = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $productid = $prod['Product ID'];
-            $productname = $prod['Name'];
-            $producttype = $prod['Type'];
-            $productseries = $prod['Series'];
-            $buyingprice = $prod['Buying Price'];
-            $sellingprice = $prod['Selling Price'];
-
-
-            ?>
-
-
-            <tr>
-              <td><?php echo $productid; ?></td>
-              <td><?php echo $producttype; ?></td>
-              <td><?php echo $productseries; ?></td>
-              <td><?php echo $productname; ?></td>
-              <td><?php echo $buyingprice; ?></td>
-              <td><?php echo $sellingprice; ?></td>
-            </tr>
-
-          <?php } ?>
-        </table>
+        <?php } ?>
+      </table>
       </div>
 
-      <div class="black_box_desc_div" style="margin-bottom:50px;margin-top:50px;">
-      </div>
+      <div class="black_box_desc_div" style ="margin-bottom:50px;margin-top:50px;">
+    </div>
 
       <!-- Bottom Banner Colors-->
       <div class="bluebar"></div>
@@ -476,59 +486,62 @@ VALUE (:Product_ID, :Name, :Type, :Buying_price, :Selling_price, :Weight, :Pictu
       <div class="redbar"></div>
 
       <!-- Footer-->
-      <footer id="footer" class="footer-1">
-        <div class="main-footer widgets-dark typo-light">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col text-left">
-                <div class="widget">
-                  <h5 class="widget-title">
-                    <font face="javanese-text">Quick Links</font><span></span>
-                  </h5>
-                  <ul class="thumbnail-widget">
-                    <li>
-                      <div class="thumb-content"><a href="index.php">Home</a></div>
-                    </li>
-                    <li>
-                      <div class="thumb-content"><a href="our-pens.php">Our Pens</a></div>
-                    </li>
-                    <li>
-                      <div class="thumb-content"><a href="our-notebooks.php">Our Notebooks</a></div>
-                    </li>
-                    <li>
-                      <div class="thumb-content"><a href="our-locations.php">Our Stores</a></div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col text-center">
-                <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
-                  <font face="kollektif">Store Opening Hours<br>
-                    Mon - Fri: 9 AM - 6 PM<br>
-                    Sat - Sun: 10 AM - 5 PM<br>
-                  </font>
-                </p>
-                <img class="flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
-                <p>
-                  <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
-                </p>
-              </div>
-              <div class="col text-right">
-                <div class="widget">
-                  <h5 class="widget-title">
-                    <font face="javanese-text">Company Information</font><span></span>
-                  </h5>
-                  <ul class="thumbnail-widget">
-                    <li>
-                      <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+  <footer id="footer" class="footer-1">
+    <div class="main-footer widgets-dark typo-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col text-left">
+            <div class="widget">
+              <h5 class="widget-title">
+                <font face="javanese-text">Quick Links</font><span></span>
+              </h5>
+              <ul class="thumbnail-widget">
+                <li>
+                  <div class="thumb-content"><a href="index.php">Home</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="our-pens.php">Our Pen Collection</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="our-notebooks.php">Our Notebooks</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="our-locations.php">Our Stores</a></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col text-center">
+            <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
+              <font face="kollektif">Store Opening Hours<br>
+                Mon - Fri: 9 AM - 6 PM<br>
+                Sat - Sun: 10 AM - 5 PM<br>
+              </font>
+            </p>
+            <img class="flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
+            <p>
+              <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
+            </p>
+          </div>
+          <div class="col text-right">
+            <div class="widget">
+              <h5 class="widget-title">
+                <font face="javanese-text">Company Information</font><span></span>
+              </h5>
+              <ul class="thumbnail-widget">
+                <li>
+                  <div class="thumb-content"><a href="error.php">Privacy Policy</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+    </div>
+  </footer>
 
 </body>
 

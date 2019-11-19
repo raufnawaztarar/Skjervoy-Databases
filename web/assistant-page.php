@@ -6,6 +6,29 @@
   <!-- Tab Title-->
   <title>Skjervoy</title>
 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
   <!-- Bootstrap Link-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -21,7 +44,6 @@
 </head>
 
 <body>
-
   <!-- Top Banner Colors-->
   <div class="rainbow_group">
     <div class="bluebar"></div>
@@ -45,11 +67,15 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
         <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
-        <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+          <?php if (!isset($_SESSION['name'])) { ?>
+            <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+          <?php } else { ?>
+            <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
+          <?php } ?>
         <li>
-          <form action="search.php" method="GET" class="form-inline">
-            <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
-          </form>
+        <form action="search.php" method="GET" class="form-inline">
+          <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
+        </form>
         </li>
       </ul>
     </div>

@@ -29,7 +29,6 @@ if (isset($_POST['inputted-username']))
   }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -37,6 +36,29 @@ if (isset($_POST['inputted-username']))
 
   <!-- Tab Title-->
   <title>Skjervoy</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Bootstrap Link-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -53,7 +75,6 @@ if (isset($_POST['inputted-username']))
 </head>
 
 <body>
-
   <!-- Top Banner Colors-->
   <div class="rainbow_group">
     <div class="bluebar"></div>
@@ -77,7 +98,7 @@ if (isset($_POST['inputted-username']))
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
         <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
-        <?php if (!isset($_SESSION['name'])) { ?>
+          <?php if (!isset($_SESSION['name'])) { ?>
             <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
           <?php } else { ?>
             <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>

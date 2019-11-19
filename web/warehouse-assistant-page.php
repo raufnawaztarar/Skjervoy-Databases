@@ -76,7 +76,7 @@
     $id = $_SESSION['varname'];
     $role = $_SESSION['varname2'];
 
-    if ($role != "Sales Assistant")
+    if ($role != "Warehouse Assistant")
     {
       ?> 
       <script type="text/javascript">

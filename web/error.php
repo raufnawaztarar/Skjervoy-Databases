@@ -61,10 +61,10 @@
         <p>It appears the server has run out of ink to draw pages with. We are very sorry about this and we will top up the server ink supply soon.</p>
     </div>
     
-    <!-- Bottom Banner Colors-->
-    <div class="bluebar"></div>
-    <div class="whitebar"></div>
-    <div class="redbar"></div>
+  <!-- Bottom Banner Colors-->
+  <div class="bluebar"></div>
+  <div class="whitebar"></div>
+  <div class="redbar"></div>
 
   <!-- Footer-->
   <footer id="footer" class="footer-1">

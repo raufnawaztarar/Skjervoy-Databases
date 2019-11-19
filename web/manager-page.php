@@ -180,109 +180,158 @@
         <font face="javanese-text" ->- Database Access -</font>
       </p>
 
-      <p class="left_box_text_employee">INVENTORY</p>
+      <?php
+      if ($type == "Shop") { ?>
 
-      <table style="width:100%">
-        <tr>
-          <th>Product ID</th>
-          <th>Type</th>
-          <th>Series</th>
-          <th>Name</th>
-          <th>Quantity</th>
-          <th>Buying Price</th>
-          <th>Selling Price</th>
-          <th>Minimum Required</th>
-          <th>Order</th>
-        </tr>
+        <p class="center_box_desc_employee">
+          <font face="javanese-text" ->- Store Inventory -</font>
+        </p>
 
-        <?php
+        <div class="flex container">
 
-        $invdata = mysql_query("SELECT * FROM Inventory WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
+          <table style="width:100%">
+            <tr>
+              <th>Product ID</th>
+              <th>Type</th>
+              <th>Series</th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Buying Price</th>
+              <th>Selling Price</th>
+              <th>Minimum Required</th>
+              <th>Order</th>
+            </tr>
 
-        while ($inv = mysql_fetch_array($invdata)) {
+            <?php
+              $invdata = mysql_query("SELECT * FROM Inventory WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
+              while ($inv = mysql_fetch_array($invdata)) {
+                $productid = $inv['Product ID'];
+                $quantity = $inv['Quantity'];
+                $minquantity = $inv['Minimum Required Quantity'];
+                $productdata = mysql_query("SELECT * FROM Products WHERE `Product ID` = \"$productid\"") or die(mysql_error('No Records Found'));
+                while ($prod = mysql_fetch_array($productdata)) {
+                  $productname = $prod['Name'];
+                  $producttype = $prod['Type'];
+                  $productseries = $prod['Series'];
+                  $buyingprice = $prod['Buying Price'];
+                  $sellingprice = $prod['Selling Price'];
+                }
+                ?>
 
-          $productid = $inv['Product ID'];
-          $quantity = $inv['Quantity'];
-          $minquantity = $inv['Minimum Required Quantity'];
 
-          $productdata = mysql_query("SELECT * FROM Products WHERE `Product ID` = \"$productid\"") or die(mysql_error('No Records Found'));
-          while ($prod = mysql_fetch_array($productdata)) {
-            $productname = $prod['Name'];
-            $producttype = $prod['Type'];
-            $productseries = $prod['Series'];
-            $buyingprice = $prod['Buying Price'];
-            $sellingprice = $prod['Selling Price'];
-          }
+              <tr>
+                <td><?php echo $productid; ?></td>
+                <td><?php echo $producttype; ?></td>
+                <td><?php echo $productseries; ?></td>
+                <td><?php echo $productname; ?></td>
+                <td><?php echo $quantity; ?></td>
+                <td><?php echo $buyingprice; ?></td>
+                <td><?php echo $sellingprice; ?></td>
+                <td><?php echo $minquantity; ?></td>
+                <td>
 
-          ?>
+                  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#<?php echo $productname; ?>">
+                    Order More
+                  </button>
 
+                  <!-- Modal -->
+                  <div class="modal fade" id="<?php echo $productname; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $productname; ?>Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="<?php echo $productname; ?>Label"><?php echo $productname; ?></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <?php
+                              $supplierdata = mysql_query("SELECT * FROM Suppliers WHERE `Name` = \"$supplier\"") or die(mysql_error('No Records Found'));
+                              while ($sup = mysql_fetch_array($supplierdata)) {
+                                $supname = $sup['Name'];
+                                $supaddress = $sup['Address'];
+                                $supemail = $sup['Email'];
+                                $supplieraddress = mysql_query("SELECT * FROM Addresses WHERE `Address ID` = \"$supaddress\"") or die(mysql_error('No Records Found'));
+                                while ($supaddr = mysql_fetch_array($supplieraddress)) {
+                                  $firstlinesup = $supaddr['First Line of Address'];
+                                  $secondlinesup = $supaddr['Second Line of Address'];
+                                  $postcodesup = $supaddr['Postcode'];
+                                  $citysup = $supaddr['City'];
+                                  $countrysup = $supaddr['Country'];
+                                }
+                                ?>
+                            <h1>Supplier: </h1><?php echo $supname; ?><br><br>
+                            <h2>Address: </h2><?php echo $firstlinesup; ?><br>
+                            <?php echo $secondlinesup; ?><br>
+                            <?php echo $postcodesup; ?><br>
+                            <?php echo $citysup; ?><br>
+                            <?php echo $countrysup; ?><br><br>
+                            <h2>Email: <br></h2><?php echo $supemail; ?><br>
 
-          <tr>
-            <td><?php echo $productid; ?></td>
-            <td><?php echo $producttype; ?></td>
-            <td><?php echo $productseries; ?></td>
-            <td><?php echo $productname; ?></td>
-            <td><?php echo $quantity; ?></td>
-            <td><?php echo $buyingprice; ?></td>
-            <td><?php echo $sellingprice; ?></td>
-            <td><?php echo $minquantity; ?></td>
-            <td><?php
+                          <?php } ?>
 
-                  if ($quantity < $minquantity) {
-                    ?><button class="btn btn-black mr-1 rounded-0" onclick="">
-                  <font color="white">Order More</font>
-                </button><?php
-                            } else { }
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
 
-                            ?></td>
-          </tr>
+            <?php } ?>
+          </table>
 
         <?php } ?>
-      </table>
 
 
-      <p class="left_box_text_employee">EMPLOYEES</p>
+        <p class="center_box_desc_employee">
+          <font face="javanese-text" ->- <?php echo $type ?> Employees -</font>
+        </p>
+
+        <div class="flex container">
 
 
-      <table style="width:100%">
-        <tr>
-          <th>Employee ID</th>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Phone Number</th>
-          <th>Salary</th>
-          <th>Bank Details</th>
-        </tr>
-
-        <?php
-
-        $empdata = mysql_query("SELECT * FROM Employees WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
-
-        while ($emp = mysql_fetch_array($empdata)) {
-
-          $empid = $emp['Employee ID'];
-          $empname = $emp['Name'];
-          $emprole = $emp['Role'];
-          $empphone = $emp['Phone'];
-          $empsalary = $emp['Salary'];
-          $empbankdetails = $emp['Bank Details'];
-
-          ?>
-
-
+        <table style="width:100%">
           <tr>
-            <td><?php echo $empid; ?></td>
-            <td><?php echo $empname; ?></td>
-            <td><?php echo $emprole; ?></td>
-            <td><?php echo $empphone; ?></td>
-            <td><?php echo $empsalary; ?></td>
-            <td><?php echo $empbankdetails; ?></td>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Phone Number</th>
+            <th>Salary</th>
+            <th>Bank Details</th>
           </tr>
 
-        <?php } ?>
-      </table>
+          <?php
+          $empdata = mysql_query("SELECT * FROM Employees WHERE `Building` = \"$building\"") or die(mysql_error('No Records Found'));
+          while ($emp = mysql_fetch_array($empdata)) {
+            $empid = $emp['Employee ID'];
+            $empname = $emp['Name'];
+            $emprole = $emp['Role'];
+            $empphone = $emp['Phone'];
+            $empsalary = $emp['Salary'];
+            $empbankdetails = $emp['Bank Details'];
+            ?>
 
 
+            <tr>
+              <td><?php echo $empid; ?></td>
+              <td><?php echo $empname; ?></td>
+              <td><?php echo $emprole; ?></td>
+              <td><?php echo $empphone; ?></td>
+              <td><?php echo $empsalary; ?></td>
+              <td><?php echo $empbankdetails; ?></td>
+            </tr>
+
+          <?php } ?>
+        </table>
+
+
+        </div>
+    </div>
+
+    <div class="black_box_desc_div" style ="margin-bottom:50px;margin-top:50px;">
     </div>
 
 

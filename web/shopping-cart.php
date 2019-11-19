@@ -227,7 +227,7 @@ $total_price += ($item[`Selling Price`]*$item["quantity"]);
             </a>
           </div>
           <div class="d-flex justify-content-start">
-            <a href="error.php">
+            <a href="checkout.php">
               <button type="button" class="btn btn-black mr-1 rounded-0">Go to Checkout
               </button>
             </a>

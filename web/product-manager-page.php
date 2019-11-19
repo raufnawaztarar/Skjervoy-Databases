@@ -433,14 +433,9 @@ VALUE (:Product_ID, :Name, :Type, :Buying_price, :Selling_price, :Weight, :Pictu
           <th>Name</th>
           <th>Buying Price</th>
           <th>Selling Price</th>
-          <th>Order</th>
         </tr>
 
         <?php
-
-
-        // $productdata = mysql_query("SELECT * FROM Products") or die(mysql_error('No Records Found'));
-
 
         $stmt = $mysql->prepare("SELECT * FROM Products");
         $stmt->execute();

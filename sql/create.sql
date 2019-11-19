@@ -232,10 +232,7 @@ DROP TABLE IF EXISTS Orders;
 CREATE TABLE Orders (
   `Order ID`        char(16) NOT NULL, 
   Date              date NOT NULL, 
-  Product           char(16) NOT NULL, 
-  Quantity          int(1) NOT NULL, 
   Address           char(16) NOT NULL, 
-  Weight            real NOT NULL, 
   `Payment Details` varchar(255) NOT NULL, 
   `Customer ID`     char(16) NOT NULL, 
   `Courier Name`    varchar(255) NOT NULL, 
@@ -245,13 +242,36 @@ CREATE TABLE Orders (
 LOCK TABLES Orders WRITE;
 /*!40000 ALTER TABLE Orders DISABLE KEYS */;
 INSERT INTO Orders 
-	(`Order ID`, Date, Product, Quantity, Address, Weight, `Payment Details`, `Customer ID`, `Courier Name`)
+	(`Order ID`, Date, Address, `Payment Details`, `Customer ID`, `Courier Name`)
 VALUES 
-	('2000111122223333', '2019-11-02', '3000111122223333', 1, '0000111122223333', 2100.0, 'Card ending in 4567', '1111222233334444', 'Royal Mail'),
-	('2000111122223334', '2019-11-10', '3000111122223334', 2, '0000111122223334', 246.5,  'Card ending in 4848', '1111222233334445', 'DHL')
-    ;
+	('2000111122223333', '2019-11-02', '0000111122223333', 'Card ending in 4567', '1111222233334444', 'Royal Mail'),
+	('2000111122223334', '2019-11-10', '0000111122223334', 'Card ending in 4848', '1111222233334445', 'DHL');
 
 /*!40000 ALTER TABLE Orders ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# OrderContents
+# ------------------------------------------------------------
+DROP TABLE IF EXISTS OrderContents;
+
+CREATE TABLE OrderContents (
+  `Content ID`    char(16) NOT NULL, 
+  `Order ID`      char(16) NOT NULL, 
+  `Product ID`    char(16) NOT NULL, 
+  Quantity        int(1) NOT NULL, 
+  PRIMARY KEY (`Content ID`)
+  );
+
+LOCK TABLES OrderContents WRITE;
+/*!40000 ALTER TABLE Orders DISABLE KEYS */;
+INSERT INTO OrderContent 
+	(`Content ID`, Order, Product, Quantity, Weight, Price)
+VALUES 
+	('1111222233334444', '2000111122223333', '3000111122223333', '1'),
+	('1111222233334445', '2000111122223334', '3000111122223334', '2');
+
+/*!40000 ALTER TABLE OrderContents ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -269,6 +289,7 @@ CREATE TABLE Customers (
   Password      char(64) NOT NULL, 
   PRIMARY KEY (`Customer ID`)
   );
+  
 
 LOCK TABLES Customers WRITE;
 /*!40000 ALTER TABLE Customers DISABLE KEYS */;

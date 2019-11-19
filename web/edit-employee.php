@@ -1,11 +1,12 @@
-<?php session_start() ?>
 <!DOCTYPE html>
 <html>
+<?php session_start() ?>
+
 
 <head>
 
   <!-- Tab Title-->
-  <title>Skjervoy</title>
+  <title>Edit Employee</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,6 +46,8 @@
 </head>
 
 <body>
+
+
   <!-- Top Banner Colors-->
   <div class="rainbow_group">
     <div class="bluebar"></div>
@@ -67,17 +70,9 @@
     <img class="col-xs-4 justify-content-center" src="resources/black_logo.png" alt="logo" height="10%" width="10%" data-toggle="null" data-target="null" onclick="window.location.href = 'index.php';">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
-        <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
-          <?php if (!isset($_SESSION['name'])) { ?>
-            <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
-          <?php } else { ?>
-            <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
-          <?php } ?>
-        <li>
-        <form action="search.php" method="GET" class="form-inline">
-          <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
-        </form>
-        </li>
+        <li href="#"><i class="nav-link fa fa-fw fa-search"></i> Search</li>
+        <li href="#"><i class="nav-link fa fa-shopping-cart"></i> Your Cart</li>
+        <li href="#"><i class="nav-link fa fa-fw fa-user"></i> Login</li>
       </ul>
     </div>
   </nav>
@@ -231,11 +226,12 @@
         <br/>
         <input style="margin-top:10px;" type="hidden" name="emp_id" value="<?php echo $emp_id_emp ?>" />
         <input style="margin-top:10px;" type="hidden" name="emp_building_id" value="<?php echo $emp_building_id ?>" />
-        <input style="margin-top:10px;" type="submit" name="submit_edit_emp" value="Submit" /> <br />
-      <?php } ?>
+        <input style="margin-top:10px;" type="submit" name="submit_edit_emp" value="Submit" />
+        <input style="margin-top:10px;" type="submit" name="cancel_edit_emp" value="Cancel" /> <br/>
     </form>
 
     <?php
+      }
     if (isset($_POST['submit_edit_emp'])) {
 
 
@@ -274,6 +270,9 @@
       } else {
         echo "Something went wrong ¯\_(ツ)_/¯ <br/>";
       }
+    } else if (isset($_POST['cancel_edit_emp'])) {
+      echo "No changes were saved.<br/>";
+      echo "<a href=\"#\" onclick=\"window.close();return false;\">Close this tab.</a>";
     }
     ?>
 

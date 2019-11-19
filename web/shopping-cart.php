@@ -85,6 +85,7 @@ break;
       <div class="redbar">
       </div>
     </div>
+
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -110,14 +111,13 @@ break;
       <img class="col-xs-4 justify-content-center" src="resources/black_logo.png" alt="logo" height="10%" width="10%" data-toggle="null" data-target="null" onclick="window.location.href = 'index.php';">
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
-          <li class="nav-item">
-            <a href="shopping-cart.php" class="nav-link">&#128722; Your Cart 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="login.php" class="nav-link">&#x1F464; Login 
-            </a>
-          </li>
+          <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
+        <?php if (!isset($_SESSION['name'])) { ?>
+            <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+          <?php } else { ?>
+            <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
+          <?php } ?>
+        <li>
           <li>
             <form action="search.php" method="GET" class="form-inline">
               <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">

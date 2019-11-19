@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -44,8 +45,6 @@
 </head>
 
 <body>
-
-
   <!-- Top Banner Colors-->
   <div class="rainbow_group">
     <div class="bluebar"></div>
@@ -69,7 +68,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
         <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
-        <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+          <?php if (!isset($_SESSION['name'])) { ?>
+            <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+          <?php } else { ?>
+            <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
+          <?php } ?>
         <li>
         <form action="search.php" method="GET" class="form-inline">
           <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
@@ -84,7 +87,6 @@
   </div>
 
   <!-- Pens Product Category-->
-
   <div class="product_block">
 
     <div class="row">
@@ -146,7 +148,7 @@
     </div>
   </div>
 
-
+  <!-- Pens -->
   <div class="site-section" id="products-section">
   <div class="container">
       <div class="row mb-5 justify-content-center">

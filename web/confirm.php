@@ -60,84 +60,75 @@
 
     <!-- First Black Description Box-->
     <div class="black_box_desc_employee">
-      <p class="center_box_heading_employee"><font face="javanese-text"->- Login -</font></p>
+      <p class="center_box_heading_employee"><font face="javanese-text"->Congratulations</font></p>
     </div>
-
-    <!-- Login Box From https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=simple-login-form-->
-    <div class="login-form">
-      <form action="index.php" method="post">      
-          <div class="form-group">
-              <input type="text" class="form-control" placeholder="Username" required="required" name="inputted-username">
-          </div>
-          <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password" required="required" name="inputted-password">
-          </div>
-          <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block">Log in</button>
-          </div>
-          <div class="clearfix">
-              <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-              <a href="#" class="pull-right">Forgot Password?</a>
-          </div>        
-      </form>
-  </div>
-
-      
-
+    <div class="flex-container justify-content-center">
+        <p><?php echo $_SESSION['name']?>, your order is on its way and will be there before you know it.</p>
+    </div>
+    
     <!-- Bottom Banner Colors-->
     <div class="bluebar"></div>
     <div class="whitebar"></div>
     <div class="redbar"></div>
 
-    <!-- Footer-->
-    <footer id="footer" class="footer-1">
+  <!-- Footer-->
+  <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col text-left">
-          <div class="widget">
-            <h5 class="widget-title"><font face="javanese-text">Quick Links</font><span></span></h5>
-            <ul class="thumbnail-widget">
-              <li>
-                <div class="thumb-content"><a href="#.">Home</a></div>
-              </li>
-              <li>
-                <div class="thumb-content"><a href="#.">Products</a></div>
-              </li>
-              <li>
-                <div class="thumb-content"><a href="#.">Store Guide</a></div>
-              </li>
-              <li>
-                <div class="thumb-content"><a href="#.">Track Orders</a></div>
-              </li>
-            </ul>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col text-left">
+            <div class="widget">
+              <h5 class="widget-title">
+                <font face="javanese-text">Quick Links</font><span></span>
+              </h5>
+              <ul class="thumbnail-widget">
+                <li>
+                  <div class="thumb-content"><a href="#.">Home</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="#.">Products</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="#.">Store Guide</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="#.">Track Orders</a></div>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="col text-center">
-          <p><img class ="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
-            <font face="kollektif" >Store Opening Hours<br>
-            Mon - Fri: 9 AM - 6 PM<br>
-            Sat - Sun: 10 AM - 5 PM<br>
-            </font>
-          </p>
-          <img class = "flag" src="../web/resources/flag.png" alt="norsk flag" height=auto width=auto>
-        </div>
-        <div class="col text-right">
-          <div class="widget">
-            <h5 class="widget-title"><font face="javanese-text">Company Information</font><span></span></h5>
-            <ul class="thumbnail-widget">
-              <li>
-                <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
-              </li>
-              <li>
-                <div class="thumb-content"><a href="#.">Employee Access</a></div>
-              </li>
-            </ul>
+          <div class="col text-center">
+            <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
+              <font face="kollektif">Store Opening Hours<br>
+                Mon - Fri: 9 AM - 6 PM<br>
+                Sat - Sun: 10 AM - 5 PM<br>
+              </font>
+            </p>
+            <img class="flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
+            <p>
+              <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
+            </p>
+          </div>
+          <div class="col text-right">
+            <div class="widget">
+              <h5 class="widget-title">
+                <font face="javanese-text">Company Information</font><span></span>
+              </h5>
+              <ul class="thumbnail-widget">
+                <li>
+                  <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    </footer>
-  </body>
+  </footer>
+
+</body>
+
 </html>

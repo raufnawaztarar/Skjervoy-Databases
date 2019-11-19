@@ -1,3 +1,35 @@
+<?php
+session_start();
+
+mysql_connect("silva.computing.dundee.ac.uk", "19ac3u05", "abc123") or die(mysql_error());
+mysql_select_db("19ac3d05") or die(mysql_error());
+
+if(!empty($_GET["action"])) {
+  switch($_GET["action"]) {
+      case "logout": 
+        if (isset($_SESSION['name'])) {
+          unset($_SESSION['id']);
+          unset($_SESSION['name']);
+        }
+      break;	
+  }
+} 
+
+if (isset($_POST['inputted-username']))
+{
+  $username = $_POST['inputted-username'];
+  $password = $_POST['inputted-password'];
+  $hashedpw = hash('sha256', $password);
+  
+  $data = mysql_query("SELECT `Customer ID`, Name, Email, Address FROM Customers WHERE Email=\"$username\" AND Password=\"$hashedpw\"") or die(mysql_error('No Records Found'));
+  
+  while ($info = mysql_fetch_array($data)) {
+    $_SESSION['id'] = $info['Customer ID'];
+    $_SESSION['name'] = $info['Name'];
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -45,7 +77,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="col-xs-4 navbar-nav mx-auto justify-content-center">
         <li class="nav-item"><a href="shopping-cart.php" class="nav-link">&#128722; Your Cart </a></li>
-        <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+        <?php if (!isset($_SESSION['name'])) { ?>
+            <li class="nav-item"><a href="login.php" class="nav-link">&#x1F464; Login </a></li>
+          <?php } else { ?>
+            <li class="nav-item"><a href="index.php?action=logout" class="nav-link">&#x1F464; Logout </a></li>
+          <?php } ?>
         <li>
         <form action="search.php" method="GET" class="form-inline">
           <input class="form-control form-control-sm ml-3 w-75" name="query" type="text" placeholder="Search" aria-label="Search">
@@ -68,7 +104,6 @@
   </div>
 
   <!-- First List Of Product Category-->
-
   <div class="product_block">
     <div class="row mb-2">
       <div class="col-sm d-flex justify-content-center">

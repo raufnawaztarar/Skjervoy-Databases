@@ -83,16 +83,16 @@
               </h5>
               <ul class="thumbnail-widget">
                 <li>
-                  <div class="thumb-content"><a href="#.">Home</a></div>
+                  <div class="thumb-content"><a href="index.php">Home</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="#.">Products</a></div>
+                  <div class="thumb-content"><a href="our-pens.php">Our Pen Collection</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="#.">Store Guide</a></div>
+                  <div class="thumb-content"><a href="our-notebooks.php">Our Notebooks</a></div>
                 </li>
                 <li>
-                  <div class="thumb-content"><a href="#.">Track Orders</a></div>
+                  <div class="thumb-content"><a href="our-locations.php">Our Stores</a></div>
                 </li>
               </ul>
             </div>
@@ -116,7 +116,7 @@
               </h5>
               <ul class="thumbnail-widget">
                 <li>
-                  <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
+                  <div class="thumb-content"><a href="error.php">Privacy Policy</a></div>
                 </li>
                 <li>
                   <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>

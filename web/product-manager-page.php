@@ -486,62 +486,62 @@ VALUE (:Product_ID, :Name, :Type, :Buying_price, :Selling_price, :Weight, :Pictu
       <div class="redbar"></div>
 
       <!-- Footer-->
-      <footer id="footer" class="footer-1">
-        <div class="main-footer widgets-dark typo-light">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col text-left">
-                <div class="widget">
-                  <h5 class="widget-title">
-                    <font face="javanese-text">Quick Links</font><span></span>
-                  </h5>
-                  <ul class="thumbnail-widget">
-                    <li>
-                      <div class="thumb-content"><a href="#.">Home</a></div>
-                    </li>
-                    <li>
-                      <div class="thumb-content"><a href="#.">Products</a></div>
-                    </li>
-                    <li>
-                      <div class="thumb-content"><a href="#.">Store Guide</a></div>
-                    </li>
-                    <li>
-                      <div class="thumb-content"><a href="#.">Track Orders</a></div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col text-center">
-                <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
-                  <font face="kollektif">Store Opening Hours<br>
-                    Mon - Fri: 9 AM - 6 PM<br>
-                    Sat - Sun: 10 AM - 5 PM<br>
-                  </font>
-                </p>
-                <img class="flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
-                <p>
-                  <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
-                </p>
-              </div>
-              <div class="col text-right">
-                <div class="widget">
-                  <h5 class="widget-title">
-                    <font face="javanese-text">Company Information</font><span></span>
-                  </h5>
-                  <ul class="thumbnail-widget">
-                    <li>
-                      <div class="thumb-content"><a href="#.">Privacy Policy</a></div>
-                    </li>
-                    <li>
-                      <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+  <footer id="footer" class="footer-1">
+    <div class="main-footer widgets-dark typo-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col text-left">
+            <div class="widget">
+              <h5 class="widget-title">
+                <font face="javanese-text">Quick Links</font><span></span>
+              </h5>
+              <ul class="thumbnail-widget">
+                <li>
+                  <div class="thumb-content"><a href="index.php">Home</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="our-pens.php">Our Pen Collection</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="our-notebooks.php">Our Notebooks</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="our-locations.php">Our Stores</a></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col text-center">
+            <p><img class="logo" src="resources/Skjervoy@3x.png" alt="Skjervoy logo white" height="50%" width="50%"><br>
+              <font face="kollektif">Store Opening Hours<br>
+                Mon - Fri: 9 AM - 6 PM<br>
+                Sat - Sun: 10 AM - 5 PM<br>
+              </font>
+            </p>
+            <img class="flag" src="resources/flag.png" alt="norsk flag" height=auto width=auto>
+            <p>
+              <font face="kollektif">Made with &#128149 by Team 5 &copy <?php echo date("Y"); ?></font>
+            </p>
+          </div>
+          <div class="col text-right">
+            <div class="widget">
+              <h5 class="widget-title">
+                <font face="javanese-text">Company Information</font><span></span>
+              </h5>
+              <ul class="thumbnail-widget">
+                <li>
+                  <div class="thumb-content"><a href="error.php">Privacy Policy</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="employee-access.php">Employee Access</a></div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+    </div>
+  </footer>
 
 </body>
 
